@@ -50,7 +50,11 @@
 				},
 				{
 					"name": "keyword.control.operator",
-					"match" : "(?i)\\b(not|bitset|bitclr|bitchg|bittst|lsl|asl|lsr|asr|\\&|\\||\\^|\\*|\\/|\\+|\\-|\\=|\\<\\>|\\<|\\.|\\<\\=|\\>\\=|and|or)\\b"
+					"match" : "(?i)\\b(not|bitset|bitclr|bitchg|bittst|lsl|asl|lsr|asr|and|or)\\b"
+				},
+				{
+					"name": "keyword.control.operator",
+					"match" : "(?i)(\\&|\\||\\^|\\*|\\/|\\+|\\-|\\=|\\<\\>|\\<|\\.|\\<\\=|\\>\\=)"
 				}					
 			]
 		},
