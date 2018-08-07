@@ -54,7 +54,7 @@
 				},
 				{
 					"name": "keyword.control.operator",
-					"match" : "(?i)(\\&|\\||\\^|\\*|\\/|\\+|\\-|\\=|\\<\\>|\\<|\\.|\\<\\=|\\>\\=)"
+					"match" : "(?i)(\\&|\\||\\^|\\*|\\/|\\+|\\-|\\=|\\<\\>|\\<|\\<\\=|\\>\\=)"
 				}					
 			]
 		},
@@ -88,7 +88,7 @@
 				{
 					"name": "support.variable.blitzbasic",
 					"comment":"just types alone eg .w",
-					"match": "(\\.\\w+)"
+					"match": "[^0-9](\\.\\w+)"
 				}				
 			]
 		}
