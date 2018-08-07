@@ -21,6 +21,12 @@
             "language": "blitzbasic",
             "scopeName": "blitzbasic",
             "path": "./syntaxes/blitzbasic.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "blitzbasic",
+                "path": "./snippets/blitzbasic.json"
+            }
+        ]        
     }
 }

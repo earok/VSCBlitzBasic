@@ -1,0 +1,218 @@
+{
+    "Goto": {
+        "prefix": "Goto",
+        "body": "Goto Label",
+        "description": "Goto causes program flow to be transferred to the specified program label. This allows sections of a program to be 'skipped' or 'repeated'."
+    },
+    "Gosub": {
+        "prefix": "Gosub",
+        "body": "Gosub Label",
+        "description": "Gosub operates in two steps. First, the location of the instruction following the Gosub is remembered in a special storage area (known as the 'stack'). Secondly, program flow is transferred to the specified Program Label. The section of program that program flow is transferred to is known as a subroutine' and should be terminated by a Return command."
+    },
+    "Return": {
+        "prefix": "Return",
+        "body": "Return",
+        "description": "Return is used to return program flow to the instruction following the previously executed Gosub command. This allows the creation of 'subroutines' which may be called from various points in a program."
+    },
+    "On": {
+        "prefix": "On",
+        "body": "On Expression Goto|Gosub Label1 Label2...",
+        "description": "If the specified Expression results in a 1, then the first Program Label will be branchedto. A result of 2 will cause the second Program Label to be branched to and so on. If the result of Expression is less than one, or not enough Program Labels are supplied, program flow will continue without a branch."
+    },
+    "End": {
+        "prefix": "End",
+        "body": "End",
+        "description": "End will halt program flow completely. In case of programs run from Blitz editor, youwill be returned to editor. In case of executable files, will be returned to WB or CLI."
+    },
+    "Stop": {
+        "prefix": "Stop",
+        "body": "Stop",
+        "description": "Stop command causes the Blitz Debugger to interrupt program flow. Place Stop commands in your code as breakpoints when debugging, ensure runtime errors areenabled. Click on Run from the debugger to continue program flow after a Stop."
+    },
+    "If": {
+        "prefix": "If",
+        "body": [
+            "If Expression",
+            "Endif"
+        ],
+        "description": "If allows execution of a section of program depending on the result of an expression. The Then command indicates only the rest of the line will be defined as the section ofcode to either execute or not. Without a Then the section of code will be defined asthat up to the EndIf command."
+    },
+    "Endif": {
+        "prefix": "Endif",
+        "body": "Endif",
+        "description": "EndIf is used to terminate an 'If block'. An If block is begun by use of If statement without the then present. Please refer to If for more information on If blocks."
+    },
+    "Else": {
+        "prefix": "Else",
+        "body": "Else",
+        "description": "Else may be used after an If to cause program instructions to be executed if the expression specified in the If proved to be false."
+    },
+    "While": {
+        "prefix": "While",
+        "body": [
+            "While Expression",
+            "Wend"
+        ],
+        "description": "While command is used to execute a series of commands repeatedly while the specified Expression proves to be true. The commands to be executed include all the commands following the While until the next matching Wend."
+    },
+    "Wend": {
+        "prefix": "Wend",
+        "body": "Wend",
+        "description": "Wend is used in conjunction with While to determine a section of program to be executed repeatedly based upon the truth of an expression."
+    },
+    "Select": {
+        "prefix": "Select",
+        "body": [
+            "Select Expression",
+            "   Case Expression",
+            "   Default",
+            "End Select"
+        ],
+        "description": "Select examines and 'remembers' the result of the specified Expression. The Case commands may then be used to execute different sections of program code depending on the result of the expression in the Select line."
+    },
+    "Case": {
+        "prefix": "Case",
+        "body": "Case Expression",
+        "description": "A Case is used following a Select to execute a section of program code when ,and only when, the Expression specified in the Case statement is equivalentto the Expression evaluated in the Select statement. If a Case statement is satisfied, program flow will continue until the next Case Default or End Select statement is encountered, at which point program flow will branch to the next matching End Select."
+    },
+    "Default": {
+        "prefix": "Default",
+        "body": "Default",
+        "description": "A Default statement may appear following a series of Case statements to cause a section of code to be executed if NONE of the Case statements were satisfied."
+    },
+    "End Select": {
+        "prefix": "End Select",
+        "body": "End Select",
+        "description": "End Select terminates a Select...Case...Case...Case sequence. If program flow hadbeen diverted through the use of a Case or Default statement, it will continue from the terminating End Select."
+    },
+    "For": {
+        "prefix": "For",
+        "body": [
+            "For Var = Expression1 To Expression2 [Step Expression3]",
+            "Next"
+        ],
+        "description": "The For statement initializes a For...Next loop. All For/Next loops must begin with a For statement, and must have a terminating Next statement further down the program.For..Next loops cause a particular section of code to be repeated a certain number oftimes. The For statement does most of the work in a For/Next loop. When For is executed, the variable specified by Var (known as the index variable) will be set to the value Expressionl. After this, the actual loop commences."
+    },
+    "Next": {
+        "prefix": "Next",
+        "body": "Next [var[,Var..]]",
+        "description": "Next terminates a For..Next loop."
+    },
+    "Repeat": {
+        "prefix": "Repeat",
+        "body": [
+            "Repeat",
+            "Until Expression"
+        ],
+        "description": "Repeat is used to begin a Repeat...Until loop. Each Repeat statement in a program must have a corresponding Until further down the program. The purpose of Repeat/Until loops is to cause a section of code to be executed AT LEAST ONCE before a test is made to see if the code should be executed again"
+    },
+    "Until": {
+        "prefix": "Until",
+        "body": "Until Expression",
+        "description": "Until is used to terminate a Repeat/Until loop. If Expression is true (non 0) program flow will continue from the command following Until. If Expression is false (0) program flow will go back to the corresponding Repeat,found further up the program"
+    },
+    "Forever": {
+        "prefix": "Forever",
+        "body": "Forever",
+        "description": "Forever may be used instead of Until to cause a Repeat/Until loop to NEVER exit. Executing Forever is identical to executing 'Until 0'."
+    },
+    "Pop": {
+        "prefix": "Pop",
+        "body": "Pop Gosub|For|Select|If|While|Repeat",
+        "description": "Sometimes, it may be necessary to exit from a particular type of program loop in order to transfer program flow to a different part of program. Pop must be included before the Goto which transfers program flow out from the inside of the loop. Actually, Pop is only necessary to prematurely terminate Gosubs, Fors and Selects. If, While and Repeat have been included for completeness but are not necessary."
+    },
+    "MouseWait": {
+        "prefix": "MouseWait",
+        "body": "MouseWait",
+        "description": "MouseWait halts program until left mouse button is pushed. If left mouse is already held down when a MouseWait is executed, program will simply continue through. MouseWait should normally be used only for program testing purposes, as MouseWait severely slows down multi-tasking."
+    },
+    "VWait": {
+        "prefix": "VWait",
+        "body": "VWait [Frames]",
+        "description": "VWait will cause program flow to halt until the next vertical blank occurs. Optional Frames parameter may be used to wait for a particular number of vertical blanks. VWait is especially useful in animation for synchrodizing display changes with the rate at which the display is physically redrawn by the monitor."
+    },
+    "Statement": {
+        "prefix": "Statement",
+        "body": [
+            "Statement Procedurename{Parameters...}",
+            " Statement Return",
+            "End Statement"
+        ],
+        "description": "Statement declares all following code up to the next End Statement as being a 'statement type' procedure. Up to 6 Parameters may be passed to a statement in the form of local variables through which calling parameters are passed. In Blitz, all statements and functions must be declared before they are called."
+    },
+    "End Statement": {
+        "prefix": "End Statement",
+        "body": "End Statement",
+        "description": "End Statement declares the end of a 'statement type' procedure definition. All statement type procedures must be terminated with an End Statement."
+    },
+    "Statement Return": {
+        "prefix": "Statement Return",
+        "body": "Statement Return",
+        "description": "Statement Return may be used to prematurely exit from a 'statement type' procedure. Program flow will return to the command following the procedure call."
+    },
+    "Function": {
+        "prefix": "Function",
+        "body": [
+            "Function[.type] Procedurename{Parameters...}",
+            " Function Return Expression",
+            "End Function"
+        ],
+        "description": "Function declares all following code up to the next End Function as being a function type procedure. The optional Type parameter may be used to determine what type of result is returned by the function. Type. If specified, must be one Blitz's 6 primitive variable types. If no Type is given, the current default type is used. Up to 6 parameters may be passed to a function in form of local variables through which calling parameters are passed. Functions may return values through the Function Return command. In Blitz, all statements and functions must be declared before they are called."
+    },
+    "End Function": {
+        "prefix": "End Function",
+        "body": "End Function",
+        "description": "End Function declares the end of a 'function type' procedure definition. All function type procedures must be terminated with an End Function."
+    },
+    "Function Return": {
+        "prefix": "Function Return",
+        "body": "Function Return Expression",
+        "description": "Function Return allows 'function type' procedures to return values to their calling expressions. Function type procedures are called from within Blitz expressions."
+    },
+    "Shared": {
+        "prefix": "Shared",
+        "body": "Shared Var[,Var...]",
+        "description": "Shared is used to declare certain variables within a procedure definition as being global variables. Any variables appearing within a procedure definition that do n<>t appear in a Shared statement are, by default, local variables."
+    },
+    "SetInt": {
+        "prefix": "SetInt",
+        "body": [
+            "SetInt Type",
+            "End SetInt"
+        ],
+        "description": "Setint is used to declare a section of program code as 'interrupt' code. Often, when a computer program is running,an event of some importance takes place which must be processed immediately."
+    },
+    "End SetInt": {
+        "prefix": "End SetInt",
+        "body": "End SetInt",
+        "description": "End SetInt must appear after a SetInt to signify the end of a section of interrupt handler code. Please refer to SetInt for more information of interrupt handlers."
+    },
+    "ClrInt": {
+        "prefix": "ClrInt",
+        "body": "ClrInt",
+        "description": "ClrInt may be used to remove any interrupt handlers currently attached to specified interrupt Type. SetInt is used to attach interrupt handlers to particular interrupts."
+    },
+    "SetErr": {
+        "prefix": "SetErr",
+        "body": [
+            "SetErr",
+            "End SetErr"
+        ],
+        "description": "The SetErr command allows you to set up custom error handlers. Program code which appears after the SetErr command will be executed when any Blitz runtime errors are caused. Custom error code should be ended by an End SetErr."
+    },
+    "End SetErr": {
+        "prefix": "End SetErr",
+        "body": "End SetErr",
+        "description": "End SetErr must appear following custom error handlers installed using SetErr. Please refer to SetErr tor more information on custom error handlers."
+    },
+    "ClrErr": {
+        "prefix": "ClrErr",
+        "body": "ClrErr",
+        "description": "ClrErr may be used to remove a custom error handler set up using SetErr."
+    },
+    "ErrFail": {
+        "prefix": "ErrFail",
+        "body": "ErrFail",
+        "description": "ErrFail may be used within custom error handlers to cause a 'normal' error. The error which caused the custom error handler to be executed will be reported and transfer will be passed to direct mode."
+    }
+}
