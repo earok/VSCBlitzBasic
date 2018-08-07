@@ -1,0 +1,26 @@
+{
+    "name": "blitz-basic",
+    "displayName": "Blitz Basic",
+    "description": "Blitz Basic for Amiga",
+    "version": "0.0.1",
+    "publisher": "earok",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "blitzbasic",
+            "aliases": ["Blitz Basic", "blitzbasic"],
+            "extensions": [".bb",".bb2"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "blitzbasic",
+            "scopeName": "blitzbasic",
+            "path": "./syntaxes/blitzbasic.tmLanguage.json"
+        }]
+    }
+}
