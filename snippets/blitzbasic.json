@@ -64,8 +64,8 @@
         "prefix": "Select",
         "body": [
             "Select Expression",
-            "   Case Expression",
-            "   Default",
+            " Case Expression",
+            " Default",
             "End Select"
         ],
         "description": "Select examines and 'remembers' the result of the specified Expression. The Case commands may then be used to execute different sections of program code depending on the result of the expression in the Select line."
@@ -214,5 +214,123 @@
         "prefix": "ErrFail",
         "body": "ErrFail",
         "description": "ErrFail may be used within custom error handlers to cause a 'normal' error. The error which caused the custom error handler to be executed will be reported and transfer will be passed to direct mode."
+    },
+    "Let": {
+        "prefix": "Let",
+        "body": "Let Var=Expression",
+        "description": "Let is an optional command used to assign a value to a variable. Let must always be followed by a variable name and an expression.An equals sign ('=') is placed between the variable name and the expression. If the equals sign is omitted, then an opertor (eg: '+', '*') must appear between the variable name and the expression. In this case, the specified variable will be altered by the specified operator and expression."
+    },
+    "Exchange": {
+        "prefix": "Exchange",
+        "body": "Exchange Var Var",
+        "description": "Exchange will 'swap' the values contained in the 2 specified variables. Exchange may only be used with 2 variables of the same type."
+    },
+    "MaxLen": {
+        "prefix": "MaxLen",
+        "body": "MaxLen StringVar=Expression",
+        "description": "MaxLen sets aside a block of memory for a string variable to grow into. This is normally only necessary in the case of special Blitz commands which require this space to be present before execution. Currently, only 2 Blitz commands require the use of MaxLen - FileRequest$ and Fields."
+    },
+    "DEFTYPE": {
+        "prefix": "DEFTYPE",
+        "body": "DEFTYPE .Typename [Var[,Var...]]",
+        "description": "DEFTYPE may be used to declare a list of variables as being of a particular type. In this case, Var parameters must be supplied. DEFTYPE may also be used to select a default variable type for future 'unknown' variables. Unknown variables are variables created with no Typename specifier. In this case, no Var parameters are supplied."
+    },
+    "NEWTYPE": {
+        "prefix": "NEWTYPE",
+        "body": [
+            "NEWTYPE .Typename",
+            "End NEWTYPE"
+        ],
+        "description": "NEWTYPE creates a custom variable type and must be followed by a list of entry names separated by ':' and/or newlines. NEWTYPE terminates using End NEWTYPE."
+    },
+    "SizeOf": {
+        "prefix": "SizeOf",
+        "body": "SizeOf .Typename [,Entrypath]",
+        "description": "SizeOf allows you to determine the amount of memory, in bytes, a particular variable type takes up. SizeOf may also be followed by an optional Entrypath, in which case the offset from the start of the type to the specified entry is returned."
+    },
+    "Dim": {
+        "prefix": "Dim",
+        "body": "Dim ArrayName [List] (Dimension1[,Dimension2...])",
+        "description": "Dim is used to initialize a BASIC array. Blitz supports 2 array types: simple arrays and list arrays. The ptional List parameter, if present, denotes a list array. Simple arrays are identical to standard BASIC arrays, and may be of any number dimensions. List arrays may be of only 1 dimension."
+    },
+    "ResetList": {
+        "prefix": "ResetList",
+        "body": "ResetList ArrayName()",
+        "description": "ResetList is used in conjunction with a list array to prepare the list array for NextItem processing. After executing a ResetList, the next Nextitem executed will set the list array's 'current element' pointer to the list array's very first."
+    },
+    "AddFirst": {
+        "prefix": "AddFirst",
+        "body": "AddFirst (ArrayName())",
+        "description": "AddFirst function allows you to insert an array list item at the beginning of an array list. AddFirst returns a true/false value reflecting whether or not there was enough room in the array list to add an element. If an array element was available, AddFirst returns a true value (-1), and sets the list array's 'current item' pointer to the item added. If no array element was available, AddFirst returns false (0)."
+    },
+    "AddLast": {
+        "prefix": "AddLast",
+        "body": "AddLast (ArrayName())",
+        "description": "AddLast function allows you to insert an array list item at the end of an array list. AddLast returns a true/false value reflecting whether or not there was enough room in the array list to add an element. If an array element was available, AddLast returns a true value (-1), and sets the list array's 'current item' pointer to the item added. If no array element was available, AddLast returns false (0)."
+    },
+    "AddItem": {
+        "prefix": "AddItem",
+        "body": "AddItem (ArrayName())",
+        "description": "AddItem function allows you to insert an array list item after the list array's 'current' item. AddItem returns a true/false value reflecting whether or not there was enough room in the array list to add an element. If an array element was available, Additem returns a true value (-1), and sets the list array's 'current item' pointer to the item added. If no array element was available, Additem returns false (0)."
+    },
+    "KillItem": {
+        "prefix": "KillItem",
+        "body": "KillItem ArrayName()",
+        "description": "KillItem deletes the specified list array's current item. After executing KillItem, the list array's 'current item' pointer will be set to the item before the item deleted."
+    },
+    "PrevItem": {
+        "prefix": "PrevItem",
+        "body": "PrevItem (ArrayName())",
+        "description": "PrevItem will set the specified list array's 'current item' pointer to the item before the list array's old current item. This allows for 'backwards' processing of a list array. Previtem returns a true/false value reflecting whether or not there actually was a previous item. If a previous item was available, PrevItem will return true (-1). Otherwise, PrevItem will return false (0)"
+    },
+    "NextItem": {
+        "prefix": "NextItem",
+        "body": "NextItem (ArrayName())",
+        "description": "NextItem will set the specified list array's 'current item' pointer to the item after the list array's old current item. This allows for 'forwards' processing of a list array. Nextitem returns a true/false value reflecting whether or not there actually was a next item available or not. If an item was available, Nextitem will return true (-1). Otherwise, Nextitem will return false (0)."
+    },
+    "FirstItem": {
+        "prefix": "FirstItem",
+        "body": "FirstItem (ArrayName())",
+        "description": "Executing Firstitem will set the specified list array's 'current item' pointer to the very first item in the list array. If there are no items in the list array, Firstitem will return false (0) otherwise, Firstitem will return true (-1)."
+    },
+    "LastItem": {
+        "prefix": "LastItem",
+        "body": "LastItem (ArrayName())",
+        "description": "Executing Lastitem will set the specified list array's 'current item' pointer to the very last item in the list array. If there are no items in the list array, Lastitem will return false (0), otherwise Lastitem will return true (-1)."
+    },
+    "PushItem": {
+        "prefix": "PushItem",
+        "body": "PushItem ArrayName()",
+        "description": "Executing Pushitem causes the specified list array's 'current item' pointer to be pushed onto an internal stack. This pointer may be later recalled by executing Popitem. The internal item pointer stack is set for up to 8 'pushes'."
+    },
+    "PopItem": {
+        "prefix": "PopItem",
+        "body": "PopItem ArrayName()",
+        "description": "Popitem 'pops' or 'recalls' a previously pushed current item pointer for specified list array. Arrayname() must match the arrayname of most recently executed Pushitem."
+    },
+    "ItemStackSize": {
+        "prefix": "ItemStackSize",
+        "body": "ItemStackSize MaxItems()",
+        "description": "ItemStackSize determines how many 'list' items may be pushed (using Pushltem), before items must be 'Pop'ped off again. For example, executing ItemStackSize 1000 will allow you to push up to 1000 list items before you run out of item stack space."
+    },
+    "SortList": {
+        "prefix": "SortList",
+        "body": "SortList Arrayname()",
+        "description": "SortList command is used to rearrange the order of elements in a Blitz linked list. Order in which the items are sorted depends on the first field of the linked list type which must be a single integer word."
+    },
+    "Sort": {
+        "prefix": "Sort",
+        "body": "Sort Arrayname()",
+        "description": "Sort will cause the specified array to be sorted. The direction of the sort may be specified using either the SortUp or SortDown commands. Default direction used for sorting is ascending - ie: array elements are sorted into a 'low to high' order."
+    },
+    "SortUp": {
+        "prefix": "SortUp",
+        "body": "SortUp",
+        "description": "SortUp is used to force the Sort command to sort arrays into ascending order. Means that after being sorted, an array's contents will be ordered in a 'low to high' manner."
+    },
+    "SortDown": {
+        "prefix": "SortDown",
+        "body": "SortDown",
+        "description": "SortDown is to force the Sort command to sort arrays into descending order. Means that, after being sorted, an array's contents will be ordered in a 'high to low' manner."
     }
 }
