@@ -332,5 +332,114 @@
         "prefix": "SortDown",
         "body": "SortDown",
         "description": "SortDown is to force the Sort command to sort arrays into descending order. Means that, after being sorted, an array's contents will be ordered in a 'high to low' manner."
+    },
+    "Print": {
+        "prefix": "Print",
+        "body": "Print Expression[,Expresion...]",
+        "description": "Print allows you to output either strings or numeric values to current output channel. Commands such as WindowOutput or BitMapOutput may be used to alter the current output channel."
+    },
+    "NPrint": {
+        "prefix": "NPrint",
+        "body": "Print Expression[,Expresion...]",
+        "description": "NPrint allows you to output either strings or numeric values to the current output channel. Commands such as WindowOutput or BitMapOutput may be used to alter the current output channel. After all Expressions have been output, NPrint automatically prints a newline char."
+    },
+    "Format": {
+        "prefix": "Format",
+        "body": "Format FormatString",
+        "description": "Format allows you to control the output of any numeric values by the Print or NPrint commands. FormatString is an 80 character or less string expression used for formatting information by the Print command. Special characters in FormatString are used to perform special formatting functions."
+    },
+    "FloatMode": {
+        "prefix": "FloatMode",
+        "body": "FloatMode Mode",
+        "description": "FloatMode allows you to control how floating point numbers are output by the Print or NPrint commands."
+    },
+    "Data": {
+        "prefix": "Data",
+        "body": "Data [.Type] Item[,Item...]",
+        "description": "Data statement allows to include pre-defined values in programs.'data items' may be transferred into variables using Read statement. When data is read into variables,the Type of the data being read MUST match the type of the variable it is being read into."
+    },
+    "Read": {
+        "prefix": "Read",
+        "body": "Read Var[,Var...]",
+        "description": "Read is used to transfer items in Data statements into variables. Data is transferred sequentially into variables through what is known as a 'date pointer'. When a piece of data is read, data pointer is incremented to point at the next piece of data. Data pointer may be set to point to a particular piece of data using the Restore command."
+    },
+    "Restore": {
+        "prefix": "Restore",
+        "body": "Restore [Program Label]",
+        "description": "Restore allows you to set Blitz's internal 'data pointer' to a particular piece of data after executing a Restore. The first item of data following specified Program Label will become the data to be read when the next Read command is executed. Restore with no parameters will reset data pointer to very first piece of data in program."
+    },
+    "Edit$": {
+        "prefix": "Edit$",
+        "body": "Edit$([DefaultString$],Characters)",
+        "description": "Edit$ is Blitz's standard text input command. When used with Window and BitMap Input Edit$ causes the optional DefaultString$ and a cursor to be printed to display. It then waits for the user to hit RETURN. Edit$ returns the text entered by program user as a string of character. During FileInput Edit$ reads the next n characters from the open file or until the next endofline character (chr$(10)). To read data from files that is not standard ascii (ignore EOL terminators) Inkey$ should be used instead of Edit$. Characters specifies a maximum number of allowable characters for input. This is extremely useful in preventing Edit$ from destroying display contents."
+    },
+    "Edit": {
+        "prefix": "Edit",
+        "body": "Edit([DefaultValue],Characters)",
+        "description": "Edit is Blitz's standard numeric input command. The same characteristics apply as those for Edit$ however Edit of course only accepts numeric input."
+    },
+    "Inkey$": {
+        "prefix": "Inkey$",
+        "body": "Inkey$[(Characters)]",
+        "description": "Inkey$ is used to collect one or more characters from the current input channel. Current input channel may be selected using commands such as WindowInput, Filelnput or BitMapInput. Inkey$ MAY NOT be used from Defaultinput input channel as CLI does not pass input back to the program until the user hits return. Characters refers to the number of characters to collect. The default is one character."
+    },
+    "DefaultInput": {
+        "prefix": "DefaultInput",
+        "body": "DefaultInput",
+        "description": "Defaultinput causes all future Edit$ and Inkey$ functions to receive their input from CLI window the Blitz program was run from. This is the default input channel used when a Blitz program is first run"
+    },
+    "DefaultOutput": {
+        "prefix": "DefaultOutput",
+        "body": "DefaultOutput",
+        "description": "DefaultOutput cause all future Print statements to send their output to CLI window the Blitz program was run from. This is the default output channel used when a Blitz program is first run."
+    },
+    "FileRequest$": {
+        "prefix": "FileRequest$",
+        "body": "FileRequest$(Title$, Pathname$, Filename$)",
+        "description": "FileRequest$ function will open up a standard Amiga-style file requester on currently used screen. Program flow will halt until user either selects a file, or hits requester's 'Cancel' button. If a file was selected, FileRequest$ will return the full file name as a string. If 'Cancel' was selected, FileRequest$ will return a null (empty) string. Title$ may be any string expression to be used as a title for the file requester. Pathname$ MUST be a string variable with a MaxLen of at least 160. Filename$ MUST be a string variable with a MaxLen of at least 64."
+    },
+    "PopInput": {
+        "prefix": "PopInput",
+        "body": "PopInput",
+        "description": "After input has been re-directed (eg using WindowInput/Filelnput), Popinput may be used to return the channel to it's previous condition."
+    },
+    "PopOutput": {
+        "prefix": "PopOutput",
+        "body": "PopOutput",
+        "description": "After output has been re-directed (eg using WindowOutput/FileOutput), PopOutput may be used to return the channel to it's previous condition."
+    },
+    "JoyX": {
+        "prefix": "JoyX",
+        "body": "JoyX(Port)",
+        "description": "Joyx will return the left/right status of a joystick plugged into the specified port. Port must be either 0 or 1, 0 being the port the mouse is normally plugged into. If the joystick is held to the left, Joyx will return -1. If the joystick is held to the right, Joyx will return 1. If the joystick is held neither left or right, Joyx will return 0."
+    },
+    "JoyY": {
+        "prefix": "JoyY",
+        "body": "JoyY(Port)",
+        "description": "Joyy will return the up/down status of a joystick plugged into the specified port. Port must be either 0 or 1, 0 being the port the mouse is normally plugged into. If the joystick is held upwards, Joyy will return -1. If the joystick is held downwrads, Joyy will return 1. If the joystick is held neither upwards or downwards, Joyy will return 0."
+    },
+    "JoyR": {
+        "prefix": "JoyR",
+        "body": "JoyR(Port)",
+        "description": "Joyr may be used to determine the rotational direction of a joystick plugged into the specified port. Port must be either 0 or 1, port 0 being the port the mouse is normally plugged into. Joyr returns a value from 0 through 8 based on the following table:"
+    },
+    "JoyB": {
+        "prefix": "JoyB",
+        "body": "JoyB(Port)",
+        "description": "Joyb read button status of the device plugged into specified port. Port must be either 0 or 1, 0 being the port where mouse is normally plugged into. If left button is pressed, Joyb will return 1. If right button is pressed, Joyb will return 2. If both buttons are pressed, Joyb will return 3. If no buttons are pressed, Joyb will return 0."
+    },
+    "GameB": {
+        "prefix": "GameB",
+        "body": [
+            "CD32_Buttons = GameB(Port)",
+            "CD32_Play = CD32_Buttons & 1 = 1",
+            "CD32_Reverse = CD32_Buttons & 2 = 2",
+            "CD32_Forward = CD32_Buttons & 4 = 4",
+            "CD32_Green = CD32_Buttons & 8 = 8",
+            "CD32_Yellow = CD32_Buttons & 16 = 16",
+            "CD32_Red = CD32_Buttons & 32 = 32",
+            "CD32_Blue = CD32_Buttons & 64 = 64"
+        ],
+        "description": "GameB returns the button states of CD32 style game controllers. The values of all buttons pressed are added together to make up the value returned by GameB. To check a certain button is down a logical AND should be performed, buttonvalue AND returnvalue will evaluate to 0 if the button is not held down."
     }
 }
