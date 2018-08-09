@@ -49,11 +49,11 @@
 					"match": "(?i)\\b(let|end|if|else|endif|while|wend|repeat|dim|newtype|macro|statement|function|return|goto|gosub|deftype|shared|for|step|to|next|until|forever|use|select|case|default|pop|setint|seterr|clrerr|USEPATH|BLITZ|AMIGA|QAMIGA|INCLUDE|XINCLUDE|INCBIN|INCDIR|CNIF|CEND|CSIF|CELSE|CERR)\\b"
 				},
 				{
-					"name": "keyword.control.operator",
+					"name": "keyword.control.operator.blitzbasic",
 					"match" : "(?i)\\b(not|bitset|bitclr|bitchg|bittst|lsl|asl|lsr|asr|and|or)\\b"
 				},
 				{
-					"name": "keyword.control.operator",
+					"name": "keyword.control.operator.blitzbasic",
 					"match" : "(?i)(\\&|\\||\\^|\\*|\\/|\\+|\\-|\\=|\\<\\>|\\<|\\<\\=|\\>\\=)"
 				}					
 			]
