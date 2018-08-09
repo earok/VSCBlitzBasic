@@ -1,0 +1,2002 @@
+
+   "True": {
+      "prefix": "True",
+      "body": "True",
+      "description": "True is a system constant with a value of -1. ",
+   },
+   "False": {
+      "prefix": "False",
+      "body": "False",
+      "description": "False is a system constant with a value of 0. NTSC This function returns 0 if the display is currently in PAL mode, or -1 if currently in NTSC mode. This may be used to write software which dynamically adjusts itself to different versions of the Amiga computer. ",
+   },
+   "DispHeight": {
+      "prefix": "DispHeight",
+      "body": "DispHeight",
+      "description": "DispHeight will return 256 if executed on a PAL Amiga or 200 if on an NTSC Amiga. This allows programs to open full sized screens, windows,etc on any Amiga ",
+   },
+   "VPos": {
+      "prefix": "VPos",
+      "body": "VPos",
+      "description": "VPos returns video's beam vertical position. Useful in both highspeed animation where screen update may need to be synced to a certain video beam position (not just the top of frame as with VWait) and for a fast random member generator in non frame- synced applications. ",
+   },
+   "Peek": {
+      "prefix": "Peek",
+      "body": "Peek [.Type](Address)",
+      "description": "Peek function returns the contents of the absolute memory location specified by  Address. The optional Type parameter allows peeking of different sizes. For example, to peek a byte, you would use Peek.b; to peek a word, you would use Peek.w; and to peek a long, you would use Peek.l It is also possible to peek a string using Peek$. This will return a string of characters read from consecutive memory locations until a byte of 0 is found. Abs (Expression) This function returns the positive equivalent of Expression. ",
+   },
+   "Frac": {
+      "prefix": "Frac",
+      "body": "Frac (Expression)",
+      "description": "Frac() returns the fractional part of Expression. Int (Expression) This returns the Integer part (before the decimal point) of Expression. ",
+   },
+   "QAbs": {
+      "prefix": "QAbs",
+      "body": "QAbs (Quick)",
+      "description": "QAbs works just like Abs except that the value it accepts is a Quick. This enhances the speed at which the function executes quite dramatically. Of course you are limited by the restrictions of the quick type of value. ",
+   },
+   "QFrac": {
+      "prefix": "QFrac",
+      "body": "QFrac (Ouick)",
+      "description": "QFrac() returns the fractional part of a quick value. It works like Frac() but accepts a quick value as it's argument. It´s faster than Frac() but has normal quick value limits. ",
+   },
+   "QLimit": {
+      "prefix": "QLimit",
+      "body": "QLimit (Quick,Low,High)",
+      "description": "QLimit is used to limit the range of a quick number. If Quick is greater than or equal to ",
+   },
+   "Low,": {
+      "prefix": "Low,",
+      "body": "Low, and less than or equal to High, the value of Quick is returned. If Quick is less than ",
+      "description": "Low, then Low is returned. If Quick is greater than High, then High is returned. ",
+   },
+   "QWrap": {
+      "prefix": "QWrap",
+      "body": "QWrap (Ouick,Low,High)",
+      "description": "QWrap will wrap the result of the Quick expression if Quick is greater than or equal to high, or less than low. If Quick is less than Low, then Quick- Low+High is returned. If Quick is greater than or equal to High, then Quick-High+Low is returned Rnd [(Range)] This function returns a random number. If Range is not specified then a random decimal is returned between 0 and 1. If Range is specified, then a decimal value between 0 and Range is returned. ",
+   },
+   "Sgn": {
+      "prefix": "Sgn",
+      "body": "Sgn (Expression)",
+      "description": "Sgn returns the sign of Expression. If Expression is less than 0, then -1 is returned.  If Expression = 0 then 0 is returned. If Expression is > 0 then 1 is returned. ",
+   },
+   "Cos": {
+      "prefix": "Cos",
+      "body": "Cos (Float) ",
+      "description": "Cos() returns the Cosine of the value Float. Sin(Float) This returns the Sine of the value Float. Tan (Float) This returns the Tangent of the value Float. ACos (Float) This returns the ArcCosine of the value Float. ASin (Float) This returns the ArcSine of the value Float. ATan (Float) This returns the ArcTangent of the value Float. HCos (Float) This returns the hyperbolic Cosine of the value Float. HSin (Float) This returns the hyperbolic Sine of the value Float. HTan (Float) This returns the hyperbolic Tangent of the value Float. Exp (Float) This returns e raised to the power of Float. Sqr (Float) This returns the square root of Float. Log10 (Float This returns the base 10 logarithm of Float. Log (Float) This returns the natural (base e) logarithm of Float. ",
+   },
+   "QAngle": {
+      "prefix": "QAngle",
+      "body": "QAngle (SrcX,SrcY,DestX,DestY)",
+      "description": "QAngle returns the angle between the two 2D coordinates passed. The angle.q returned is a value from 0-1, 1 representing 360 degrees in standard polar geometry. Left$ (String$,Length) This function returns the Length leftmost characters of string String$. ",
+   },
+   "Right$": {
+      "prefix": "Right$",
+      "body": "Right$ (String$,Length)",
+      "description": "Right$() returns the rightmost Length characters from string String$. Mid$ (String$,Startchar[ Length]) This function returns Length characters of string String$ starting at character Startchar. If the optional Length parameter is omitted, then all characters from Startchar up to the end of String$ will be returned. ",
+   },
+   "Hex$": {
+      "prefix": "Hex$",
+      "body": "Hex$ (Expression)",
+      "description": "Hex$() returns an 8 character string equivalent to hexadecimal representation of Expression. ",
+   },
+   "Bin$": {
+      "prefix": "Bin$",
+      "body": "Bin$ (Expression)",
+      "description": "Bin$() returns a 32 character string equivalent to a binary representation of Expression. ",
+   },
+   "Chr$": {
+      "prefix": "Chr$",
+      "body": "Chr$ (Expression)",
+      "description": "Chr$ returns a one character string equivalent to the ASCII character Expression.Ascii is a standard way of coding the characters used by the computer display. ",
+   },
+   "Asc": {
+      "prefix": "Asc",
+      "body": "Asc (String$)",
+      "description": "Asc() returns the ASCII value of the first characters in the string String$. String$ (String$,Repeats) This function will return  a  string  containing  Repeats sequential occurrences of the string String$. ",
+   },
+   "Instr": {
+      "prefix": "Instr",
+      "body": "Instr (String$,Findstring$[,Startpos])",
+      "description": "Instr attempts to locate FindString$ within String$. If a match is found, returns the character position of the first matching character. If no match is found, returns 0 The optional Startpos parameter allows you to specify a starting character position for the search. ",
+   },
+   "CaseSense": {
+      "prefix": "CaseSense",
+      "body": "CaseSense",
+      "description": "CaseSense is used to determine whether the search is case sensitive or not. ",
+   },
+   "Replace$": {
+      "prefix": "Replace$",
+      "body": "Replace$ (String$,Findstring$,Replacestring$)",
+      "description": "Replace$() will search the string String$ for any occurrences of the string Findstring$ and replace it with the string Replacestring$. CaseSense is used to determine whether the search is case sensitive or not. Mki$ (Integer) This will create a two byte character string, given the two byte numeric value Numeric. Mki$ is often used before writing integer values to sequential files to save disk space. When the file is later read in, Cvi may be used to convert the string back to an integer. Mkl$ (Long) This will create a four byte character string, given the four byte numeric value Long. Mkl$ is often used when writing long values to sequential files to save disk space. When the file is later read in, Cvl may be used to convert the string back to a long. Mkq$ (Quick) This will create a four byte character string, given the four byte numeric value Quick. Mkq$ is often used when writing quick values to sequential files to save disk space. When the file is later read in, Cvq may be used to convert the string back to a quick. ",
+   },
+   "Cvi": {
+      "prefix": "Cvi",
+      "body": "Cvi (String$)",
+      "description": "Cvi returns an integer value equivalent to the left 2 characters of String$. This is the logical opposite of Mki$. ",
+   },
+   "Cvl": {
+      "prefix": "Cvl",
+      "body": "Cvl (String$)",
+      "description": "Cvl returns a long value equivalent to the left 4 characters of String$. This is the logical opposite of Mkl$. ",
+   },
+   "Cvq": {
+      "prefix": "Cvq",
+      "body": "Cvq (String$)",
+      "description": "Cvq returns a quick value equivalent to the left 4 characters of String$. This is the logical opposite of Mkq$. ",
+   },
+   "Len": {
+      "prefix": "Len",
+      "body": "Len (String$)",
+      "description": "Len returns the length of the string String$ ",
+   },
+   "UnLeft$": {
+      "prefix": "UnLeft$",
+      "body": "UnLeft$ (String$,Length)",
+      "description": "UnLeft$() removes the rightmost Length characters from the string String$. ",
+   },
+   "UnRight$": {
+      "prefix": "UnRight$",
+      "body": "UnRight$ (String$,Length)",
+      "description": "UnRight$() removes the leftmost Length characters from the string String$. ",
+   },
+   "StripLead$": {
+      "prefix": "StripLead$",
+      "body": "StripLead$ (String$, Expression)",
+      "description": "StripLead$ removes all leading occurrences of the ASCII character specified by Expression from the string String$. ",
+   },
+   "StripTrail$": {
+      "prefix": "StripTrail$",
+      "body": "StripTrail$ (String$, Expression)",
+      "description": "StripTrail$ removes all trailing  occurrences of the ASCII character specified by Expression from the string String$. LSet$ (String$, Characters) This function returns a string of Characters characters long. The string String$ will be placed at the beginning of this string. If String$ is shorter than Characters the right hand side is padded with spaces. If it is longer, it will be truncated. RSet$ (String$, Characters) This function returns a string of Characters characters long. The string String$ will be placed at end of this string. If String$ is shorter than Characters the left hand side is padded with spaces. If it is longer, it will be truncated. Centre$ (String$,Characters) This function returns a string of Characters characters long. The string String$ will be centered in the resulting string. If String$ is shorter than Characters the left and right sides will be padded with spaces. If it is longer, it will be truncated on either side. LCase$ (String$) This function returns the string String$ converted into lowercase. UCase$ (Siring$) This function returns the string String$ converted to uppercase. CaseSense On l Off Allows to control the searching mode used by the Instr and Replace$ functions. ",
+   },
+   "CaseSense": {
+      "prefix": "CaseSense",
+      "body": "CaseSense On indicates that an exact match must be found.",
+      "description": "CaseSense Off indicates that alphabetic characters may be matched even if they are not in the same case CaseSense On is the default search mode. Val (String$) This functions converts the string String$ into a numeric value and returns this value. When converting the string, the conversion will stop the moment either a non numeric value or a second decimal point is reached. Str$ (Expression) This returns a string equivalent of the numeric value Expression. This now allows you to perform string operations on this string. If the Format command has been used to alter numeric output, this will be applied to the resultant string. UStr$ (Expression) This returns a string equivalent of the numeric value Expression. This now allows you to perform string operations on this string. Unlike Str$, UStr$ is not affected by any active Format commands. ",
+   },
+   "SystemDate": {
+      "prefix": "SystemDate",
+      "body": "SystemDate",
+      "description": "SystemDate returns the system date as the number of days passed since 1/1/1978. ",
+   },
+   "Date$": {
+      "prefix": "Date$",
+      "body": "Date$ (days)",
+      "description": "Date$ converts the format returned by SystemDate (days passed since 1/1/1978) into a string format of dd/mm/yyyy or mm/dd/yyyy depending on the dateformat (defaults to 0) ",
+   },
+   "NumDays": {
+      "prefix": "NumDays",
+      "body": "NumDays (date$)",
+      "description": "",
+   },
+   "Numdays": {
+      "prefix": "Numdays",
+      "body": "Numdays converts a Date$ in the above format to the day count format, where ",
+      "description": "numdays is the number of days since 1/1/1978. ",
+   },
+   "DateFormat": {
+      "prefix": "DateFormat",
+      "body": "DateFormat format# 0 or 1",
+      "description": "DateFormat configures the way both date$ and numdays treat a string representation of the date: 0=dd/mm/yyyy and 1=mm/dd/yyyy ",
+   },
+   "Days": {
+      "prefix": "Days",
+      "body": "Days",
+      "description": "Days Months and Years each return the particular value relevant to the last call to SystemDate. They are most useful for when the program needs to format the output of the date other than that produced by date$.  WeekDay returns which day of the week it is with Sunday=0 through to Saturday=6. Months See description of Days. Years See description of Days WeekDay See description of Days. Hours  Hours, Mins and Secs return the time of day when SystemDate was last called. Mins    Hours, Mins and Secs return the time of day when SystemDate was last called. Secs  Hours, Mins and Secs return the time of day when SystemDate was last called. WBWidth The functions WBWidth, WBHeight, WBDepth & WBViewMode return the width, height, depth & viewmode of the current WorkBench screen as configured by preferences. WBHeight See Description of WBWidth. WBDepth See Description of WBWidth. WBViewMode See Description of WBWidth. ",
+   },
+   "Processor": {
+      "prefix": "Processor",
+      "body": "Processor",
+      "description": "Processor returns the processor type in the computer on program is currently running. 0=68000 1=68010 2=68020 3=68030 4=68040 ",
+   },
+   "ExecVersion": {
+      "prefix": "ExecVersion",
+      "body": "ExecVersion",
+      "description": "ExecVersion returns the relevant information about the system´s program is running on. 33=1.2 34=1.3 36=2.0 39=3.0 ",
+   },
+   "USEPATH": {
+      "prefix": "USEPATH",
+      "body": "USEPATH Pathtext",
+      "description": "USEPATH allows you to specify a 'shortcut' path when dealing with NEWTYPE variables. Consider the following lines of code: aliens()\\x= 160 aliens()\\y= 100 aliens()\\xs= 10 aliens()\\ys=-10 ",
+   },
+   "USEPATH": {
+      "prefix": "USEPATH",
+      "body": "USEPATH can be used to save you some typing, like so:",
+      "description": "USEPATH aliens() \\x=160 \\y=100 \\xs=10 \\ys=-10 Whenever Blitz encounters a variable starting with the backslash character ('\\'), it simply inserts the current USEPATH text before the backslash. ",
+   },
+   "BLITZ": {
+      "prefix": "BLITZ",
+      "body": "BLITZ",
+      "description": "The BLITZ directive is used to enter Blitz mode. For a full discussion on Amiga/Blitz mode, please refer to the programming chapter of the Blitz Programmers Guide. ",
+   },
+   "AMIGA": {
+      "prefix": "AMIGA",
+      "body": "AMIGA",
+      "description": "The AMIGA directive is used to enter Amiga mode. For a full discussion on Amiga/Blitz mode, please refer to the programming chapter of the Blitz Programmers Guide. QAMIGA The QAMIGA directive is used to enter Quick Amiga mode.  For a full discussion on Amiga/Blitz mode, please refer to the programming chapter of the Blitz Programmers Guide. ",
+   },
+   "INCLUDE": {
+      "prefix": "INCLUDE",
+      "body": "INCLUDE Filename",
+      "description": "INCLUDE is a compile time directive which causes the specified file, Filename, to be compiled as part of the programs object code. The file must be in tokenised form (de: saved from the Blitz editor) - ascii files may not be INCLUDE'd.  INCDIR may be used to specify a path for Filename. Filename may be optionally quote enclosed to avoid tokenisation problems. ",
+   },
+   "XINCLUDE": {
+      "prefix": "XINCLUDE",
+      "body": "XINCLUDE Filenam",
+      "description": "XINCLUDE stands for exclusive include. XINCLUDE works identically to INCLUDE with the exception that XlNCLUDE'd files are only ever included once.  For example, if a program has 2 XINCLUDE statements with the same filename, only the first XINCLUDE will have any effect. ",
+   },
+   "INCBIN": {
+      "prefix": "INCBIN",
+      "body": "INCBIN Filename",
+      "description": "INCBIN allows you to include a binary file in your object code. This is mainly of use to assembler language programmers, as having big chunks of binary data in the middle of a BASIC program is not really a good idea. ",
+   },
+   "INCDIR": {
+      "prefix": "INCDIR",
+      "body": "INCDIR Pathname",
+      "description": "INCDIR may be used to specify a path for Filename. Filename may be optionally quote enclosed to avoid tokenisation problems. The INCDIR command allows you to specify an AmigaDos path to be prefixed to any. Filenames specified by any of INCLUDE, XINCLUDE or INCBIN commands. ",
+   },
+   "CNIF": {
+      "prefix": "CNIF",
+      "body": "CNIF Constant Comparison Constant",
+      "description": "CNIF allows you to conditionally compile a section of program code based on a comparison of 2 constants. Comparison should be one of '<', '>', '=', '<>', '<=' or '>='. If the comparison proves to be true, then compiling will continue. If comparison is false no object code will be generated until a matching CEND is encountered. ",
+   },
+   "CEND": {
+      "prefix": "CEND",
+      "body": "CEND",
+      "description": "CEND marks the end of a block of conditionally compiled code. CEND must always appear somewhere following a CNIF or CSIF directive. ",
+   },
+   "CSIF": {
+      "prefix": "CSIF",
+      "body": "CSIF \"String\" Comparison \"String\"",
+      "description": "CSIF allows you to conditionally compile a section of program code based on a comparison of 2 literal strings. Comparison should be one of '<',  '>', '=',  '<>',  '<='  or '>='. Both strings must be quote enclosed literal strings. If the comparison proves to be true, then compiling will continue as normal. If the comparison proves to be false, then no object code will be generated until a matching CEND is encountered. CSIF is of most use in macros for checking macro parameters. ",
+   },
+   "CELSE": {
+      "prefix": "CELSE",
+      "body": "CELSE",
+      "description": "CELSE may be used between a CNIF or CSIF, and a CEND to cause code to be compiled when a constant comparison proves to be false. ",
+   },
+   "CERR": {
+      "prefix": "CERR",
+      "body": "CERR Errormessage",
+      "description": "CERR allows a program to generate compile-time error messages. CERR is normally used in conjunction with macros and conditional compiling to generate errors when incorrect macro parameters are encountered. ",
+   },
+   "Macro": {
+      "prefix": "Macro",
+      "body": "Macro Macronam",
+      "description": "Macro is used to declare the start of a macro definition. All text following Macro, up until the next End Macro, will be included in the macro's contents. ",
+   },
+   "End": {
+      "prefix": "End",
+      "body": "End Macro",
+      "description": "End Macro is used to finish a macro definition. Macro definitions are set up using the Macro command. Runerrson These two new compiler directives are for enabling and disabling error checking in different parts of the program, they override the settings in Compiler Options. Runerrsoff See description of Runerrson. ",
+   },
+   "Use": {
+      "prefix": "Use",
+      "body": "Use Objectname Object#",
+      "description": "Use will cause the Blitz object specified by Objectname and Object# to become the currently used object. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free Objectname Object#",
+      "description": "Frees a Blitz object. Any memory consumed by the object's existence will be free'd up, and in case of things such as windows and screens, the display may be altered. Attempting to free a non-existent object will have no effect. USED ObjectName Returns the currently used object number. Useful for routines which need to operate on currently used object, also interrupts should restore currently used object settings. ",
+   },
+   "Addr": {
+      "prefix": "Addr",
+      "body": "Addr Objectname(Object#)",
+      "description": "Addr is a low-level function allowing advanced programmers the ability to find where a particular Blitz object resides in RAM. Apendix at the end lists all Blitz object formats. Maximum Objectname The Maximum function allows a program to determine the 'maximum' setting for a particular Blitz object. Maximum settings are entered into the OPTIONS requester, accessed through the 'COMPILER' menu of the Blitz editor. ",
+   },
+   "DCB": {
+      "prefix": "DCB",
+      "body": "DCB [.Size] Repeats,Data",
+      "description": "DCB stantd for 'define consistant block' .DCB allows you to insert a repeating series of the satire value into your assembler programs. ",
+   },
+   "EVEN": {
+      "prefix": "EVEN",
+      "body": "EVEN",
+      "description": "EVEN allows to word align Blitz's internal program counter. This may be necessary if a DC, DCB or DS statement has caused the program counter to be left at an odd address. ",
+   },
+   "GetReg": {
+      "prefix": "GetReg",
+      "body": "GetReg 68000 Reg,Expression",
+      "description": "GetReg allows you to tranfer the result of a BASIC expression to a 68000 register. The result of the expression will first be converted into a long value before being moved to the data register. GetReg should only be used to transfer expressions to one of the 8 data registers (d0-d7). GetReg will use the stack to temporarily store any registers used in calculation of theexpression. ",
+   },
+   "PutReg": {
+      "prefix": "PutReg",
+      "body": "PutReg 68000 Reg, Variable",
+      "description": "PutReg may he used to transfer a vlue from any 68000 register (d0-d7/a0-a7) into a BASIC variable. If the specified variable is a string, long, float or quick, then all 4 bytes from the register will be transfered. If the specified variable is a word or a byte, then only the relevant low bytes will be transferred. ",
+   },
+   "SysJsr": {
+      "prefix": "SysJsr",
+      "body": "SysJsr Routine",
+      "description": "SysJsr allows you to call any of Blitz's system routines from your own program. Routine specifies a routine number to call. ",
+   },
+   "TokeJsr": {
+      "prefix": "TokeJsr",
+      "body": "TokeJsr Token[,Form]",
+      "description": "TokeJsr allows to call any of Blitz's library based routines. Token refers to either a token number, or an actual token name. Form refers to a particular form of the token. ",
+   },
+   "ALibJsr": {
+      "prefix": "ALibJsr",
+      "body": "ALibJsr Token[,Form]",
+      "description": "ALibJsr is only used when writing Blitz libraries. ALibJsr allows you to call a routine from another library from within your own library. Please refer to the Library Writing section of the programmers guide for more information on library writing. ",
+   },
+   "BLibJsr": {
+      "prefix": "BLibJsr",
+      "body": "BLibJsr Token[,Form]",
+      "description": "BLibJsr is only used when writing Blitz libraries. BLibJsr allows you to call a routine from another library from within your own library. Please refer to the Library Writing section of the programmers guide for more information on library writing. ",
+   },
+   "AsmExit": {
+      "prefix": "AsmExit",
+      "body": "AsmExit",
+      "description": "AsmExit is used to exit from functions and statements written in assembler.  Registers A4-A6 must be preserved in functions and statements written in assembler. ",
+   },
+   "Poke": {
+      "prefix": "Poke",
+      "body": "Poke [.Type] Address,Data",
+      "description": "The Poke command will place the specified Data into a absolute memory location specified by Address. The size of the Poke may be specified by the optional Type parameter. For example, to poke a byte into memory use Poke.b; to poke a word into memory use Poke.w; and to poke a long word into memory use Poke.l In addition, strings may be poked into memory by use of Poke$. This will cause the ascii code of all characters in the string specified by Data to be poked, byte by byte, into consecutive memory locations. An extra 0 is also poked past the end of the string. ",
+   },
+   "Peek": {
+      "prefix": "Peek",
+      "body": "Peek [. Type](Address)",
+      "description": "The Peek function returns the contents of the absolute memory location specified by Address. The optional Type parameter allows peeking of different sizes. For example, to peek a byte, you would use Peek.b; to peek a word, you would use Peek.w; and to peek a long, you would use Peek.l It is also possible to peek a string using Peek$. This will return a string of characters read trom consecutive memory locations until a byte of 0 is found. ",
+   },
+   "Peeks$": {
+      "prefix": "Peeks$",
+      "body": "Peeks$ (Address,length)",
+      "description": "Peeks$ will return a string of characters corresponding to bytes peeked from consective memory locations starting at Address, and Length characters in length ",
+   },
+   "Call": {
+      "prefix": "Call",
+      "body": "Call Address",
+      "description": "Call make program flow to be transferred to the memory location specified by Address. NOTE that Call is for advanced programmers only, as incorrect use of Call can lead to severe problems - GURUS etc! A 68000 JSR instruction is used to transfer program flow, so an RTS may be used to transfer back to the Blitz program. Bank (Bank#) Returns the meniory location of the given memory Bank, replaces the older and more stupidly named BankLoc command. ",
+   },
+   "BankSize": {
+      "prefix": "BankSize",
+      "body": "BankSize (Bank#)",
+      "description": "BankSize returns the size of the memory hlock allocated for the specified Bank#. lnitBank Bank#,size,memtype  InitBank allocates a hlock ot memory and assigns it to the Bank specified. The memtype is the same as the Amiga operating system memory flags: 1 = public  2 = chip 65536 = clear memory ",
+   },
+   "FreeBank": {
+      "prefix": "FreeBank",
+      "body": "FreeBank Bank#",
+      "description": "FreeBank de-allocates any memory block allocated tor the Bank specified. ",
+   },
+   "LoadBank": {
+      "prefix": "LoadBank",
+      "body": "LoadBank Bank#,FileName$[,MemType]",
+      "description": "The LoadBank command has been modified, instead of having to initialise the bank before loading a file, LoadBank will now initialise the bank to the size of the file if it is not already large enough or has not been initialised at all. ",
+   },
+   "SaveBank": {
+      "prefix": "SaveBank",
+      "body": "SaveBank Bank#,filename$",
+      "description": "SaveBank will save the memory assigned to the Bank to the filename specified. AllocMem (size,type) Unlike calling Exec's AllocMem_ command directly Blitz will automatically free any allocated memory when the program ends. Programmers are advised to use the InitBank command. Flags that can be used with the memory type parameter are: 1=public ;fast if present 2=chipmem 65536=clear ;clears all memory allocated with 0's FreeMem location,size Used to tree any memory allocated with the AllocMem command. WBStartup By executing WBStartup at some point in your program, your program will be given the ability to run from Workbench. A program run from Workbench which does NOT include the WBStartup command will promptly crash if an attempt is made to run it from Workbench. ",
+   },
+   "NumPars": {
+      "prefix": "NumPars",
+      "body": "NumPars",
+      "description": "The NumPars function allows an executable file to determine how many parameters were passed to it by either Workbench or the CLI.  Parameters passed from the CLI are typed following the program name and separated by spaces. For example. let's say you have created an executable program called myprog, and run it trom the CLI in the following way: myprog filer Olle2 In this case, NumPars would return the value '2' - 'file1' and 'file2' beng the 2 parameters. Programs run from Workbench are only capable of picking up 1 parameter through the use of either the parameter file's 'Default Tool' entry in it's '.info' file, or by use of multiple selection through the 'Shift' key. If no parameters are supplied to an executable file, NumPars will return 0. During program development, the 'CLI Arguement' menu item in the 'COMPILER' menu allows you to test out CLI parameters. ",
+   },
+   "Par$": {
+      "prefix": "Par$",
+      "body": "Par$ (Parameter)",
+      "description": "Par$ return a striny equivalent to a parameter passed to an executable file through either the CLI or Workbench. Refer to NumPars for more information. ",
+   },
+   "CloseEd": {
+      "prefix": "CloseEd",
+      "body": "CloseEd",
+      "description": "CloseEd statetnent will cause the Blitz editor screen to 'close down' when programs are executed from within Blitz. This may be useful when writing programs which use a large amount of chip memory, as the editor screen itself occupies 40K of ChipMem. CloseEd will have no effect on executable files run outside of the Blitz environment. ",
+   },
+   "NoCli": {
+      "prefix": "NoCli",
+      "body": "NoCli",
+      "description": "NoCli will prevent the nonnal 'Default Cli' from opening when programs are executed ",
+   },
+   "from": {
+      "prefix": "from",
+      "body": "from within Blitz. NoCli has no effect on executable files run outside Blitz environment",
+      "description": "FromCLI Returns TRUE (-1) if your program was run from CLI, or FALSE (0) if run from WB. ",
+   },
+   "ParPath$": {
+      "prefix": "ParPath$",
+      "body": "ParPath$ (parameter,type)",
+      "description": "ParPath$ returns the path that the parameter resides in, 'type' specifies how you want the path returned: 0 You want only the directory of the parameter returned.  1 You want the directory along with the parameter name returned. If you passed the parameter \"FRED\" to your program from WB, and FRED resides in directory \"work:mystuff/myprograms\" then ParPath$(0,0) will return \"work:mystuff/ myprograms\" , but ParPath$(0,1) will return \"work:mystuff/myprograms/FRED\". The way WB handles argument passing of directories is different to that of files. When a directory is passed as an argument, ArgsLib gets an empty string for the name, and the directory string holds the path to the passed directory AND the directory name itself. Slice Slice#, Y, Flags Slice#, Y, Width, Height, Flags, BitPlanes, Sprites, Colours, w1, w2 The Slice command is used to create a Blitz slice object. Slices are primarily of  use in Blitz mode, allowing you to create highly customized displays. In both forms of the Slice command, the Y parameter specifies the vertical pixel position of the top of the slice. A Y value of 44 will position slices at about the top of the display. In the first torm of the Slice command, Flags refers to the number of bitplanes in any bitmaps (the bitmap's depth) to be shown in the slice. This form of the Slice command will normally create a lo-res slice, however this may be changed to a hi-res slice by adding eight to the Flags parameter. For instance, a Flags value of tour will set up a lo-res, 4 bitplane (16 colour) slice, whereas a Flags value of ten will set up a hi- res, 2 bitplane (4 colour) slice. The width of a slice set up in this way will be 320 pixels for a lo-res slice, or 640 pixels for a hi-res slice. The height of a slice set up using this syntax will be 200 pixels on an NTSC Amiga, or 256 pixels on a PAL Amiga. The second form of the Slice command is far more versatile, albeit a little more complex. Width and Height allow you to use specific values for the slice's dimensions. These parameters are specified in pixel amounts. BitPlanes refers to the depth of any bitmaps you will be showing in this slice. Sprites refers to how many sprite channels should be available in this slice. Each slice may have up to eight sprite channels, allowing sprites to be 'multiplexed'. This is one way to overcome the Amiga's 'eight sprite limit'. It is recommended that the top-most slice be created with all 8 sprite channels, as this will prevent sprite flicker caused by unused sprites. Colours refers to how many colour palette entries should be available for this slice, and should not be greater than 32. Width1 and Width2 specify the width, in pixels, of any bitmaps to be shown in this slice. If a slice is set up to be a dual-playfield slice, Width1 refers to the width of the 'foreground' bitmap, and Width2 refers to the width of the 'background' bitmap. If a slice is NOT set up to be a dual-playfield slice, both Width1 and Width2 should be set to the same value. These parameters allow you to show bitmaps which are wider than the slice, introducing the ability to smooth scroll through large bitmaps. The Flags parameter has been lett to last because it is the most complex. Flags allows you control over many aspects of the slices appearance, and just what ettect the slice has. Here are some example settings for Flags: Flags Effect Max BitPlanes $ftf8 A Standard lo-res slice 6 $fft9  A Standard hi-res slice 4 $fita  A Lo-res, dual-playfield slice 6 $tfib  A Hi-res, dual-playfiled slice 4 $fffc  A HAM slice 6 WARNING - the next bit is definitely for the more advanced users out there! Knowledge of the following is NOT necessary to make good use of slices. Flags is actually a collection of individual bit-flags. The bit-flags control how the slices 'copper list' is created. Here is a list of the bitsnumbers and their effect: Bit# Effect 15 Create copper MOVE BPLCON0 14 Create copper MOVE BPLCON1 13 Create copper MOVE BPLCON2 12 Create copper MOVE DIWSTRT and MOVE DIWSTOP 10 Create copper MOVE DDFSTRT and MOVE DDFSTOP  8 Create copper MOVE BPL1MOD  7 Create copper MOVE BPL2MOD  4 Create a 2 line 'blank' above top of slice  3 Allow for smooth horizontal scrolling  2 HAM slice  1 Dual-playtield slice  0 Hi-res slice - default is lo-res Clever selection of these bits allows you to create 'minimal' slices which may only affect specific system registers. The BitPlanes parameter may also be modified to specify 'odd only' or 'even only' bitplanes. This is of use when using dual playfield displays, as it allowing you to create a mid display slice which may show a different foreground or background bitmap leaving the other intact. To specify creation of foreground bitplanes only, simply set bit 15 of the BitPlanes parameter. To specify creation of background bitplanes only, set bit 14 of the BitPlanes parameter ",
+   },
+   "Use": {
+      "prefix": "Use",
+      "body": "Use Slice Slice#",
+      "description": "Use Slice is used to set the specified slice object as being the currently used slice. This is required tor commands such as Show, ShowF, ShowB and Blitz mode RGB. ",
+   },
+   "FreeSlices": {
+      "prefix": "FreeSlices",
+      "body": "FreeSlices",
+      "description": "FreeSlices is used to free all slices currently in use. As there is no capability to Free individual slices, this is the only means by which slices may be deleted. ",
+   },
+   "Show": {
+      "prefix": "Show",
+      "body": "Show Bitmap#[,X, Y]",
+      "description": "Show is used to display a bitmap in the currently used slice. This slice should not be a dual-playfield type slice. Optional X and Y parameters may be used to position the bitmap at a point other than it's top-left. This is normally only of use in cases where a bitmap larger than the slice width and/or height has been set up. ",
+   },
+   "ShowF": {
+      "prefix": "ShowF",
+      "body": "ShowF BitMap#[,X, Y[,ShowB X]]",
+      "description": "ShowF is used to display a bitmap in the foreground of the currently used slice. The slice must have been created with the appropriate Flags parameter in order to support dual-playfield display Optional X and Y parameters may be used to show the bitmap at a point other than it's top-left. Omitting the X and Y parameters is identical to supplying X and Y values of 0. The optional ShowB x parameter is only of use in special situations where a dual- playfield slice has been created to display ONLY a foreground bitmap. In this case, the X offset of the background bitmap should be specified in the ShowB x parameter. ",
+   },
+   "ShowB": {
+      "prefix": "ShowB",
+      "body": "ShowB BitMap#[,X,Y[,ShowFX]]",
+      "description": "ShowB is used to display a bitmap in the background of the currently used slice. The slice must have been created with the appropriate Flags parameter in order to support dual-playfield display. Optional X and Y parameters may be used to show the bitmap at a point other than it's top-lett. Omitting the X and Y parameters is identical to supplying X and Y values of 0. The optional ShowF x parameter is only of use in special situations where a dual- playfield slice has been created to display ONLY a background bitmap. In this case, the X offset of the foreground bitmap should be specified in the ShowF x parameter. ",
+   },
+   "ColSplit": {
+      "prefix": "ColSplit",
+      "body": "ColSplit ColourRegister,Red,Green,Blue,Y",
+      "description": "ColSplit allows you to change any of the palette colour registers at a position relative to the top of the currently used slice. This allows you to 're-use' colour registers at different positions down the screen to display different colours. Y specifies a vertical offset from the top of the currently used slice. ",
+   },
+   "CustomCop": {
+      "prefix": "CustomCop",
+      "body": "CustomCop Copin$, Y",
+      "description": "CustomCop allows advanced programmers to introduce their own copper instructions at a specified position down the display. Copins$ refers to a string of characters equivalent to a series of copper instructions. Y refers to a position down the display. ",
+   },
+   "ShowBlitz": {
+      "prefix": "ShowBlitz",
+      "body": "ShowBlitz",
+      "description": "ShowBlitz redisplays the entire set up of slices. This may be necessary if you have made a quick trip into Amiga mode, and wish to return to Blitz mode with previously created slices intact. ",
+   },
+   "CopLoc": {
+      "prefix": "CopLoc",
+      "body": "CopLoc",
+      "description": "CopLoc returns the memory address of the Blitz mode copper list. All Slices, ColSplits, and CustomCops executed are merged into a single copper list, the address of which may found using the CopLoc function. ",
+   },
+   "CopLen": {
+      "prefix": "CopLen",
+      "body": "CopLen",
+      "description": "CopLen returns the length, in bytes, of the Blitz mode copper list. All Slices, ColSplits, and CustomCops executed are merged into a single copper list, the length of which may found using the CopLen function ",
+   },
+   "Display": {
+      "prefix": "Display",
+      "body": "Display On I Off",
+      "description": "Display is a blitz mode only command which allows you to 'turn on' or 'turn off' the entire display. If the display is turned off, the display will appear as a solid block of colour 0. ",
+   },
+   "SetBPLCON0": {
+      "prefix": "SetBPLCON0",
+      "body": "SetBPLCON0 Default",
+      "description": "The SetBPLCON0 command has been added for advanced control of Slice display modes. The BPLCON0 hardware register is on page A4-l of the reference manual (appendix 4). The bits of interest are as follows: bit#1 ERSY external sync (for genlock enabling) bit#2 LACE interlace mode bit#3 LPEN light pen enable ",
+   },
+   "CreateDisplay": {
+      "prefix": "CreateDisplay",
+      "body": "CreateDisplay CopList#[,CopList#..]",
+      "description": "CreateDisplay is used to setup a new screen display with the new display library. Any number of CopLists can be passed to CreateDisplay although at present they must be in order of vertical position and not overlap CreateDisplay then links the Cooplists together using internal pointers. bitmaps, colours and sprites attached to coplists are not affected ",
+   },
+   "DisplayBitMap": {
+      "prefix": "DisplayBitMap",
+      "body": "DisplayBitMap CopLis t#,bmap[,x, y] [, bmap[,x, y]]",
+      "description": "The DisplayBitMap command is similar in usage to the slice libraries' show commands instead of different commands for front and back playfields and smooth scroll options there is only the one DisplayBitMap command with various parameter options With AGA machines, the x positioning of lores and hires coplists uses the fractional part of the x parameter for super smooth scrolling The CopList must be initialised with the smooth scrolling flag set if the x,y parameters are used, same goes to dualplayfield. ",
+   },
+   "DisplaySprite": {
+      "prefix": "DisplaySprite",
+      "body": "DisplaySprite CopList#,Sprite#,X,Y,Sprite Channel",
+      "description": "DisplaySprite is similar to the slice libraries ShowSprite command with the added advantage of super hires positioning and extra wide sprite handling. See also SpriteMode and the usage discussionabove. ",
+   },
+   "DisplayPalette": {
+      "prefix": "DisplayPalette",
+      "body": "DisplayPalette CopList#,Palette# [, coloroffset]",
+      "description": "DisplayPalette copies colour information from a Palette to the CopList specified. ",
+   },
+   "DisplayControls": {
+      "prefix": "DisplayControls",
+      "body": "DisplayControls CopList#, BPL CON2, BPLCON3, BPL CON4",
+      "description": "DisplayControls allows access to the more remote options available in the Amiga's display system. The following are the most important bits from these registers (still unpublished by Commodore!*()@GYU&^) Default values are at top of the table, parameters are exclusive or'd with these values. To set all the sprite color offsets to 1 so that sprite colours are fetched from color registers 240..255 instead of 16..31 we would use the parameters: DisplayControls 0,0,0,$ee Bit# BPLCON2 BPLCON3 BPLCON4  ($224) ($c00) ($11) 15 * BANK2 *activecolorbankBPLAM7 ;xorithbitplane 14 ZDBPSEL2 BANK1 * BPLAM6 ;DMA altering 13 ZDBPSEL1 BANK0 * BPLAM5 ;effectivecolour 12 ZDBPSEL0 PF20F2 coloffset pfield 2 BPLAM4 ;look up 11 ZDBPEN PF20F1 BPLAM3 10 ZDCTEN PF20F0 BPLAM2 09 KILLEHB * LOCT *palette hi/lo nibble BPLAM1 08 RDRAM=0 * BPLAM0 07 SOGEN SPRESI *sprite res ESPRM7 high order color 06 PF2PRI H SPRES0 * ESPRM6 offset tor even 05 PF2P2 BRDRBLANK border ESPRM5 sprites 04 PF2P1 BRDNTRAN zd=border ESPRM4 03 PFIP0 OSPRM7 hiorder color 02 PFIP2 ZDCLCKEN zd= 14mhz OSPRM6 offset for odd 01 PFIPI BRDSPRT spritesinborders! OSPRM5 sprites 00 PFIPO EXTBLKEN blank output? OSPRM4 ! =  Don't touch H  - See standard hardware reference manual *  - controlled by display library ZD - any reference to ZD is only a guess (just sold my genlock) DisplayAdjust CopList#,fetchwid,dUfstrt,dUfstop,diwstrt,diwsto Temporary control of display registers until I get the width adjust parameter working with InitCopList. Currently only standard width displays are available but you can modify the width manually (just stick a screwdriver in the back of your 1084) or with some knowledge of Commodores AGA circuitry. No to be quite serious I really do not have a clue how they cludeged up the Amiga chip set. When ECS was introduced suddenly all display fetching moved to the right. Now they seem to have done the same to sprites so it is near impossible to have them all going without limiting yourself to a seriously thin display. If you hack around with the system copperlists you'll find they actually change fetch modes as you scroll a viewport across the display and commodore say you should not use sprites anyway so as to be compatible with their new hardware which is rumoured to run WindowsNT, yipeee. By then we will be hopefully shipping the Jaguar lib for Blitz. CustomColors CopList#, CCOffset, YPos,Palette,startcol,numcols Using the custom copper space in a display, CustomColors will alter the displays palette at the given YPos. The number of customcops required is either 2+numcols for ecs displays and 2+n+n+n/16 for age displays. In age, numcols must be a multiple of 32. Note: Large AGA palette changes may take several lines of the display to be complete. ",
+   },
+   "CustomString": {
+      "prefix": "CustomString",
+      "body": "CustomString CopList#, CCOffset, YPos, Copper$",
+      "description": "CustomString allows the user to insert their own copper commands (contained in a string) into the display's copper list at a given vertical position. The amount of space required is equal to the number of copper instructions in the Copper$ (length of string divide by 4) plus 2 which of course have to be allocated with InitCopList before CustomString is used. ",
+   },
+   "CustomSprites": {
+      "prefix": "CustomSprites",
+      "body": "CustomSprites Coplist#, CCOffset, YPos, NumSprites",
+      "description": "CustomSprites inserts a copper list that reinitialises the sprites hardware at a certain vertical position in the display. These lower sprites are assigned sprite numbers of 8..15. CustomCops required = 4 x numsprites + 2 ",
+   },
+   "DisplayDblScan": {
+      "prefix": "DisplayDblScan",
+      "body": "DisplayDblScan mode",
+      "description": "DisplayDblScan is used to divide the vertical resolution of the display by 2,4,8 or 16 using Modes 1,2,3 and 4. This is most useful for fast bitmap based zooms. A Mode of 0 will return the display to 100% magnification. As with the DisplayRainbow, DisplayRGB, DisplayUser and DisplayScroll commands DisplayDblScan uses the new line by line copper control of the display library. To initialise this mode a negative parameter is used in the CustomCops parameter of the InitCopList command. DisplayDblScan requires 2 copper instructions per line (make CustomCops=-2). ",
+   },
+   "DisplayRainbow": {
+      "prefix": "DisplayRainbow",
+      "body": "DisplayRainbow CopList#, Register,Palette[,copoffset]",
+      "description": "DisplayRainbow is used to alter a certain colour register vertically down a display. It simple maps each colour in a palette to the corresponding vertical position of display. ECS displays require one copper instruction per line while AGA displays require 4. ",
+   },
+   "DisplayRGB": {
+      "prefix": "DisplayRGB",
+      "body": "DisplayRGB CopList#,Pegister,line,r,g,b[,copoffset]",
+      "description": "DisplayRGB is a single line version of DisplayRainbow allowing the programmer to alter any register of any particular line. As with DisplayRainbow ECS displays require 1 copper instruction while AGA requires 4. ",
+   },
+   "DisplayUser": {
+      "prefix": "DisplayUser",
+      "body": "DisplayUser CopList#, Line,String[,Offset]",
+      "description": "DisplayUser allows the programmer to use their own Copper$ at any line of the display. Of course copper instructions have to be allocated with the number of copper instructions in the InitCoplist multiplied by -1. ",
+   },
+   "DisplayScroll": {
+      "prefix": "DisplayScroll",
+      "body": "DisplayScroll CopList#, &xpos. q(n), &xpos.q(n)[, Offset]",
+      "description": "DisplayScroll allows the program to dynamically display any part of a bitmap on any line of the display. DisplayScroll should always follow the DisplayBitMap command. The parameters are two arrays holding a list of xoffsets that represent the difference in horizontal position from the line above. AGA machines are able to use the fractional part of each entry for super hiresolution positioning of the bitmap. Three instructions per line are required for the DisplayScroll command. BlikKeys On l Off BlitzKeys is used to turn on or off Blitz mode keyboard reading. If Blitz mode keyboard reading is enabled, the Inkey$ function may be used to gain information about keystrokes in Blitz mode. BlikQualifier BlitzQualifier returns any qualifier keys that were held down in combination with the last inkey$ during BlitzMode input. BlikRepeat Delay,Speed BlitzRepeat allows you to determine key repeat characteristics in Blitz mode. Delay specifies the amount of time, in fiftieths of a second, before a key will start repeating. Speed specifies the amount of time, again in fiftieths of a second, between repeats of a key once it has started repeating. BlitzRepeat is only effective when the Blitz mode keyboard reading is enabled. This is done using the BlitzKeys command. ",
+   },
+   "RawStatus": {
+      "prefix": "RawStatus",
+      "body": "RawStatus (Rawkey)",
+      "description": "The RawStatus function can be used to determine if an individual key is being held down or not. Rawkey is the rawcode of the key to check for. If the specified key is being held down, a value of -1 will be returned. If the specified key is not being held down, a value of zero will be returned. RawStatus is only available if Blitz mode keyboard reading has been enabled. This is done using the BlitzKeys command. ",
+   },
+   "Mouse": {
+      "prefix": "Mouse",
+      "body": "Mouse On I Off",
+      "description": "Mouse command turns on or off Blitz mode's ability to read the mouse. Once a Mouse On has been executed, programs can read the mouse's position or speed in Blitz mode. ",
+   },
+   "Pointer": {
+      "prefix": "Pointer",
+      "body": "Pointer Sprite#,Sprite Channel",
+      "description": "The Pointer command allows you to attach a sprite object to the mouse's position in the currently used slice in Blitz mode. To properly attach a sprite to mouse position, several commands must be executed in correct sequence. 1st a sprite must be created using the LoadShape and GetaSprite sequence of commands. Then, a slice must be created to display the sprite in. A Mouse On must then be executed to enable mouse reading. ",
+   },
+   "MouseArea": {
+      "prefix": "MouseArea",
+      "body": "MouseArea Minx,Miny,Maxx,Maxy",
+      "description": "MouseArea allows you to limit Blitz mode mouse movement to a rectangular section of the display. Minx and Miny define the top left corner of the area, Maxx and Maxy define the lower right corner. MouseArea defaults to an area from 0,0 to 320,200. MouseX If Blitz mode mouse reading has been enabled using a Mouse On command, the MouseX function may be used to find the current horizontal location of the mouse. If mouse reading is enabled, the mouse position will be updated every fiftieth of a second, regardless of whether or not a mouse pointer sprite is attached. MouseY If Blitz mode mouse reading has been enabled using Mouse On command, the MouseY function may be used to find the current vertical location of the mouse. If mouse reading is enabled, the mouse position will be updated every fiftieth of a second, regardless of whether or not a mouse pointer sprite is attached MouseXSpeed If Blitz mode mouse reading has been enabled using a Mouse On command, the MouseXSpeed function may be used to find the current horizontal speed of mouse movement, regardless of whether or not a sprite is attached to the mouse. If MouseXSpeed returns a negative value, then the mouse has been moved to the left. If a positive value is returned, the mouse has been moved to the right. MouseXSpeed only has relevance after every vertical blank. Therefore, MouseXSpeed should only be used after a VWait has been executed or during a vertical blank interupt. MouseYSpeed If Blitz mode mouse reading has been enabled using a Mouse On command, the MouseYSpeed function may be used to find the current vertical speed of mouse movement, regardless of whether or not a sprite is attached to the mouse. ",
+   },
+   "If": {
+      "prefix": "If",
+      "body": "If MouseYSpeed returns a negative value, then the mouse has been moved upwards. ",
+      "description": "If a positive value is returned, the mouse has been moved downwards. MouseYSpeed only has relevance after every vertical blank. Therefore, MouseYSpeed should only be used after a VWait has been executed or during a vertical blank interupt. ",
+   },
+   "LoadBlitzFont": {
+      "prefix": "LoadBlitzFont",
+      "body": "LoadBlitzFont BlitzFont#,Fontname.font$",
+      "description": "LoadBlitzFont creates a blitzfont object. Blitzfonts are used in the rendering of text to ",
+   },
+   "bitmaps.": {
+      "prefix": "bitmaps.",
+      "body": "bitmaps. Normally, the standard rom resident topaz font is used to render text to ",
+      "description": "bitmaps. However, you may use LocalBlitzFont to select a font of your choice for bitmap output. The specified Fontname.font$ parameter specifies the name of the font to load, which MUST be in your FONTS: directory. LoadBlitzFont may only be used to load eight by eight non-proportional fonts. Use BlitzFont BlitzFont# If you have loaded two or more blitzfont objects using LoadBlitzFont,  UseBlitzFont may be used to select one of these fonts for future bitmap output. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free BlitzFont BlitzFont#",
+      "description": "Free BlitzFont 'unloads' a previously loaded blitzfont object. This frees up any memory occupied by the font. ",
+   },
+   "BitMapOutput": {
+      "prefix": "BitMapOutput",
+      "body": "BitMapOutput BitMap#",
+      "description": "BitMapOutput may be used to redirect Print statements to be rendered onto a bitmap. The font used for rendering may be altered using LoadBlitzFont Fonts used for bitmap output must be eight by eight non-proportional fonts. BitMapOutput is mainly of use in Blitz mode as other forms of character output become unavailable in Blitz mode. ",
+   },
+   "Colour": {
+      "prefix": "Colour",
+      "body": "Colour Foreground Colour[,Background Colour]",
+      "description": "",
+   },
+   "Colour": {
+      "prefix": "Colour",
+      "body": "Colour allows you to alter the colours use to render text to bitmaps. Foreground ",
+      "description": "colour allows you to specify the colour text is rendered in, and the optional Background colour allows you to specify the colour of the text background. The palette used to access these colours will depend upon whether you are in Blitz mode or in Amiga mode. In Blitz mode, colours will come from the palette of the currently used slice. In Amiga mode, colours will come from the palette of the screen the bitmap is attached to. Locate X, Y If you are using BitMapOutput to render text, Locate allows you to specify the cursor position at which characters are rendered. X specifies a character position across the bitmap, and is always rounded down to a multiple of an eighth. Y specifies a character position down the bitmap, and may be a fractional value. For example, a Y of 1.5 will set a cusor position one and a half characters down from the top of the bitmap. CursX When using BitMapOutput to render text to a bitmap, CursX may be used to find the horizontal character position at which the next character Printed will appear. CursX will reflect the cursor position of the bitmap specified in the most recently executed BitMapOutput statement. CursY When using BitMapOutput to render text to a bitmap, CursY may be used to find the vertical character position at which the next character Printed will appear. CursY will reflect the cursor position of the bitmap specified in the most recently executed BitMapOutput statement. BitMapInput BitMaplnput is a special command designed to allow you to use Edit$ and Edit in Blitz mode. To work properly, a BlitzKeys On must have been executed before BitMapInput. BitMapOutput must be executed before any Edit$ or Edit commands are encountered. ",
+   },
+   "BitMap": {
+      "prefix": "BitMap",
+      "body": "BitMap BitMap#, Width,Height,Depth",
+      "description": "BitMap creates and initializes a bitmap object. Once created, the specified bitmap becomes the currently used bitmap. Width and Height specify the size of the bitmap. Depth specifies how many colours may be drawn onto the bitmap, and may be in the range one through six. The actual colours available on a bitmap can be calculated using 2^depth. For example, a bitmap of depth three allows for 2^3 or eight colours. ",
+   },
+   "Use": {
+      "prefix": "Use",
+      "body": "Use BitMap BitMap#",
+      "description": "Use BitMap defines the specified bitmap object as being the currently used BitMap. This is necessary for commands, such as Blit, which require the presence of a currently used BitMap. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free BitMap BitMap#",
+      "description": "Free BitMap erases all information connected to the specified bitmap. Any memory occupied by the bitmap is also deallocated. Once free'd, a bitmap may no longer be used. ",
+   },
+   "CopyBitMap": {
+      "prefix": "CopyBitMap",
+      "body": "CopyBitMap BitMap#,BitMap#",
+      "description": "CopyBitMap will make an exact copy of a bitmap object into another bitmap object. The first BitMap# parameter specifies the source bitmap for the copy, the second BitMap# the destination. Any graphics rendered onto the source bitmap will also be copied. ScreensBitMap Screen#,BitMap# Blitz allows you the option of attaching a bitmap object to any Intuition Screens you open. If you open a Screen without attaching a bitmap, a bitmap will be created anyway. You may then find this bitmap using the ScreensBitMap command. Once ScreensBitMap is executed, the specified bitmap becomes the currently used bitmap. ",
+   },
+   "LoadBitMap": {
+      "prefix": "LoadBitMap",
+      "body": "LoadBitMap BitMap#,Filename$[,Palette#",
+      "description": "LoadBitMap allows you to load an ILBM IFF graphic into a previously initialized bitmap object. You may optionally load in the graphics's colour palette into a palette object specified by Palette#. An error will be generated if the specified Filename$ is not in the correct IFF format. ",
+   },
+   "SaveBitmap": {
+      "prefix": "SaveBitmap",
+      "body": "SaveBitmap BitMap#, Filename$[,Palette#]",
+      "description": "SaveBitMap allows you to save a bitmap to disk in ILBM IFF format. An optional palette may also be saved with the IFF. ",
+   },
+   "BitPlanesBitMap": {
+      "prefix": "BitPlanesBitMap",
+      "body": "BitPlanesBitMap SrcBitMap, DestBitMap, PlanePick",
+      "description": "BitPlanesBitMap creates a 'dummy' bitmap from the SrcBitMap with only the bitplanes specified by the PlanePick mask. This is useful for shadow effects etc. where blitting speed can be speed up because of the fewer bitplanes involved. ",
+   },
+   "ShapesBitMap": {
+      "prefix": "ShapesBitMap",
+      "body": "ShapesBitMap Shape#,BitMap#",
+      "description": "ShapesBitMap creates a dummy BitMap so drawing commands can be used directly on a shapes image data. ",
+   },
+   "CludgeBitMap": {
+      "prefix": "CludgeBitMap",
+      "body": "CludgeBitMap BitMap#, Width,Height,Depth,Memory",
+      "description": "CludgeBitMap will create a bitmap object with the proportions for that specified using the memory location given. Of course, the memory location specified must be in chipmem and it is upto the user to ensure that sufficient memory has been allocated. This command is most useful for games where memory fragmentation can be a big problem, by allocating one block of memory on program initialisation for all bitmaps CludgeBitMap can be used so that creating and freeing of BitMaps is not necessary. ",
+   },
+   "BitMapWindow": {
+      "prefix": "BitMapWindow",
+      "body": "BitMapWindow srobitmap#,destbitmap#,x,y,w,h",
+      "description": "BitMapWindow creates a dummy bitmap inside another bitmap. Both x and w parameters are rounded to the nearest 16 pixel boundary. Any rendering, printing and blitting to the new bitmap will be clipped inside the area used. ",
+   },
+   "BitMapOrigin": {
+      "prefix": "BitMapOrigin",
+      "body": "BitMapOrigin BitMapOrigin BitMap#,x,y",
+      "description": "BitMapOrigin allows the programmer to relocate the origin (0,0) of the bitmap used by the drawing commands line, poly, box and circle. DecodelLBM DecodelLBM BitMap#,MemoryLocation A very fast method of unpacking standard iff ilbm data to a bitmap. Not only does this command allow a faster method of loading standard IFF files but allows the programmer to \"incbin\" iff pictures in their programs.See the discussion above for using DecodeILBM on both files and included memory. ",
+   },
+   "Cls": {
+      "prefix": "Cls",
+      "body": "Cls [Colour]",
+      "description": "Cls allows you to fill the currently used bitmap with the colour specified by the Colour parameter. If Colour is omitted, the currently used bitmap will be filled with colour 0. A Coltiur parameter of - 1 will cause the entire bitmap to be 'inverted'. ",
+   },
+   "Plot": {
+      "prefix": "Plot",
+      "body": "Plot X,Y,Colour",
+      "description": "Plot is used to alter the colour of an individual pixel on the currently used bitmap. X and Y specify the location of the pixel to be altered, and Colour specifies the colour to change the pixel to. A Colour parameter of -1 will cause the pixel at the specified pixel position to be 'inverted'. ",
+   },
+   "Point": {
+      "prefix": "Point",
+      "body": "Point (X,Y)",
+      "description": "The Point function will return the colour of a particular pixel in the currently used hitmap. The pixel to be examined is specified by the X and Y parameters If X and Y specify a point outside the edges of the bitmap, a value of -1 will be returned. ",
+   },
+   "Line": {
+      "prefix": "Line",
+      "body": "Line [X1,Y1,]X2,Y2,Colour",
+      "description": "The Line command draws a line connecting two pixels onto the currently used bitmap. The X and Y parameters specify the pixels to be joined, and Colour specifies the colour to draw the line in If X1 and Y1 are omitted, the end points (X2,Y2) of the last line drawn will be used. A Colour parameter of -1 will cause an 'inverted' line to be drawn ",
+   },
+   "Box": {
+      "prefix": "Box",
+      "body": "Box X1,Y1,X2,Y2, Colour",
+      "description": "The Box command draws a rectangular outline onto the currently used bitmap.X1, Y1, X2 and Y2 specify two corners of the box to be drawn. Colour refers to the colour to draw the box in. A Colour parameter of -1 will cause an 'inverted' box to be drawn. ",
+   },
+   "Boxf": {
+      "prefix": "Boxf",
+      "body": "Boxf X1,Y1,X2,Y2, Colour",
+      "description": "Boxf draws a solid rectangular shape on the currently used bitmap. X1,Y1,X2 and Y2 refer to two corners of the box. Colour specifies the colour to draw the box in. A Colour parameter of -1 will cause the rectangular area to be 'inverted'. ",
+   },
+   "Circle": {
+      "prefix": "Circle",
+      "body": "Circle X,Y,Radius[, YRadius],Colour",
+      "description": "Circle will draw an open circle onto the currently used bitmap. X and Y specify the mid point of the circle. The Radius parameter specifies the radius of the circle. If a Y Radius parameter is supplied, then an ellipse may be drawn. A Colour parameter of -1 will cause an 'inverted' circle to be drawn. ",
+   },
+   "Circlef": {
+      "prefix": "Circlef",
+      "body": "Circlef X,Y,Radius[, YRadius],Colou",
+      "description": "Circlef will draw a filled circle onto the currently used bitmap. X and Y specify the mid point of the circle - Colour, the colour in which to draw the circle. The Radius parameter specifies the radius of the circle. If a Y Radius parameter is supplied, then an ellipse may be drawn. A Colour parameter of - 1 will cause an 'inverted' circle to be drawn. ",
+   },
+   "Scroll": {
+      "prefix": "Scroll",
+      "body": "Scroll X1,Y1,Width,Height,X2,Y2[,Source BitMap]",
+      "description": "Scroll allows rectangular areas within a bitmap to be moved around. X1, Y1, Width and Height specify the position and size of the rectangle to be moved. X2 and Y2 specify the position the rectangle is to be moved to. An optional Source BitMap parameter allows you to move rectangular areas from one bitmap to another. ",
+   },
+   "FloodFill": {
+      "prefix": "FloodFill",
+      "body": "FloodFill X,Y,Colour [,Border Colour]",
+      "description": "FloodFill will 'colour in' a region of the screen starting at the coordinates X,Y . The first mode will fill all the region that is currently the colour at the coordinates X,Y with the colour specified by Colour. The second mode will fill a region starting at X,Y and surrounded by the BorderColour with Colour. ",
+   },
+   "FreeFill": {
+      "prefix": "FreeFill",
+      "body": "FreeFill",
+      "description": "FreeFill will deallocate the memory that Blitz uses to execute the commands Circlef, FloodFill, ReMap and Boxf. Blitz uses a single monochrome bitmap the size of the bitmap being drawn to do it's ",
+   },
+   "filled": {
+      "prefix": "filled",
+      "body": "filled routines, by using the FreeFill command this BitMap can be 'freed' up if no more ",
+      "description": "filled commands are to be executed. ",
+   },
+   "ReMap": {
+      "prefix": "ReMap",
+      "body": "ReMap colour#0,colour#1[,Bitmap]",
+      "description": "ReMap is used to change all the pixels on a BitMap in one colour to another colour. The optional BitMap parameter will copy all the pixels in Colour#0 to their new colour on the new bitmap. ",
+   },
+   "Poly": {
+      "prefix": "Poly",
+      "body": "Poly numpoints, *coords. w,color",
+      "description": "Poly is a bitmap based commands such as Box and Line. It draws a polygon using coordinates from an array or newtype of words. Polyf numpoints, *coords. w,color[,color2] Same as Poly except Polyf draws filled polygons and has an optional parameter color2, if used this colour will be used if the coordinates are listed in anti-clockwise order, useful for 3D type applications. If color2=-1 then the polygon is not drawn if the verticies are listed in anti- clockwise order. ",
+   },
+   "LoadAnim": {
+      "prefix": "LoadAnim",
+      "body": "LoadAnim Anim#,FileName$[Palette#]",
+      "description": "The LoadAnim command will create an Anim object and load a DPaint compatible animation. The ILBMInfo command can be used to find the correct screensize and resolution for the anim file. The optional Palette# parameter can be used to load a palette with the anims correct colours. ",
+   },
+   "InitAnim": {
+      "prefix": "InitAnim",
+      "body": "InitAnim Anim#[,Bitmap#]",
+      "description": "InitAnim renders the first two frames of the Anim onto the current BitMap and the BitMap specified by the second parameter. The second BitMap# parameter is optional, this is to support Anims that are not in a double-buffered format (each frame is a delta of the last frame not from two frames ago). However, the two parameter double buffered form of InitAnim should always be used. (hmmm don't ask me O.K.!) ",
+   },
+   "NextFrame": {
+      "prefix": "NextFrame",
+      "body": "NextFrame Anim#",
+      "description": "NextFrame renders the nextframe of an Anim to the current BitMap. If the last frame of an Anim has been rendered NextFrame will loop back to the start of the Animation. ",
+   },
+   "Frames": {
+      "prefix": "Frames",
+      "body": "Frames (Anim#)",
+      "description": "The Frames() function returns the number of frames in the specified Anim. ",
+   },
+   "LoadShape": {
+      "prefix": "LoadShape",
+      "body": "LoadShape Shape#,Filename$[,Palette#]",
+      "description": "LoadShape allows you to load an ILBM IFF file into a shape object. The optional Palette# parameter lets you also load the colour information contained in the file into a palette object. The LoadShape command has now been extended to support anim brushes, if the file is an anim brush the shapes are loaded into consecutive shapes starting with the Shape# provided. ",
+   },
+   "SaveShape": {
+      "prefix": "SaveShape",
+      "body": "SaveShape Shape#,Filename$,Palette#",
+      "description": "SaveShape will create an ILBM IFF file based on the specified shape object. If you want the file to contain colour information, you should also specify a palette object using the Palette# parameter. ",
+   },
+   "LoadShapes": {
+      "prefix": "LoadShapes",
+      "body": "LoadShapes Shape#[, Shape#],Filename$",
+      "description": "LoadShapes lets you load a 'range' of shapes from disk into a series of shape objects. The file specified by Filename$ should have been created using SaveShapes command. The first Shape# parameter specifies the number of the first shape object to be loaded. Further shapes will be loaded into increasingly higher shape objects. If a second Shape# parameter is supplied, then only shapes up to and including the second Shape# value will be loaded. If there are not enough shapes in the file to fill this range, any excess shapes will remain untouched. ",
+   },
+   "SaveShapes": {
+      "prefix": "SaveShapes",
+      "body": "SaveShapes Shape#,Shape#,Filename$",
+      "description": "SaveShapes allows you to create a file containing a range of shape objects. This file may be later loaded using the LoadShapes command. The range of shapes to be saved is specified by Shape#,Shape#, where the first Shape# refers to the lowest shape to be saved and the second Shape# the highest. ",
+   },
+   "GetaShape": {
+      "prefix": "GetaShape",
+      "body": "GetaShape Shape#,X, Y, Width,Height",
+      "description": "GetaShape lets you transfer a rectangular area of the currently used bitmap into the specified shape object. X, Y, Width and Height specify the area of the bitmap to be picked up and used as a shape. ",
+   },
+   "CopyShape": {
+      "prefix": "CopyShape",
+      "body": "CopyShape Shape#,Shape#",
+      "description": "CopyShape will produce an exact copy of one shape object in another shape object. The 1st Shape# specifies the source shape for the copy, the 2nd specifies the destination shape. CopyShape is often used when you require two copies of a shape in order to manipulate (using, for example, XFlip) one of them. AutoCookie On l Off When shapes objects are used by any of the blitting routines (for example, Blit), they usually require the presence of what is known as a'cookiecut'. These cookiecuts are used for internal purposes by the various blitting commands, and in no way affect the appearance or properties of a shape. They consume some of your valuable ChipMem. When a shape is created (for example, by using LoadShape or GetaShape), a cookiecut is automatically made for it. However, this feature may be turned off by executing an AutoCookie Off. This is a good idea if you are not going to be using shapes for blitting - for example, shapes used for gadgets or menus. ",
+   },
+   "MakeCookie": {
+      "prefix": "MakeCookie",
+      "body": "MakeCookie Shape#",
+      "description": "MakeCookie allows you to create a'cookiecut' for an individual shape. Cookiecuts are necessary for shapes which are to be used by the various blitting commands (for ",
+   },
+   "example,": {
+      "prefix": "example,",
+      "body": "example, QBlit), and are normally made automatically whenever a shape is created (for ",
+      "description": "example, using LoadShape). However, use of the AutoCookie command may mean you end up with a shape which has no cookiecut, but which youi wish to blit at some stage. You can then use MakeCookie to make a cookiecut for this shape. ",
+   },
+   "ShapeWidth": {
+      "prefix": "ShapeWidth",
+      "body": "ShapeWidth (Shape#)",
+      "description": "ShapeWidth function returns the width, in pixels, of a previously created shape object. ",
+   },
+   "ShapeHeight": {
+      "prefix": "ShapeHeight",
+      "body": "ShapeHeight (Shape#)",
+      "description": "ShapeHeight function returns the height, in pixels,of a previously created shape object. Handle Shape#,X,Y All shapes have an associated 'handle'. A shape's handle refers to an offset from the upper left of the shape to be used when calculating a shapes position when it gets blitted to a bitmap. This is also often referred to as a 'hot spot'. The X parameter specifies the 'acrosswards' offset for a handle, the Y parameter specifies a 'downwards' offset. Let's have a look at an example of how a handle works. Assume you have set a shapes X handle to 5, and it's Y handle to 10. Now let's say we blit the shape onto a bitmap at pixel position 160,100. The handle will cause the upper left corner of the shape to end up at 155,90, while the point within the shape at 5,10 will end up at 160,100. When a shape is created, it's handle is automatically set to 0,0 - it's upper left corner. ",
+   },
+   "MidHandle": {
+      "prefix": "MidHandle",
+      "body": "MidHandle Shape#",
+      "description": "MidHandle will cause the handle of the specified shape to be set to it's centre. For example, these two commands achieve exactly the same result: MidHandle 0 Handle 0,ShapeWidth(0)/2,ShapeHeight(0)/2 For more information on handles, please refer to the Handle command. ",
+   },
+   "XFlip": {
+      "prefix": "XFlip",
+      "body": "XFlip Shape#",
+      "description": "The XFlip command is one of Blitz's powerful shape manipulation commands. XFlip will horizontally 'mirror' a shape object, causing the object to be 'turned back to front'. ",
+   },
+   "YFlip": {
+      "prefix": "YFlip",
+      "body": "YFlip Shape#",
+      "description": "The YFlip command may be used to vertically 'mirror' a shape object. The resultant shape will appear to have been 'turned upside down'. ",
+   },
+   "Scale": {
+      "prefix": "Scale",
+      "body": "Scale Shape#,X Ratio,Y Ratio[,Palette#]",
+      "description": "Scale is a very powerful command which may be used to 'stretch' or'shrink' shape objects. The Ratio parameters specify how much stretching or shrinking to perform. A Ratio greater than one will cause the shape to be stretched (enlarged), while a Ratio of less than one will cause the shape to be shrunk (reduced). A Ratio of exactly one will cause no change in the shape's relevant dimension. As there are separate Ratio parameters for both x and y, a shape may be stretched along one axis and shrunk along the other! The optional Palette# parameter allows you to specify a palette object for use in the scaling operation. If a Palette# is supplied, the scale command will use a 'brightest pixel' method of shrinking. This means a shape may be shrunk to a small size without detail being lost. ",
+   },
+   "Rotate": {
+      "prefix": "Rotate",
+      "body": "Rotate Shape#,Angle Ratio",
+      "description": "The Rotate command allows you to rotate a shape object. Angle Ratio specifies how much clockwise rotation to apply, and should be in the range zero to one. For instance, an Angle Ratio of .5 will cause a shape to be rotated 180 degrees, while an Angle Ratio of .25 will cause a shape to be rotated 90 degrees clockwise. ",
+   },
+   "DecodeShapes": {
+      "prefix": "DecodeShapes",
+      "body": "DecodeShapes Shape#[,Shape#],MemoryLocatio",
+      "description": "DecodeShapes, similar to DecodeMedModule ensures the data is in chip and then configures the Shape object(s) to point to the data. ",
+   },
+   "InitShape": {
+      "prefix": "InitShape",
+      "body": "InitShape Shape#, Width,Height,Depth",
+      "description": "InitShape has been added to simple create blank shape objects. Programmers who make a habit of using ShapesBitMap to render graphics to a shape object will appreciate this one for sure. ",
+   },
+   "Blit": {
+      "prefix": "Blit",
+      "body": "Blit Shape#,X, Y[,Excessonoff]",
+      "description": "Blit is the simplest of all the blitting commands. Blit will simply draw a shape object onto the currently used bitmap at the pixel position specified by X,Y . The shape's handle, if any, will be taken into account when positioning the blit. The optional Excessonoff parameter only comes into use if you are blitting a shape which has less bitplanes (colours) than the bitmap to which it is being blitted. In this case, Excessonoff allows you to specify an on/off value for the excess bitplanes - ie, the bitplanes beyond those altered by the shape. Bit zero of Excessonoff will specify an on/off value for the first excess bitplane, bit one an on/off value for the second excess bitplane and so on. The manner in which the shape is drawn onto the bitmap may be altered by use of the ",
+   },
+   "BlitMode": {
+      "prefix": "BlitMode",
+      "body": "BlitMode command.",
+      "description": "",
+   },
+   "BlitMode": {
+      "prefix": "BlitMode",
+      "body": "BlitMode BLTCON0",
+      "description": "BlitMode command allows you to specify just how the Blit command uses the blister when drawing shapes to bitmaps. By default, BlitMode is set to a CookieMode' which simply draws shapes 'as is'. However, this mode may be altered to produce other useful ways of drawing. Here are just some of the possible BLTCON0 parameters: CookieMode: Shapes are drawn 'as is'. EraseMode: An area the size and shape of the shape willbe 'erased' on the destination bitmap InvMode: An area the size and shape of the shape willbe 'inversed' on the destination bitmap. SolidMode: The shape will be drawn as a solid area of one colour. Actually, these modes are all just special functions which return a useful value. Advanced programmers may be interested to know that the BLTCON0 parameter is used by the Blit command's blister routine to determine the blister MINITERM and CHANNEL USE flags. Bits zero through seven specify the miniterm, and bits eight through eleven specify which of the blister channels are used. For the curious out there, all the blister routines in Blitz assume the following blister channel setup: BlitterChannel Used For A Pointer to shape's cookie cut B Pointer to shape data C Pointer to destination D Pointer to destination ",
+   },
+   "CookieMode": {
+      "prefix": "CookieMode",
+      "body": "CookieMode",
+      "description": "The CookieMode function returns a value which may be used by one of the commands involved in blitting modes. Using CookieMode as a blitting mode will cause a shape to be blitted cleanly, 'as is', onto a bitmap. EraseMode The EraseMode function returns a value which may be used by one the commands involved in blitting modes. Using EraseMode as a blitting mode will cause a blitted shape to erase a section of a bitmap corresponding to the outline of the shape. InvMode The InvMode function returns a value which may be used by one the commands involved in blitting modes. Using InvMode as a blitting mode will cause a shape to 'invert' a section of a bitmap corresponding to the outline of the blitted shape. SolidMode The SolidMode function returns a value which may be used by one the commands involved in blitting modes. Using SolidMode as a blitting mode will cause a shape to overwrite a section of a bitmap corresponding to the outline of the blitted shape ",
+   },
+   "Queue": {
+      "prefix": "Queue",
+      "body": "Queue Queue#,Max Items",
+      "description": "The Queue command creates a queue object for use with the QBlit and UnQueue commands. What is a queue? Well, queues (in the Blitz sense) are used for the purpose of multi-shape animation. Before going into what a queue is, let's have a quick look at the basics of animation. Say you want to get a group of objects flying around the screen. To achieve this, you will have to construct a loop similar to the following: ",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 1: Start at the first object ",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 2: Erase the object from the display",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 3: Move the object ",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 4: Draw the object at it's new location on the display ",
+      "description": "Step 5: If there are any more objects to move, go on to the next object and then   go to Step 2, else... ",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 6: go to step 1",
+      "description": "Step 2 is very important, as if it is left out, all the objects will leave trails behind them! However, it is often very cumbersome to have to erase every object you wish to move. This is where queues are of use. Using queues, you can 'remember' all the objects drawn through a loop, then, at the end of the loop (or at the start of the next loop), erase all the objects 'remembered' from the previous loop. Look at how this works: ",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 1: Erase all objects remembered in the queue",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 2: Start at the first object ",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 3: Move the object ",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 4: Draw the object at it's new location, and add it to the end of the queue ",
+      "description": "",
+   },
+   "Step": {
+      "prefix": "Step",
+      "body": "Step 5: If there are any objects left to move, go on to the next object, then go to",
+      "description": "step 3; else... Step 6: Go to step 1 This is achieved quite easily using Blitz's queue system. The UnQueue command performs step 1, and the QBlit command performs step 4. Queues purpose is to initialize the actual queue used to remember objects in. Queue must be told the maximum number of items the queue is capable of remembering, which is specified in the Max items parameter. ",
+   },
+   "QBlit": {
+      "prefix": "QBlit",
+      "body": "QBlit Queue#,Shape#,X, Y[,Excessonoff]",
+      "description": "QBlit performs similarly to Blit, and is also used to draw a shape onto the currently used bitmap. Where QBlit differs, however, is in that it also remembers (using a queue) where the shape was drawn, and how big it was. This allows a later UnQueue command to erase the drawn shape. The optional Excessonoff parameter works identically to the Excessonoff parameter used by the Blit command. ",
+   },
+   "UnQueue": {
+      "prefix": "UnQueue",
+      "body": "UnQueue Queue#[,BitMap#]",
+      "description": "UnQueue is used to erase all 'remembered' items in a queue. Items are placed in a queue by use of the QBlit command. An optional BitMap# parameter may be supplied to cause items to be erased by way of 'replacement' from another bitmap, as opposed to the normal 'zeroing out' erasing. ",
+   },
+   "FlushQueue": {
+      "prefix": "FlushQueue",
+      "body": "FlushQueue Queue#",
+      "description": "FlushQueue will force the specified queue object to be 'emptied', causing the next UnQueue command to have no effect. ",
+   },
+   "QBlitMode": {
+      "prefix": "QBlitMode",
+      "body": "QBlitMode BLTCON0",
+      "description": "QBlitMode allows you to control how the blister operates when QBlitting shapes to bitmaps. ",
+   },
+   "Buffer": {
+      "prefix": "Buffer",
+      "body": "Buffer Buffer#,Memorylen",
+      "description": "The Buffer command is used to create a buffer object. Buffers are similar to queues in concept, but operate slightly differently. If you have not yet read the description of the Queue command, it would be a good idea to do so before continuing here. The buffer related commands are very similar to the queue related commands - Buffer, BBlit, and UnBuffer, and are used in exactly the same way. Where buffers differ from queues, however, is in their ability to preserve background graphics. Whereas an UnQueue command normally trashes any background graphics, UnBuffer will politely restore whatever the BBlits may have overwritten. This is achieved by the BBlit command actually performing two bliss. The first blit transfers the area on the bitmap which the shape is about to cover to a temporary storage area - the second blit actually draws the shape onto the bitmap. When the time comes to UnBuffer all those BBlits, the temporary storage areas will be transferred back to the disrupted bitmap. The Memorylen parameter of the Buffer command refers to how much memory, in bytes, should be put aside as temporary storage for the preservation of background graphics. The value of this parameter varies depending upon the size of shapes to be BBlited, and the maximum number of shapes to be BBlited between UnBuffers. A Memorylen of 16384 should be plenty for most situations, but may need to be increased if you start getting 'Buffer Overflow' error messages. ",
+   },
+   "BBlit": {
+      "prefix": "BBlit",
+      "body": "BBlit Buffer#,Shape#,X, Y[,Excessonoff]",
+      "description": "The BBlit command is used to draw a shape onto the currently used bitmap, and preserve the overwritten area into a previously initialized buffer. The optional Excessonoff parameter works identically to the Excessonoff parameter used by the Blit command. ",
+   },
+   "UnBuffer": {
+      "prefix": "UnBuffer",
+      "body": "UnBuffer Buffer#",
+      "description": "UnBuffer is used to 'replace' areas on a bitmap overwritten by a series of BBlit commands. For more information on buffers, please refer to the Buffer command. ",
+   },
+   "FlushBuffer": {
+      "prefix": "FlushBuffer",
+      "body": "FlushBuffer Buffer#",
+      "description": "FlushBuffer will force the specified buffer object to be 'emptied', causing the next UnBuffer command to have no effect. ",
+   },
+   "BBlitMode": {
+      "prefix": "BBlitMode",
+      "body": "BBlitMode BLTCON0",
+      "description": "BBlitMode allows you to control how the blister operates when BBlitting shapes to bitmaps. ",
+   },
+   "Stencil": {
+      "prefix": "Stencil",
+      "body": "Stencil Stencil#,BitMap#",
+      "description": "The Stencil command will create a stencil object based on the contents of a previously created bitmap. The stencil will contain information based on all graphics contained in the bitmap, and may be used with the SBlit and ShowStencil commands. ",
+   },
+   "SBlit": {
+      "prefix": "SBlit",
+      "body": "SBlit Stencil#,Shape#,X,Y[,Excessonoff]",
+      "description": "SBlit works identically to the Blit command, and also updates the specified Stencil#. This is an easy way to render 'foreground' graphics to a bitmap. ",
+   },
+   "SBlitMode": {
+      "prefix": "SBlitMode",
+      "body": "SBlitMode BLTCON0",
+      "description": "SBlitmode is used to determine how the SBlit command operates. Please refer to the BlitMode command tor more information on blitting modes. ",
+   },
+   "ShowStencil": {
+      "prefix": "ShowStencil",
+      "body": "ShowStencil Buffer#,Stencil#",
+      "description": "ShowStencil is used in connection with BBlits and stencil objects to produce a 'stencil' effect. Stencils allow you create the effect of shapes moving 'between' background and foreground graphics. Used properly, stencils can add a sense of 'depth' or 'three dimensionality' to animations. So what steps are involved in using stencils? To begin with, you need both a bitmap and a stencil object. A stencil object is similar to a bitmap in that it contains various graphics. Stencils differ, however, in that they contain no colour information. They simply determine where graphics are placed on the stencil. The graphics on a stencil usually correspond to the graphics representing 'foreground' scenery on a bitmap. So the first step is to set up a bitmap with both foreground and background scenery on it. Next, a stencil is set up with only the foreground scenery on it. This may be done using either the Stencil or SBlit command. Now, we BBlit our shapes. This will, of course, place all the shapes in front of both the background and the foreground graphics. However, once all shapes have been BBlitted, executing the ShowStencil command will repair the damage done to the foreground graphics! ",
+   },
+   "Block": {
+      "prefix": "Block",
+      "body": "Block Shape#,X, Y",
+      "description": "Block is an extremely fast version of the Blit command with some restrictions. Block should only be used with shapes that are 16,32,48,64...pixels wide and that are being blitted to an x position of 0,16,32,48,64... Note: the height and y destination of the shape are not limited by the Block command. Block is intended tor use with map type displays. ",
+   },
+   "BlitColl": {
+      "prefix": "BlitColl",
+      "body": "BlitColl (Shape#,x,y)",
+      "description": "BlitColl is a fast way of collision detection when blitting shapes. BlitColl returns -1 if a collision occurs, 0 if no collision. A collision occurs if any pixel on the current BitMap is non zero where your shape would have been blitted. ShapesHit is faster but less accurate as it checks only the rectangular area of each shape, where as BlitColl takes into account the shape of the shape and of course can not tell you what shape you have collided with. ",
+   },
+   "ClipBlit": {
+      "prefix": "ClipBlit",
+      "body": "ClipBlit ClipBlit Shape#,X, Y",
+      "description": "ClipBlit is the same as the Blit command except ClipBlit will clip the shape to the inside of the used bitmap, all blit commands in Blitz are due to be expanded with this feature. ClipBlitMode BPLCON0 Same as BlitMode except applies to the ClipBlit command.Another oversight now fixed. BlockScroll X1,Y1,Width,Height,X2,Y2[,BitMap#] Same as the Scroll command except that BlockScroll is much faster but only works with 16 bit aligned areas. This means that X1, X2 and Width must all be multiples of 16. Useful for block scrolling routines that render the same blocks to both sides of the display, the programmer can now choose to render just one set and then copy the result to the other side with the BlockScroll command. GetaSprite Sprite#,Shape# To be able to display a sprite, you must first create a sprite object. This will contain the image information for the sprite. GetaSprite will transfer the graphic data contained in a shape object into a sprite object. This allows you to perform any of the Blitz shape manipulation commands (eg Scale or Rotate) on a shape before creating a sprite from the shape. Once GetaSprite has been executed, you may not require the shape object anymore. In this case, it is best to t'ree up the shape object (using Free Shape) to conserve as much valuable chip memory as possible. ",
+   },
+   "ShowSprite": {
+      "prefix": "ShowSprite",
+      "body": "ShowSprite Sprite#,X, Y,Sprite Channel",
+      "description": "ShowSprite is the command used to actually display a sprite through a sprite channel. X and Y specify the position the sprite is to be displayed at. These parameters are ALWAYS given in lo-resolution pixels. Sprite Channel is a value 0 through 7 which decides which sprite channel the sprite should be display through. InFront Sprite Channel A feature of sprites is that they may be displayed either 'in front of' or 'behind' the bitmap graphics they are appearing in. The InFront command allows you to determine which sprites appear in front of bitmaps, and which sprites appear behind. Sprite Channel must be an even number in the range 0 through 8. After executing an InFront command, sprites displayed through sprite channels greater than or equal to Sprite Channel will appear BEHIND any bitmap graphics. Sprites displayed through channels less than Sprite Channel will appear IN FRONT OF any bitmap graphics. For example, after executing an InFront 4, any sprites displayed through sprite channels 4,5,6 or 7 will appear behind any bitmap graphics, while any sprites displayed through sprite channels 0,1,2 or 3 will appear in front of any bitmap graphics. ",
+   },
+   "InFront": {
+      "prefix": "InFront",
+      "body": "InFront should only be used in non-dualplayfield slices.",
+      "description": "",
+   },
+   "InFrontF": {
+      "prefix": "InFrontF",
+      "body": "InFrontF Sprite Channel",
+      "description": "InFrontF is used on dualplayfield slices to determine sprite/playfield priority with respect to the foreground playfield. Using combinations of InFrontF and InFrontB (used for the background playfield), it is possible to display sprites at up to 3 different depths: some in front of both playfields, between the playfields, and behind both playfields. ",
+   },
+   "InFrontB": {
+      "prefix": "InFrontB",
+      "body": "InFrontB Sprite Channel",
+      "description": "InFrontB is used on dualplayfield slices to determine sprite/playtield priority with respect to the background playtield. Using combinations of InFrontB and InFrontF (used tor the foreground playfield), it is possible to display sprites at up to 3 different depths - some in front of both playfields, some between the playfields, and some behind both playfields. ",
+   },
+   "LoadSprites": {
+      "prefix": "LoadSprites",
+      "body": "LoadSprites Sprite#[,Sprite#],Filename$",
+      "description": "LoadSprites lets you load a 'range' of sprites from disk into a series of sprite objects. The file specified by Filename$ should have been created using the SaveSprites command. The first Sprite# parameter specifies the number of the first sprite object to be loaded. Further sprites will be loaded into increasingly higher sprite objects. If a second Sprite# parameter is supplied, then only sprites up to and including the second Sprite# value will be loaded. If there are not enough sprites in the file to fill this range, any excess sprites will remain untouched. ",
+   },
+   "SaveSprites": {
+      "prefix": "SaveSprites",
+      "body": "SaveSprites Sprite#,Sprite#,Filename$",
+      "description": "SaveSprites allows you to create a file containing a range of sprite objects. This file may be later loaded using the LoadSprites command. The range of sprites to be saved is specified by Sprite#,Sprite#, where the first Sprite# refers to the lowest sprite to be saved and the second Sprite# the highest. SpriteMode mode For use with the capabilities of the new Display library SpriteMode is used to define the ",
+   },
+   "width": {
+      "prefix": "width",
+      "body": "width of sprites to be used in the program. The mode values 0, 1 and 2 correspong to ",
+      "description": "the widths 16, 32 and 64 SetColl Colour,Bitplanes[Playfield] There are 3 different commands involved in controlling sprite/bitmap collision detection, of which SetColl is one (the other 2 being SetCollOdd and SetCollHi). All three determine what colours in a bitmap will cause a collision with sprites. This allows you to design bitmaps with 'safe' and 'unsafe' areas. SetColl allows you to specify a single colour which, when present in a bitmap, and in contact with a sprite, will cause a collision. The Colour parameter refers to the 'collidable' colour. Bitplanes refers to the number of bitplanes (depth) that bitmap collision are to be tested in. ",
+   },
+   "The": {
+      "prefix": "The",
+      "body": "The optional PlayField parameter is only used in a dualplayfield slice. If Playfield is 1, ",
+      "description": "then Colour refers to a colour in the foreground bitmap. If Playfield is 0, then Colour refers to a colour in the background bitmap. DoColl and PColl are the commands used for actually detecting the collisions. ",
+   },
+   "SetCollOdd": {
+      "prefix": "SetCollOdd",
+      "body": "SetCollOdd",
+      "description": "SetCollOdd is used to control the detection of sprite/bitmap collisions. SetCollOdd will cause ONLY the collisions between sprites and 'odd coloured' bitmap graphics to be reported. Odd coloured bitmap graphics refers to any bitmap graphics rendered in an odd colour number (de: 1,3,5...). This allows you to design bitmap graphics in such a way that even coloured areas are 'safe' (de: they will not report a collision) whereas odd colour areas are 'unsafe' (de: they will report a collision). DoColl and PColl commands are used to detect the actual sprite/bitmap collisions. ",
+   },
+   "SetCollHi": {
+      "prefix": "SetCollHi",
+      "body": "SetCollHi BitPlanes",
+      "description": "SetCollHi may be used to enable sprite/bitmap collisions between sprites and the 'high half' colour range of a bitmap. For example, if you have a 16 colour bitmap, the high half of the colours would be colours 8 through 15. The BitPlanes parameter should be set to the number of bitplanes (depth) of the bitmap with which collisions should be detected. Please refer to the SetColl command for more information on sprite/bitmap collisions. ",
+   },
+   "DoColl": {
+      "prefix": "DoColl",
+      "body": "DoColl",
+      "description": "DoColl is used to perform sprite/bitmap collision checking. Once DoColl is executed, the PColl and/or SColl functions may be used to check for sprite/bitmap or sprite/sprite collisions. Before DoColl may be used with PColl, the type of bitmap collisions to be detected must have been specified using one of the SetColl, SetCollOdd or SetCollHi commands After executing a DoColl, PColl and SColl will return the same values until the next time DoColl is executed. ",
+   },
+   "PColl": {
+      "prefix": "PColl",
+      "body": "PColl (Sprite Channel)",
+      "description": "PColl function may be used to find out if a particular sprite has collided with any bitmaps. Sprite Channel refers to the sprite channel of the sprite you wish to check is being displayed through. If the specified sprite has collided with any bitmap graphics, PColl will return a true (-1) value, otherwise PColl will return false (0). Before using PColl, a DoColl must previously have been executed. ",
+   },
+   "SColl": {
+      "prefix": "SColl",
+      "body": "SColl (Sprite Channel, Sprite Channel)",
+      "description": "SColl may be used to determine whether the 2 sprites currently displayed through the specified sprite channels have collided. If they have, SColl will return true (-1), otherwise SColl will return false (0).DColl must have been executed prior to using SColl. ",
+   },
+   "ShapesHit": {
+      "prefix": "ShapesHit",
+      "body": "ShapesHit (Shape#,X,Y,Shape#,X,Y)",
+      "description": "ShapesHit function will calculate whether the rectangular areas occupied by 2 shapes overlap. ShapesHit will automatically take the shape handles into account. If the 2 ",
+   },
+   "shapes": {
+      "prefix": "shapes",
+      "body": "shapes overlap, ShapesHit will return true (-1),otherwise ShapesHit will return false (0).",
+      "description": "",
+   },
+   "ShapeSpriteHit": {
+      "prefix": "ShapeSpriteHit",
+      "body": "ShapeSpriteHit (Shape#,X,Y,Sprite#,X,Y)",
+      "description": "The ShapeSpriteHit function will calculate whether the rectangular area occupied by a shape at one position, and the rectangular area occupied by a sprite at another position are overlapped. If the areas do overlap, ShapeSpriteHit will return true (-1),  otherwise ShapeSpriteHit will return false (0). ShapeSpriteHit automatically takes the handles of both the shape and the sprite into account. ",
+   },
+   "SpritesHit": {
+      "prefix": "SpritesHit",
+      "body": "SpritesHit (Sprite#,X,Y,Sprite#,X,Y)",
+      "description": "SpritesHit function will calculate whether the rectangular areas occupied by 2 sprites overlap. SpritesHit will automatically take the sprite handles into account. If the 2 sprites overlap, SpritesHit will return true (-1), otherwise SpritesHit will return false (0). Care should be taken with the pronunciation of this command. ",
+   },
+   "RectsHit": {
+      "prefix": "RectsHit",
+      "body": "RectsHit (X1,Y1,Width1,Height1,X2,Y2,Width2,Height2)",
+      "description": "The RectsHit function may be used to determine whether 2 arbitrary rectangular areas overlap. If the specified rectangular areas overlap, RectsHit will return true (-1), otherwise RectsHit will return false (0). Care should be taken with the pronunciation of this command. ",
+   },
+   "LoadPalette": {
+      "prefix": "LoadPalette",
+      "body": "LoadPalette Palette#, Filename$[, Palette Offset]",
+      "description": "LoadPalette creates and initializes a palette object. Filename$ specifies the name of an ILBM IFF file containing colour information. If the file contains colour cycling information, this will also be loaded into the palette object. An optional Palette Offset may be specified to allow the colour information to be loaded at a specified point (colour register) in the palette. This is especially useful in the case of sprite colours, as these must begin at colour register sixteen. LoadPalette does not actually change any display colours. Once a palette is loaded, Use Palette can be used to cause display changes. ",
+   },
+   "ShowPalette": {
+      "prefix": "ShowPalette",
+      "body": "ShowPalette Palette#",
+      "description": "ShowPalette replaces Use Palette for copying a palette's colours to the current Screen or Slice. ",
+   },
+   "Use": {
+      "prefix": "Use",
+      "body": "Use Palette Palette#",
+      "description": "Use Palette transfers palette information from a palette object to a displayable palette. If executed in Amiga mode, palette information is transferred into the palette of the currently used Screen. If executed in Blitz mode, palette information is transferred into the palette of the currently used Slice. ",
+   },
+   "NewPaletteMode": {
+      "prefix": "NewPaletteMode",
+      "body": "NewPaletteMode On l Off",
+      "description": "NewPaletteMode flag has been added for compatibility with older Blitz programs. By setting NewPaletteMode to On the Use Palette command merely makes the specified palette the current object and does not try to copy the colour information to the current Screen or Slice. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free Palette Palette#",
+      "description": "Free Palette erases all information in a palette object. That Palette object may no longer be Used or Cycled SavePalette Palette#,FileName$ Creates a standard IFF \"CMAP\" file using the given Palette's colors. ",
+   },
+   "CyclePalette": {
+      "prefix": "CyclePalette",
+      "body": "CyclePalette Palette#",
+      "description": "CyclePalette uses the standard color cycling parameters in the palette object to cycle the colors. Unlike the Cycle command which copied the resulting palette to the current screen the CyclePalette command just modifies the palette object and can hence be used with the DisplayBitmap command in the new Display library. ",
+   },
+   "FadePalette": {
+      "prefix": "FadePalette",
+      "body": "FadePalette SrcPaleffe#,DestPalette#, Brightness. q ;palettelib",
+      "description": "FadePalette multiplies all colours in a Palette by the Brightness argument and maces the result in the DestPalette. lnitPalette Palette#,NumColors InitPalette simply initialises a palette object to hold NumColors. All colors will be set to black. ",
+   },
+   "DecodePalette": {
+      "prefix": "DecodePalette",
+      "body": "DecodePalette Palette#,MemoryLocation[,Palette Offset]",
+      "description": "DecodePalette allows the programmer to unpack included iff palette information to Blitz palette objects. ",
+   },
+   "Pal": {
+      "prefix": "Pal",
+      "body": "Pal RGB Palette#, Colour Register,Bed,Green,Blue",
+      "description": "PalRGB allows you to set an individual colour register within a palette object. Unless an RGB has also been executed, the actual colour change will not come into effect until the next time ShowPalette is executed. ",
+   },
+   "RGB": {
+      "prefix": "RGB",
+      "body": "RGB Colour Register,Red,Green,Blue",
+      "description": "RGB enables you to set individual colour registers in a palette to an RGB colour value. If executed in Amiga mode, RGB sets colour registers in the currently used screen. If executed in Blitz Mode, RGB sets colour registers in the currently used slice. Note that RGB does not alter palette objects in any ",
+   },
+   "Red": {
+      "prefix": "Red",
+      "body": "Red (Colour Register)",
+      "description": "Red returns the amount of RGB red in a specified colour register. If executed in Amiga mode, Red returns the amount of red in the specified colour register of the currently used screen. If executed in Blitz mode, Red returns the amount of red in the specified colour register of the currently used slice. Red will always return a value between 0..15 ",
+   },
+   "Green": {
+      "prefix": "Green",
+      "body": "Green (Colour llegister)",
+      "description": "Green returns the amount of RGB green in a specified colour register. If executed in Amiga mode, Green returns the amount of green in the specified colour register of the currently used screen. If executed in Blitz mode, Green returns the amount of green in the specified colour register of the currently used slice. Green will always return a value in the range zero to fifteen. ",
+   },
+   "Blue": {
+      "prefix": "Blue",
+      "body": "Blue (Colour Register)",
+      "description": "Blue returns the amount of RGB blue in a specified colour register. If executed in Amiga mode, Blue returns the amount of blue in the specified colour register of the currently used screen. If executed in Blitz mode, Blue returns the amount of blue in the specified colour register of the currently used slice. Blue will always return a value in the range 0 to 15. ",
+   },
+   "AGARGB": {
+      "prefix": "AGARGB",
+      "body": "AGARGB Colour Register,Red,Green,Blue",
+      "description": "The AGARGB command is the AGA equivalent of the RGB command. The 'Red', 'Green' and 'Blue' parameters must be in the range 0 through 255, while 'Colour Register' is limited to the number of colours available on the currently used screen. AGAPalRGB Palette#, Colour Register,Red,Green,Blue The AGAPalRGB command is the AGA equivalent of the PalRGB command. AGAPalRGB allows you to set an individual colour register within a palette object. This command only sets up an entry in a palette object, and will not alter the actual screen palette until a 'ShowPalette' is executed. ",
+   },
+   "AGARed": {
+      "prefix": "AGARed",
+      "body": "AGARed (colour register)",
+      "description": "The AGARed function returns the red component of the specified colour register within the currently used screen. The returned value will be within the range 0 (being no red) through 255 (being full red). ",
+   },
+   "AGAGreen": {
+      "prefix": "AGAGreen",
+      "body": "AGAGreen (colour register)",
+      "description": "The AGAGreen function returns the green component of the specified colour register within the currently used screen. The returned value will be within the range 0 (being no green) through 255 (being full green). ",
+   },
+   "AGABlue": {
+      "prefix": "AGABlue",
+      "body": "AGABlue (colour register)",
+      "description": "The AGABlue function returns the blue component of the specified colour register within the currently used screen. The returned value will be within the range 0 (being no blue) through 255 (being full blue). ",
+   },
+   "SetCycle": {
+      "prefix": "SetCycle",
+      "body": "SetCycle Palette#, Cycle,Low Colour,High Colour [,Speed]",
+      "description": "SetCycle is used to configure colour cycling information for the Cycle command. Low and high colours specify the range of colours that will cycle. You may have a maximum of 7 different cycles for a single palette. The optional parameter Speed specifies how quickly the colours will cycle, a negative value will cycle the colours backwards. ",
+   },
+   "Cycle": {
+      "prefix": "Cycle",
+      "body": "Cycle Palette#",
+      "description": "",
+   },
+   "Cycle": {
+      "prefix": "Cycle",
+      "body": "Cycle will cause the colour cycling information contained in the specified palette to be",
+      "description": "cycled on the currently used Screen. Colour cycling information is created when LoadPalette is executed or with the SetCycle command. StopCycle will halt all colour cycling started with the Cycle command Fadeln Palette#[,Rate[Low Colour, High Colour]] Fadein will cause the colour palette of the currently used slice to be 'faded in' from black up to the RGB values contained in the specified Palette#. Rate# allows to control the speed of the fade, with 0 being the fastest fade. Low Colour and High Colour allow to control which colour palette registers are affected by the fade ",
+   },
+   "FadeOut": {
+      "prefix": "FadeOut",
+      "body": "FadeOut Palette#[,Rate[Low Colour, High Colour]]",
+      "description": "Fadeout will cause the colour palette of the currently used slice to be 'faded out' from the RGB values contained in the specified Palette# down to black. Rate# allows to control the speed of the fade, with 0 being the fastest fade. Low Colour and High Colour allow to control which colour palette registers are affected by the fade For FadeOut to work properly, the RGB values in the currently used slice should be set to the specified Palette# prior to using FadeOut. ",
+   },
+   "ASyncFade": {
+      "prefix": "ASyncFade",
+      "body": "ASyncFade On l Off",
+      "description": "ASyncFade allows you control over how the FadeIn and FadeOut commands work. Normally, FadeIn and FadeOut will halt program flow, execute the entire fade, and then continue program flow. This is ASyncFade Off mode. ASyncFade On will cause FadeIn and FadeOut to work differently. Instead of performing the whole fade at once, the programmer must execute the DoFade command to perform the neixt step of the fade. This allows fading to occur in parallel with program flow. ",
+   },
+   "DoFade": {
+      "prefix": "DoFade",
+      "body": "DoFade",
+      "description": "DoFade will cause the next step of a fade to be executed. ASyncFade On, and a FadeIn or FadeOut must be executed prior to calling DoFade. The FadeStatus function may be used to determine whether there are any steps of fading left to perform. ",
+   },
+   "FadeStatus": {
+      "prefix": "FadeStatus",
+      "body": "FadeStatus",
+      "description": "FadeStatus is used in conjunction with the DoFade command to determine if any steps of fading have yet to be performed. If a fade process has not entirely finished yet (de: more DoFades are required), then FadeStatus will return true (-1). If not, FadeStatus will return false (0). Please refer to ASyncFade and DoFade for more information. ",
+   },
+   "PaletteRange": {
+      "prefix": "PaletteRange",
+      "body": "PaletteRange Palette#,StartCol,EndCol,r0,g0,b0,r1,g1,b",
+      "description": "PaletteRange creates a spread of colors within a palette. Similar to DPaint's spread function PaletteRange takes a start and end colour and creates the color tweens between them. ",
+   },
+   "DuplicatePalette": {
+      "prefix": "DuplicatePalette",
+      "body": "DuplicatePalette SrcPalette#,DestPalette#",
+      "description": "DuplicatePalette simply creates a new Palette which exactly matches the SrcPalette. ",
+   },
+   "Sound": {
+      "prefix": "Sound",
+      "body": "Sound Sound#,Channelmask[, Vol1[, Vol2...]",
+      "description": "Sound causes a previously created sound object to be played through the Amiga's audio hardware. Channelmask specifies which of the Amiga's four audio channels the sound should be played through, and should be in the range one through fifhteen. The following is a list of Channelmask values and their effect: Mask   Channel0 Channel1   Channel2    Channel3 1 on   off off off 2 off   on off off 3 on   on off off 4 off   off on off 5 on   off on off 6 off   on on off 7 on   on on off 8 off   off off on 9 on   off off on 10 off   on off on 11 on   on off on 12 off   off on on 13 on   off on o 14 off   on on on 15 on   on on on In the above table, any audio channels specified as 'off' are not altered by Sound, and any sounds they may have previously been playing will not be affected. The Volx parameters allow individual volume settings for different audio channels. Volume settings must be in the range zero through 64, zero being silence, and 64 being loudest. The first Vol parameter specifies the volume for the lowest numbered 'on' audio channel, the second Vol for the next lowest and so on. For example, assume you are using the following Sound command: Sound 0,10,32,16 The Channelmask of ten means the sound will play through audio channels one and three. The first volume of 32 will be applied to channel one, and the second volume of 16 will be applied to channel three. Any Vol parameters omitted will be cause a volume setting of 64. ",
+   },
+   "LoopSound": {
+      "prefix": "LoopSound",
+      "body": "LoopSound Sound#,Channelmask[, Vol1[, Vol2...]",
+      "description": "LoopSound behaves identically to Sound, only the sound will be played repeatedly. Looping a sound allows for the facility to play the entire sound just once, and begin repeating at a point in the sound other than the beginning. This information is picked up from the 8SVX IFF file, when LoadSound is used to create the sound, or from the offset parameter of InitSound. ",
+   },
+   "Volume": {
+      "prefix": "Volume",
+      "body": "Volume Channelmask, Vol1[, Vol2...]",
+      "description": "Volume allowsyou to dynamically alter the volume of an audio channel. This enables effects such as volume fades. For an explanation of Channelmask and Vol parameters, please refer to the Sound command. ",
+   },
+   "InitSound": {
+      "prefix": "InitSound",
+      "body": "InitSound Sound#,LengthLPeriod[, Repeat]",
+      "description": "InitSound initializes a sound object in preparation for the creation of custom sound data. This allows simple sound waves such as sine or square waves to be algorithmically created. SoundData should be used to create the actual wave data. ",
+   },
+   "Length": {
+      "prefix": "Length",
+      "body": "Length refers to the length, in bytes, the sound object is required to be.",
+      "description": "Length MUST be less than 128K, and MUST be even. Period allows you to specify a default pitch for the sound. A period of 428 will cause the sound to be played at approximately middle 'C'. Otfset is used in conjunction with LoopSound, and specifies a position in the sound at which repeating should begin. Please refer to LoopSound for more information on repeating sounds ",
+   },
+   "SoundData": {
+      "prefix": "SoundData",
+      "body": "SoundData Sound#,Offset,Data",
+      "description": "SoundData allows you to manually specify the waveform of a sound object. The sound object should normally have been created using InitSound, although altering IFF sounds is perfectly legal. SoundData alters one byte of sound data at the specified Offset. Data refers to the actual byte to place into the sound, and should be in the range -128 to +127. ",
+   },
+   "PeekSound": {
+      "prefix": "PeekSound",
+      "body": "PeekSound (Sound#,Offset)",
+      "description": "PeekSound returns the byte of a sample at specified offset of sound object specified. ",
+   },
+   "DecodeSound": {
+      "prefix": "DecodeSound",
+      "body": "DecodeSound Sound#,MemoryLocation",
+      "description": "DecodeSound, similar to the other new Decode commands allows the programmer to include sound files within their program's object code. SetPeriod Sound#,Period This command allows the programmer to manually adjust the period of the sound object to change it's effective pitch. ",
+   },
+   "DiskPlay": {
+      "prefix": "DiskPlay",
+      "body": "DiskPlay Filename$, Channelmask[, Vol1[, Vol2...]",
+      "description": "DiskPlay will play an 8SVX IFF sound file straight from disk. This is ideal for situations where you simply want to play a sample without the extra hassle of loading a sound, playing it, and then freeing it. The DiskPlay command will also halt program flow until the sample has finished playing. DiskPlay usually requires much less memory to play a sample than the LoadSound, Sound technique. Also, DiskPlay allows you to play samples of any length, whereas LoadSound only allows samples up to 128K in length to be loaded. ",
+   },
+   "DiskBuffer": {
+      "prefix": "DiskBuffer",
+      "body": "DiskBuffer Bufferlen",
+      "description": "DiskBuffer allows you to set the size of the memory buffer used by the DiskPlay command. This Buffer is by default set to 1024 bytes, and should not normally have to be set to more than this. Reducing the buffer size by too much may cause loss of sound quality of the DiskPlay command. If you are using DiskPlay to access a very slow device, the buffer size may have to be increased. ",
+   },
+   "Filter": {
+      "prefix": "Filter",
+      "body": "Filter On l Off",
+      "description": "Filter may be used to turn on or off the Amiga's low pass audio filter. ",
+   },
+   "LoadModule": {
+      "prefix": "LoadModule",
+      "body": "LoadModule Module#,Filename$",
+      "description": "LoadModule loads in from disk a soundtracker/noisetracker music module This module may be later played back using PlayModule. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free Module Module#",
+      "description": "Free Module may be used to delete a module object. Any memory occupied by the module will also be free'd. ",
+   },
+   "PlayModule": {
+      "prefix": "PlayModule",
+      "body": "PlayModule Module#",
+      "description": "PlayModule will cause a previously loaded soundtracker/noisetracker song module to be played back. ",
+   },
+   "StopModule": {
+      "prefix": "StopModule",
+      "body": "StopModule",
+      "description": "StopModule will cause any soundtracker/noisetracker modules which may be currently playing to stop. ",
+   },
+   "Load": {
+      "prefix": "Load",
+      "body": "Load Med Module MedModule# Name",
+      "description": "The LoadMedModule command loads any version 4 channel Octamed module. Following routines support up to and including version 3 of the Amiganut's Med standard. The number of MedModules loaded in memory at one time is only limited by the MedModules maximum set in the Blitz Options requester. Like any Blitz commands that access files LoadMedModule can only be used in AmigaMode. ",
+   },
+   "StartMedModule": {
+      "prefix": "StartMedModule",
+      "body": "StartMedModule MedModule#",
+      "description": "StartMedModule is responsible for initialising the module including linking after it is loaded from disk using the LoadMedModule command. It can also be used to restart a module from the beginning. ",
+   },
+   "PlayMed": {
+      "prefix": "PlayMed",
+      "body": "PlayMed",
+      "description": "PlayMed is responsible for playing the current MedModule, it must be called every 50th of a second either on an interupt (#5) or after a VWait in a program loop. ",
+   },
+   "StopMed": {
+      "prefix": "StopMed",
+      "body": "StopMed",
+      "description": "StopMed will cause any med module to stop playing. This not only means that PlayMed will have no affect until the next StartMedModule but silences audio channels so they are not left ringing as is the effect when PlayMed is not called every vertical blank. ",
+   },
+   "JumpMed": {
+      "prefix": "JumpMed",
+      "body": "JumpMed Pattern#",
+      "description": "JumpMed will change the pattern being played in the current module. ",
+   },
+   "SetMedVolume": {
+      "prefix": "SetMedVolume",
+      "body": "SetMedVolume Volume",
+      "description": "SetMedVolume changes the overall volume that the Med Library plays the module, all the audio channels are affected. This is most useful for fading out music by slowly decreasing the volume from 64 to 0 ",
+   },
+   "GetMedVolume": {
+      "prefix": "GetMedVolume",
+      "body": "GetMedVolume Channel#",
+      "description": "GetMedVolume returns the current volume setting of the specified audio channel. This is useful for graphic effects required to sync to certain channels of the music playing. ",
+   },
+   "GetMedNote": {
+      "prefix": "GetMedNote",
+      "body": "GetMedNote Channel#",
+      "description": "GetMedNote returns the current note playing from the specified channel. As with GetMedVolume this is useful for producing graphics effects synced to the music the Med Library is playing. ",
+   },
+   "GetMedinstr": {
+      "prefix": "GetMedinstr",
+      "body": "GetMedinstr Channel",
+      "description": "GetMedInstr returns the current instrument playing through the specified audio channel. ",
+   },
+   "SetMedMask": {
+      "prefix": "SetMedMask",
+      "body": "SetMedMask Channel Mask",
+      "description": "SetMedMask allows the user to mask out audio channels needed by sound effects stopping the Med Library using them. ",
+   },
+   "DecodeMedModule": {
+      "prefix": "DecodeMedModule",
+      "body": "DecodeMedModule MedModule#,MemoryLocation",
+      "description": "DecodeMedModule replaces the cludgemedmodule, as med modules are not packed but used raw, DecodeMedModule simply checks to see the memory location passed is in ChipMem (if not it copies the data to chip) and points the Blitz MedModule object to that memory. . Speak string$ The Speak command will first convert the given string to phonetics and then pass it to the Narrator.Device. Depending on the settings of the Narrator device (see SetVoice) the Amiga will \"speak\" the string you have sent in the familiar Amiga synthetic voice. ",
+   },
+   "SetVoice": {
+      "prefix": "SetVoice",
+      "body": "SetVoice rate,pitch,expression,sex, volume,frequency",
+      "description": "SetVoice alters the sound of the Amiga's speech synthsiser by changing the vocal characteristics listed in the parameters above. ",
+   },
+   "Translate$": {
+      "prefix": "Translate$",
+      "body": "Translate$ (string$)",
+      "description": "Translate$() returns the phonetic equivalent of the string for use with the ",
+   },
+   "PhoneticSpeak": {
+      "prefix": "PhoneticSpeak",
+      "body": "PhoneticSpeak command.",
+      "description": "",
+   },
+   "PhoneticSpeak": {
+      "prefix": "PhoneticSpeak",
+      "body": "PhoneticSpeak phonetic$",
+      "description": "PhoneticSpeak is similar to the Speak command but should only be passed strings containing legal phonemes such as that produced by the Translate$() function. ",
+   },
+   "VoiceLoc": {
+      "prefix": "VoiceLoc",
+      "body": "VoiceLoc",
+      "description": "VoiceLoc returns a pointer to the internal variables in the speech synthesiser that enable the user to access new parameters added to the V37 Narrator Device. Formants as referred to in the descriptions are the major vocal tracts and are separated into the parts of speech that produce the bass, medium and trebly sounds. Screen Screen#,Mode[,  Title$] Screen#,X, Y, Width,Height,Depth, VMode,Title$,Dpen,Bpen[BMap#] Screen will open an Intuition screen. The are 2 formats of the screen command, a ",
+   },
+   "quick": {
+      "prefix": "quick",
+      "body": "quick format, and a long format.",
+      "description": "The quick format of the Screen commands involves 3 parameters - Screen#, Mode and an optional Title$. Screen# specifies the screen object to create. Mode specifies how many bitplanes the screen is to have, and should be in the range 1 through 6. Adding 8 to Mode will cause a hi-res screen to be opened, as opposed to the default lo-res screen. A hi-res screen may only have from 1 to 4 bitplanes. Adding 16 to Mode will cause an interlaced screen to be opened. Title$ allows you to add a title to the screen. The long format of Screen gives you much more control over how the screen is opened. The VMode parameter refers to the resolution of the Screen, add the values together to make up the screenmode you require: hires =$8000 ham =$200 superhires =$20 interlace  =4 lores =0 ",
+   },
+   "ShowScreen": {
+      "prefix": "ShowScreen",
+      "body": "ShowScreen Screen#",
+      "description": "ShowScreen will cause the specified screen object to be moved to front of the display. ",
+   },
+   "WbToScreen": {
+      "prefix": "WbToScreen",
+      "body": "WbToScreen Screen#",
+      "description": "WbToScreen will assign the Workbench screen a screen object number. This allows you to perform any of the functions that you would normally do own your own screens, on the Workbench screen. It's main usage is to allow you to open windows on the Workbench screen. After execution, the Workbench screen will become the currently used screen. FindScreen Screen#[, Title$] This command will find a screen and give it an object number so it can be referenced in your programs. If Title$ is not specified, then the foremost screen is found and given the object number Screen#. If the Title$ argument is specified, then a screen will be searched for that has this name. After execution, the found screen will automatically become the currently used screen. ",
+   },
+   "LoadScreen": {
+      "prefix": "LoadScreen",
+      "body": "LoadScreen Screen#, Filename$[, Palette#]",
+      "description": "LoadScreen loads an IFF ILBM picture into the screen object specified by Screen#. The file that is loaded is specified by Filename$. You can also choose to load in the colour palette for the screen, by specifying the optional Palette#. This value is the object number of the palette you want the pictures colours to be loaded into. For the colours to be used on your screen, you will have to use the statement. ",
+   },
+   "SaveScreen": {
+      "prefix": "SaveScreen",
+      "body": "SaveScreen Screen#,Filename$",
+      "description": "SaveScreen will save a screen to disk as an IFF ILBM file. The screen you wish to save is specified by the Screen#, and the name of the file you to create is specified by Filename$. ",
+   },
+   "SMouseX": {
+      "prefix": "SMouseX",
+      "body": "SMouseX",
+      "description": "SMouseX returns the horizontal position of the mouse relative to the left edge of the currently used screen. ",
+   },
+   "SMouseY": {
+      "prefix": "SMouseY",
+      "body": "SMouseY",
+      "description": "SMouseY returns vertical position of the mouse relative to top of the current screen. ViewPort (Screen#) The ViewPort function returns the location of the specified screens ViewPort. The ViewPort address can be used with graphics.library commands and the like. ",
+   },
+   "ScreenPens": {
+      "prefix": "ScreenPens",
+      "body": "ScreenPens active text,inactive text,hilight,shadow,active fill,gadget fill",
+      "description": "ScreenPens configures the 10 default pens used for system gadgets in WB 2. Any Screens opened after a ScreenPens statement will use the pens defined. This command will have no affect when used with Workbench 1.3 or earlier ",
+   },
+   "CloseScreen": {
+      "prefix": "CloseScreen",
+      "body": "CloseScreen Screen#",
+      "description": "CloseScreen has been added for convenience. Same as Free Screen but a little more intuitive (especially for those that have complained about such matters (yes we care)). HideScreen Screen# Move Screen to back of all Screens open in the system. BeepScreen Screen# Flash specified screen. MoveScreen Screen#,deltax,deltay Move specified screen by specified amount. Good for system friendly special effects. ScreenTags Screen#,Title$[&TagList]or[[,Tag,Data]...] Full access to all the Amiga's new display resoutions is now available in Amiga mode by use of ScreenTags command. Following tags are of most interest to programmers. #Left=$80000021 : #Top=$80000022 : #Width=$80000023 #Height=$80000024 : #Depth=$80000025 : #DetailPen=$80000026 #BlockPen=$80000027 #Title=$80000028 : #Colors=$80000029 : #ErrorCode=$8000002A #Font=$8000002B : #SysFont=$8000002C : #Type=$8000002D #BitMap=$8000002E #PubName=$8000002F : #PubSig=$80000030 #PubTask=$80000031 : #DisplayID=$80000032 #DClip=$80000033 : #0verscan=$80000034 #ShowTitle=$80000036 : #Behind=$80000037 : #Quiet=$80000038 #AutoScroll=$80000039 : #Pens=$8000003A #FullPalette=$8000003B : #ColorMapEntries=$8000003C #Parent=$8000003D : #Draggable=$8000003E #Exclusive=$8000003F #SharePens=$80000040 : #BackFill=$80000041 #Interleaved=$80000042 #Colors32=$80000043 : #VideoControl=$80000044 #FrontChild=$80000045 : #BackChild=$80000046 #LikeWorkbench=$80000047 : #Reserved=$80000048 ",
+   },
+   "ShowBitMap": {
+      "prefix": "ShowBitMap",
+      "body": "ShowBitMap [BitMap#]",
+      "description": "The ShowBitMap command is the Amiga-mode version of the Show command. It enables you to change a Screens bitmap allowing double buffered (flicker free) animation to happen on a standard Intuition Screen. Unlike Blitz mode it is better to do ShowBitMap then VWait to sync up with the Amiga's display, this will make sure the new bitmap is being displayed before modifying the previous BitMap Window Window#,X, Y, Width, Height, Flags, Title$, Dpen, Spen[,GadgetList#] Window opens an Intuition window on the currently used screen. Window# is a unique object number for the new window. X & Y refer to the offset from top left of the screen the window is to appear at. Width and Height are the size of the window in pixels. Flags are the special window flags that a window can have when opened. These flags allow for the inclusion of a sizing gadget, dragbar and many other things. The flags are listed as followed, with their corresponding values. To select more than one of these flags, they must be logically Or'd together using the 'l ' operator. For example, to open a window with dragbar and sizing gadget which is active once opened, you would specify a Flags parameter of $1 I $2 I $1000. Title$ is a BASIC string, either a constant or a variable, that you want to be the title of the window. Dpen is the colour of the detail pen of the window. This colour is used for window title. BPen is the block pen of the window. This pen is used for things like the border around the edge of the window. The optional GadgetList# is the number of a gadgetlist object you have may want attached to the window After the window has opened, it will become the currently used window. The Window library has been extended to handle super bitmap windows. SuperBitMap windows allow the window to have it's own bitmap which can actually be larger than the window. The two main benefits of this feature are the window's ability to refresh itself and the ability to scroll around a large area \"inside\" the bitmap. To attach a BitMap to a Window set the SuperBitMap flag in the flags field and include the BitMap# to be attached. ",
+   },
+   "Window": {
+      "prefix": "Window",
+      "body": "Window Flag    Value Description",
+      "description": "WINDOWSIZING  $0001 Attaches sizing gadget to bottom right corner of window and allows it to be sized. WINDOWDRAG   $0002 Allows window to be dragged with the mouse by it's title bar. WINDOWDEPTH  $0004 Lets windows be pushed behind or in front of other windows. WINDOWCLOSE  $0008 Attaches a closegadget to the upper left corner of the window. SIZEBRIGHT    $0010 With GIMMEZERO & ZEROWINDOWSIZING set, this will leave the right hand margin, the width of the sizing gadget, clear, and drawing in window will not extend over this right margin. SIZEBBOTTOM  $0020 Same as SIZEBRIGHT except it leaves a margin at the bottom of the window, the width of the sizing gadget. BACKDROP    $0100 This opens the window behind any other window that is already opened. It cannot have the WINDOWDEPTH flag set also, as the window is intended to stay behind all others. GIMME00    $0400 This flag keeps the windows border separate from the rest of the windows area. Any drawing on the window, extending to the borders, will not overwrite the border. NOTE: Although convevient, this does take up more memory than usual. BORDERLESS   $0800 Opens a window without any border on it at all. ACTIVATE    $1000 Activates the window once opened. ",
+   },
+   "Use": {
+      "prefix": "Use",
+      "body": "Use Window Window#",
+      "description": "Use Window will cause the specified window object to become the currently used window. Use Window also automatically performs a WindowInput and WindowOutput on the specified window. ",
+   },
+   "Free": {
+      "prefix": "Free",
+      "body": "Free Window Window#",
+      "description": "Free Window closes down a window. This window is now gone, and can not be accessed any more by any statements or functions. Once a window is closed, you may want to direct the input and output somewhere new, by calling Use Window on another window, DefaultOutput/DefaultInput, or by some other appropriate means. Window# is the window object number to close ",
+   },
+   "WindowInput": {
+      "prefix": "WindowInput",
+      "body": "WindowInput Window#",
+      "description": "Windowinput will cause any future executions of the Inkey$, Edit$ or Edit functions to receive their input as keystrokes from the specified window object. WindowInput is automatically executed when either a window is opened, or Use Window is executed. After a window is closed (using Free Window), remember to tell Blitz to get it's input from somewhere else useful (for example, using another WindowInput command) before executing another Inkey$, Edit$ or Edit function. ",
+   },
+   "WindowOutput": {
+      "prefix": "WindowOutput",
+      "body": "WindowOutput Window#",
+      "description": "WindowOutput will cause any future executions of either the Print or NPrint statements to send their output as text to the specified window object. WindowOutput is automatically executed when either a window is opened, or Use Window is executed. After a window is closed (using Free Window), remember to send output somewhere else useful (for example, using another WindowOutput command) before executing another Print or NPrint statement. DefaultlDCMP IDCMP_Flags DefaultIDCMP allows you to set the IDCMP flags used when opening further windows. You can change the flags as often as you like, causing all of your windows to have their own set of IDCMP flags if you wish. A window's IDCMP flags will affect the types of 'events' reportable by the window. Events are reported to a program by means of either the WaitEvent or Event functions. To select more than one IDCMP Flag when using DefaultIDCMP , combine the separate flags together using the OR operator ('I'). Any windows opened before any DefaultIDCMP command is executed will be opened using an IDCMP flags setting of: $2 I $4 I $8 I $20 I $40 I $100 I $200 I $400 I $40000 I $80000. This should be sufficient for most programs. If you do use DefaultIDCMP for some reason, it is important to remember to include all flags necessary for the functioning of the program. For example, if you open a window which is to have menus attached to it, you MUST set the $100 (menu selected) IDCMP flag, or else you will have no way of telling when a menu has been selected IDCMP FlagEvent $2 Reported when a window has it's size changed. $4 Reported when a windows contents have been corrupted. This may mean a windows contents may need to be re-drawn. $8 Reported when either mouse button has been hit. $10 Reported when the mouse has been moved. $20 Reported when a gadget within a window has been pushed 'down'. $40 Reported when a gadget within a window has been 'released'. $100 Reported when a menu operation within a window has occured. $200 Reported when the 'close' gadget of a window has been selected. $400 Reported when a keypress has been detected. $8000 Reported when a disk is inserted into a disk drive. $10000 Reported when a disk is removed from a disk drive. $40000 Reported when a window has been 'activated'. $80000 Reported when a window has been 'de-activated'. AddlDCMP IDCMP_Flags AddIDCMP allows you to 'add in' IDCMP flags to the IDCMP flags selected by DefaultIDCMP . Please refer to DefaultIDCMP for a thorough discussion of IDCMP flags. SublDCMP IDCMP_Flags SubIDCMP allows you to 'subtract out' IDCMP flags from the IDCMP flags selected by DefaultIDCMP . Please refer to DefaultIDCMP for a thorough discussion of IDCMP flags. ",
+   },
+   "WaitEvent": {
+      "prefix": "WaitEvent",
+      "body": "WaitEvent",
+      "description": "WaitEvent will halt program excution until an Intuition event has been received. This event must be one that satisfies the IDCMP flags of any open windows. If used as a function, WaitEvent returns the IDCMP flag of the event (please refer to DefaultIDCMP for a table of possible IDCMP flags). If used as a statement, you have no way of telling what event occured. You may find the window object number that caused the event using the EventWindow function. In the case of events concerning gadgets or menus, further functions are available to detect which gadget or menu was played with. In the case of mouse button events, the MButtons function may be used to discover exactly which mouse button has been hit IMPORTANT NOTE: If you are assigning the result of WaitEvent to a variable, MAKE SURE that the variable is a long type variable. For example: MyEvent.l=WaitEvent ",
+   },
+   "Event": {
+      "prefix": "Event",
+      "body": "Event",
+      "description": "Event works similarly to WaitEvent in that it returns the IDCMP flag of any outstanding windows events. However, Event will NOT cause program flow to halt. Instead, if no ",
+   },
+   "event": {
+      "prefix": "event",
+      "body": "event has occured, Event will return 0.",
+      "description": "",
+   },
+   "EventWindow": {
+      "prefix": "EventWindow",
+      "body": "EventWindow",
+      "description": "EventWindow is used to determine in which window the most recent window event occured. Window events are detected by use of either WaitEvent or Event commands. EventWindow returns the window object number in which the most recent window event occured Flush Events [IDCMP_Flag] When window events occur in Blitz, they are automatically 'queued' for you. This means that if your program is tied up processing one window event while others are being created, you wont miss out on anything. Any events which may have occured between executions of WaitEvent or Event will be stored in a queue for later use. There may be situations where you want to ignore this backlog of events.Use FlushEvents to make it. Executing FlushEvents with no parameters will completely clear Blitz's internal event queue, leaving you with no outstanding events. Supplying an IDCMP_Flag parameter will only clear events of the specified type from the event queue. ",
+   },
+   "GadgetHit": {
+      "prefix": "GadgetHit",
+      "body": "GadgetHit",
+      "description": "GadgetHit returns the identification number of the gadget that caused the most recent 'gadget pushed' or 'gadget released' event. As gadgets in different windows may possibly posess the same identification numbers, you may also need to use EventWindow to tell exactly which gadget was hit. ",
+   },
+   "MenuHit": {
+      "prefix": "MenuHit",
+      "body": "MenuHit",
+      "description": "MenuHit returns the identification number of the menu that caused the last menu event. As with gadgets, you can have different menus for different windows with same identification number. Therefore you may also need to use EventWindow to find which window caused the event. If no menus have yet been selected, Menuhit will return -1. ",
+   },
+   "ItemHit": {
+      "prefix": "ItemHit",
+      "body": "ItemHit",
+      "description": "ItemHit returns the identification nr. of the menu item that caused the last menu event. ",
+   },
+   "SubHi": {
+      "prefix": "SubHi",
+      "body": "SubHi",
+      "description": "SubHit returns the identification number of the the menu subitem that caused the last menu event. If no subitem was selected, SubHit will return -1. ",
+   },
+   "MButtons": {
+      "prefix": "MButtons",
+      "body": "MButtons",
+      "description": "MButtons returns the codes for the mouse buttons that caused the most recent 'mouse buttons' event. If menus have been turned off using Menus Off, then the right mouse button will also register an event and can be read with MButtons. ",
+   },
+   "RawKey": {
+      "prefix": "RawKey",
+      "body": "RawKey",
+      "description": "RawKey returns the raw key code of a key that caused most recent 'key press' evens. ",
+   },
+   "Qualifier": {
+      "prefix": "Qualifier",
+      "body": "Qualifier",
+      "description": "Qualifier will return the qualifier of the last key that caused a 'key press' event to occur. A qualifier is a key which alters the meaning of other keys; for example the 'shift' keys. Here is a table of qualifier values and their equivalent keys: Key Left Right UnQualified $8000 $8000 Shift $8001 $8002 Caps Lock Down $8004 $8004 Control $8008 $8008 Alternate $8010 $8020 Amiga $8040 $8080 A combination of values may occur, if more that one qualifier key is being held down. The way to filter out the qualifiers that you want is by using the logical AND operator. ",
+   },
+   "WPlot": {
+      "prefix": "WPlot",
+      "body": "WPlot X,Y,Colour",
+      "description": "WPlot plots a pixel in the currently used window at the coordinates X,Y in the colour specified by Colour. ",
+   },
+   "WBox": {
+      "prefix": "WBox",
+      "body": "WBox X1,Y1,X2,Y2,Colour",
+      "description": "WBox draws a solid rectangle in the currently used window. The upper left hand coordinates of the box are specified with the X1 and Y1 values, and the bottom right hand corner of the box is specified by the values X2 and Y2. ",
+   },
+   "WCircle": {
+      "prefix": "WCircle",
+      "body": "WCircle X,Y,Radius,Colour",
+      "description": "WCircle allows to draw a circle in currently used window. You specify the centre of the circle with the coordinates X,Y . The Radius value specifies the radius of the circle you want to draw. The last value, Colour specifies what colour the circle will be drawn in. ",
+   },
+   "WEllipse": {
+      "prefix": "WEllipse",
+      "body": "WEllipse X,Y,X Radius,Y Radius,Colour",
+      "description": "WEllipse draws an ellipse in the currently used window. You specify the centre of the ellipse with the coordinates X,Y . X Radius specifies the horizontal radius of the ellipse, Y Radius the vertical radius. Colour refers to the colour in which to draw the ellipse. ",
+   },
+   "WLine": {
+      "prefix": "WLine",
+      "body": "WLine X1,Y1,X2,Y2[,Xn, Yn..],Colour",
+      "description": "Wline allows you to draw a line or a series of lines into the currently used window. The first two sets of coordinates X1,Y1,X2,Y2, specify the start and end points of the initial line. Any coordinates specified after these initial two, will be the end points of another line going from the last set of end points, to this set. Colour is the colour of the line(s) that are to be drawn. ",
+   },
+   "WCls": {
+      "prefix": "WCls",
+      "body": "WCls [Colour]",
+      "description": "WCls will clear the currently used window to colour 0, or a colour is specified, then it will be cleared to this colour. If the current window was not opened with the GIMMEZEROZERO flag set, then this statement will clear any border or title bar that the window has. The InnerCls statement should be used to avoid these side effects.. ",
+   },
+   "InnerCls": {
+      "prefix": "InnerCls",
+      "body": "InnerCls [Colour]",
+      "description": "InnerCls will clear only the inner portion of the currently used window. It will not clear the titlebar or borders as WCls would do if your window was not opened with the GIMMEZEROZERO flag set. If a colour is specified, then that colour will be used to clear the window. ",
+   },
+   "WScroll": {
+      "prefix": "WScroll",
+      "body": "WScroll X1,Y1,X2,Y2,Delta X,Delta Y",
+      "description": "WScroll will cause a rectangular area of the currently used window to be moved or 'scrolled'. X1 and Y1 specify the top left location of the rectangle, X2 and Y2 the bottom right. The Delta parameters determine how far to move the area. Positive values move the area right/down, while negative values move the area left/up. ",
+   },
+   "Cursor": {
+      "prefix": "Cursor",
+      "body": "Cursor Thickness",
+      "description": "Cursor will set the style of cursor that appears when editing strings or numbers with the Edit$ or Edit functions. If Thickness is less than 0, then a block cursor will be used. If the Thickness is greater then 0, then an underline Thickness pixels high will be used. Editat After executing an Edit$ or Edit function, Editat may be used to determine the horizontal character position of the cursor at the time the function was exited. Through the use of Editat, EditExit, EditFrom and Edit$, simple full screen editors may be put together. ",
+   },
+   "EditFrom": {
+      "prefix": "EditFrom",
+      "body": "EditFrom [Characterpos]",
+      "description": "EditFrom allows you to control how the Edit$ and Edit functions operate when used within windows If a Characterpos parameter is specified, then the next time an edit function is executed, editing will commence at the specified character position (0 being the first character position). Also, editing may be terminated by the use of the 'return' key or also by any non printable character ('up arrow' or 'Esc') or a window event. When used in conjunction with Editat and EditExit, this allows you to put together simple full screen editors. If Characterpos is omitted, Edit$ and Edit return to normal - editing always beginning at character postition 0, and 'return' being the only way to exit. ",
+   },
+   "EditExit": {
+      "prefix": "EditExit",
+      "body": "EditExit",
+      "description": "EditExit returns the ASCII value of the character that was used to exit a window based Edit$ or Edit function. You can only exit the edit functions with keypresses other than 'return' if EditFrom has been executed prior to the edit call. ",
+   },
+   "WindowFont": {
+      "prefix": "WindowFont",
+      "body": "WindowFont IntuiFont#",
+      "description": "WindowFont sets the font for the currently used window. Any further printing to this window will be in the specified font. IntuiFont# specifies a previously initialized intuifont object created using LoadFont. ",
+   },
+   "WColour": {
+      "prefix": "WColour",
+      "body": "WColour Foreground Colour[,Background Colour]",
+      "description": "WColour sets the foreground and background colour of printed text for the currently used window. Any further text printed on this window will be in these colours. ",
+   },
+   "WJam": {
+      "prefix": "WJam",
+      "body": "WJam Jammode",
+      "description": "WJam sets the text drawing mode of the currently used window. These drawing modes allow you to do inverted, complemented and other types of graphics. The drawing modes can be OR'ed together to create a combination of them. Jam1=0 This draws only the foreground colour and leaves the background transparent. Eg For the letter 0, any empty space (inside and outside the letter) will be transparent. Jam2=1 This draws both the foreground and background to the window. Eg With the letter 0 again, the 0 will be drawn, but any clear area (inside and outside) will be drawn in the current background colour. Complement=2 This will exlusive or (XOR) the bits of the graphics. Eg Drawing on the same place with the same graphics will cause the original display to return. Inversvid = This allows the display of inverse video characters. If used in conjunction with Jam2, it behaves like Jam2, but the foreground and background colours are exchanged. ",
+   },
+   "Activate": {
+      "prefix": "Activate",
+      "body": "Activate Window#",
+      "description": "Activate will activate the window specified by Window#. ",
+   },
+   "Menus": {
+      "prefix": "Menus",
+      "body": "Menus On l Off",
+      "description": "The Menus command may be used to turn ALL menus either on or off. Turning menus off may be useful if you wish to read the right mouse button. ",
+   },
+   "WPointer": {
+      "prefix": "WPointer",
+      "body": "WPointer Shape#",
+      "description": "WPointer allows you to determine the mouse pointer imagery used in the currently used window. Shape# specifies an initialized shape object the pointer is to take it's appearance from, and must be of 2 bitplanes depth (4 colours). ",
+   },
+   "WMove": {
+      "prefix": "WMove",
+      "body": "WMove X,Y",
+      "description": "WMove will move the current window to screen position X,Y . ",
+   },
+   "WSize": {
+      "prefix": "WSize",
+      "body": "WSize Width,Height",
+      "description": "WSize will alter the width and height of the current window to the values specified by Width and Height. ",
+   },
+   "WMouseX": {
+      "prefix": "WMouseX",
+      "body": "WMouseX",
+      "description": "WMouseX returns the horizontal x coordinate of the mouse relative to the left edge of the current window. If the current window was opened without the GIMMEZEROZERO flag set, then the left edge is taken as the left edge of the border around the window, otherwise, if GIMMEZEROZERO was set, then the left edge is the taken from inside the window border. ",
+   },
+   "WMouseY": {
+      "prefix": "WMouseY",
+      "body": "WMouseY",
+      "description": "WMouseY returns the vertical y coordinate of the mouse relative to the top of the current window. If the current window was opened without the GIMMEZEROZERO flag set, then the top is taken as the top of the border around the window, otherwise, if GIMMEZEROZERO was set, then the top is taken trom inside the window border. ",
+   },
+   "EMouseX": {
+      "prefix": "EMouseX",
+      "body": "EMouseX",
+      "description": "EMouseX will return the horizontal position of the mouse pointer at the time the most recent window event occured. Window events are detected using the WaitEvent or Event commands. ",
+   },
+   "EMouseY": {
+      "prefix": "EMouseY",
+      "body": "EMouseY",
+      "description": "EMouseY returns vertical position of the mouse pointer at the time the most recent window event occured. Window events are detected using the WaitEvent or Event. ",
+   },
+   "WCurs": {
+      "prefix": "WCurs",
+      "body": "WCurs",
+      "description": "WCursX returns the horizontal location of the text cursor of the currently used window. The text cursor position may be set using WLocate. ",
+   },
+   "WCursY": {
+      "prefix": "WCursY",
+      "body": "WCursY",
+      "description": "WCursY returns the vertical location of the text cursor of the currently used window. The text cursor position may be set using WLocate. ",
+   },
+   "WLocate": {
+      "prefix": "WLocate",
+      "body": "WLocate X, Y",
+      "description": "WLocate is used to set the text cursor position within the currently used window. X and Y are both specified in pixels as offsets from the top left of the window. Each window has it's own text cursor position, therefore changing the text cursor position of one ",
+   },
+   "window": {
+      "prefix": "window",
+      "body": "window will not affect any other window's text cursor position.",
+      "description": "",
+   },
+   "WindowX": {
+      "prefix": "WindowX",
+      "body": "WindowX",
+      "description": "WindowX returns the horizontal pixel location of the top left corner of the currently used window, relative to the screen the window appears in. ",
+   },
+   "WindowY": {
+      "prefix": "WindowY",
+      "body": "WindowY",
+      "description": "WindowY returns the vertical pixel location of the top left corner of the currently used window, relative to the screen the window appears in. ",
+   },
+   "WindowWidth": {
+      "prefix": "WindowWidth",
+      "body": "WindowWidth",
+      "description": "WindowWidth returns the pixel width of the currently used window. ",
+   },
+   "WindowHeight": {
+      "prefix": "WindowHeight",
+      "body": "WindowHeight",
+      "description": "WindowHeight returns the pixel height of the currently used window. ",
+   },
+   "InnerWidth": {
+      "prefix": "InnerWidth",
+      "body": "InnerWidth",
+      "description": "InnerWidth returns the pixel width of the area inside the border of currently window. ",
+   },
+   "InnerHeight": {
+      "prefix": "InnerHeight",
+      "body": "InnerHeight",
+      "description": "InnerHeight returns the pixel height of the area inside the border of currently window. ",
+   },
+   "WTopOff": {
+      "prefix": "WTopOff",
+      "body": "WTopOff",
+      "description": "WTopOff returns the number of pixels between the top of the current window border and the inside of the window. ",
+   },
+   "WLeftOff": {
+      "prefix": "WLeftOff",
+      "body": "WLeftOff",
+      "description": "WLeftOff returns the number of pixels between the left edge of the current window border and the inside of the window. ",
+   },
+   "SizeLimits": {
+      "prefix": "SizeLimits",
+      "body": "SizeLimits Min Width,Min Height,Max Width,Max Height",
+      "description": "SizeLimits sets the limits that any new windows can be sized to with the Sizing gadget. After calling this statement, any new windows will have these limits imposed on them. ",
+   },
+   "RastPort": {
+      "prefix": "RastPort",
+      "body": "RastPort (Window#)",
+      "description": "RastPort returns the specified Window's RastPort address. Many commands in the graphics.library and the like require a RastPort as a parameter. ",
+   },
+   "PositionSuperBitMap": {
+      "prefix": "PositionSuperBitMap",
+      "body": "PositionSuperBitMap x,y",
+      "description": "PositionSuperBitMap is used to display a certain area of the bitmap in a super bitmap window. GetSuperBitMap After rendering changes to a superbitmap window the bitmap attached can also be updated with the GetSuperBitMap. After rendering changes to a bitmap the superbitmap window can be refreshed with the PutSuperBitMap command. Both commands work with the currently used window. PutSuperBitMap See GetSuperBitmap description. ",
+   },
+   "WTitle": {
+      "prefix": "WTitle",
+      "body": "WTitle windowtitle$,screentitle$",
+      "description": "WTitle is used to alter both the current window's title bar and it's screens title bar. Useful for displaying important stats such as program status etc. ",
+   },
+   "CloseWindow": {
+      "prefix": "CloseWindow",
+      "body": "CloseWindow Window#",
+      "description": "CloseWindow has been added for convenience. Same as Free Window but a little more intuitive (added for those that have complained about such matters). ",
+   },
+   "WPrintScroll": {
+      "prefix": "WPrintScroll",
+      "body": "WPrintScroll",
+      "description": "WPrintScroll will scroll the current window upwards if the text cursor is below the bottom of the window and adjust the cursor accordingly. Presently WPrintScroll only works with windows opened with the gimme00 flag set (#gimmezerozero=$400). ",
+   },
+   "WBlit": {
+      "prefix": "WBlit",
+      "body": "WBlit Shape#,x,y",
+      "description": "WBlit is used to blit any shape to the current window. Completely system friendly this command will completely clip the shape to fit inside the visible part of the window Use GimmeZeroZero windows for clean clipping when the window has title/sizing gadgets. ",
+   },
+   "BitMaptoWindow": {
+      "prefix": "BitMaptoWindow",
+      "body": "BitMaptoWindow Bitmap#,Window#[srox,srcy,destx,desty,width,height]",
+      "description": "BitMaptoWindow will copy a bitmap to a window in an operating system friendly manner (what do you expect). The main use of such a command is for programs which use the raw bitmap commands such as the 2D and Blit libraries for rendering bitmaps quickly but require a windowing environment for the user inyerface EventCode EventQualifier EventCode returns the actual code of the last Event received by your program, EventQualifier returns the contents of the Qualifier field. Of use with the new GadTools library and some other low level event handling requirements. WindowTags Window#,Flags, Title$,[&TagList] I [[Tag,Data]...] Similar to ScreenTags, WindowTags allows the advanced user to open a Blitz window with a list of OS Tags as described in the documentation for the OS prior to 2.0. ",
+   },
+   "LoadFont": {
+      "prefix": "LoadFont",
+      "body": "LoadFont IntuiFont#,Fontname.font$, Y Size [,style]",
+      "description": "LoadFont is used to load a font from the fonts: directory. Unlike BlitzFonts any size ",
+   },
+   "IntuiFont": {
+      "prefix": "IntuiFont",
+      "body": "IntuiFont can be used. The command WindowFont is used to set text output to a certain ",
+      "description": "IntuiFont in a particular Window. The LoadFont command has been extended with an optional style parameter. The following constants may be combined: #underl ined= 1 #bold=2 #italic=4 #extended=8 ;wider than normal #colour=64 ;hmm use colour version I suppose ",
+   },
+   "ButtonGroup": {
+      "prefix": "ButtonGroup",
+      "body": "ButtonGroup Group -",
+      "description": "ButtonGroup allows you to determine which 'group' a number of button type gadgets belong to. Following the execution of ButtonGroup, any button gadgets created will be identified as belonging to the spiecified group. The upshot of all this is that button gadgets are only mutually exclusive to other button gadgets within the same group. 'Group' must be a positive number greater than 0. Any button gadgets created before a'ButtonGroup' command is executed will belong to group 1. ",
+   },
+   "SetGadgetStatus": {
+      "prefix": "SetGadgetStatus",
+      "body": "SetGadgetStatus GadgetList#,Id,Value",
+      "description": "SetGadgetStatus is used to set a cycling text gadget to a particular value, once set ReDraw should be used to refresh the gadget to reflect it's new value. ",
+   },
+   "GadgetPens": {
+      "prefix": "GadgetPens",
+      "body": "GadgetPens Foreground Colour[,Background Colour]",
+      "description": "GadgetPens determines the text colours used when text gadgets are created using the TextGadget command. The default values used for gadget colours are a foreground colour of 1, and a background colour of 0. ",
+   },
+   "GadgetJam": {
+      "prefix": "GadgetJam",
+      "body": "GadgetJam Jammode",
+      "description": "GadgetJam allows you to determine the text rendering method used when gadgets are created using the TextGadget command. Please refer to the WJam command in the windows chapter for a full description of jam modes available. ",
+   },
+   "SelectMode": {
+      "prefix": "SelectMode",
+      "body": "SelectMode mode",
+      "description": "SelectMode is used to predefine how gadget rendering will show a gadget selection, modes are 1 for box and 0 for inverse. Use prior to creation of gadgets. ",
+   },
+   "ShapeGadget": {
+      "prefix": "ShapeGadget",
+      "body": "ShapeGadget GadgetList#,X,Y,Flags,ld,Shape#[,Shape#",
+      "description": "ShapeGadget command allows to create gadgets with graphic imagery. Shape# refers to a shape object containing the graphics you wish the gadget to contain. ShapeGadget command has been extended to allow an alternative image to be displayed when the gadget is selected. All other parameters are identical to those in TextGadget. ",
+   },
+   "StringGadget": {
+      "prefix": "StringGadget",
+      "body": "StringGadget GadgetList#,X, Y,Flags,ld,Maxlen, Width",
+      "description": "StringGadget allows to create an Intuition style 'text entry' gadget. When clicked on, a string gadget brings up a text cursor, and is ready to accept text entry trom keyboard. X and Y specifies the gadgets, position, relative to the top left of the window it is to appear in. See the beginning of the chapter for the relevant Flags tor a string gadget. Id is an identification value to be attached to this gadget. All gadgets in a gadgetlist should have unique Id numbers, allowing you to detect which gadgets has been selected. Id may be any positive, non-zero number. Maxlen refers to the maximum number of characters which may appear in this gadgets. ",
+   },
+   "Width": {
+      "prefix": "Width",
+      "body": "Width refers to how wide, in pixels, the gadget should be. A string gadget may have a ",
+      "description": "width less than the maximum number of characters it may contain, as characters will be scrolled through the gadget when necessary. You may read the current contents of a string gadget using the StringText function. ",
+   },
+   "StringText$": {
+      "prefix": "StringText$",
+      "body": "StringText$ (GadgetList#,ld)",
+      "description": "",
+   },
+   "Stringtext$": {
+      "prefix": "Stringtext$",
+      "body": "Stringtext$ function allows you to determine the current contents of a string gadget. ",
+      "description": "StringText$ will return a string of characters representing the string gadgets contents. ",
+   },
+   "ActivateString": {
+      "prefix": "ActivateString",
+      "body": "ActivateString Window#,ld",
+      "description": "ActivateString may be used to 'automatically' activate a string gadget. This is identical to the program user having clicked in the string gadget themselves, as the string gadget's cursor will appear, and further keystrokes will be sent to the string gadget. It is often nice of a program to activate Important string gadgets, as it saves the user the hassle of having to reach t'or the mouse before the keyboard. ",
+   },
+   "ResetString": {
+      "prefix": "ResetString",
+      "body": "ResetString GadgetList#,ld",
+      "description": "ResetString allows you to 'reset' a string gadget. This will cause the string gadget's cursor position to be set to the leftmost position. ",
+   },
+   "ClearString": {
+      "prefix": "ClearString",
+      "body": "ClearString GadgetList#,l",
+      "description": "ClearString may be used to clear, or erase, the text in the specified string gadget. The cursor position will also be moved to the leftmost position in the string gadget. If a string gadget is cleared while it is displayed in a window, the text will not be erased from the actual display. To do this, ReDraw must be executed. ",
+   },
+   "SetString": {
+      "prefix": "SetString",
+      "body": "SetString GadgetList#, ID, String$",
+      "description": "SetString may be used to initialize the contents of a string gadget created with the StringGadget command. If the string gadget specified by GadgetList# and id is already displayed, you will also need to execute ReDraw to display the change. ",
+   },
+   "PropGadget": {
+      "prefix": "PropGadget",
+      "body": "PropGadget GadgetList#,X, Y,Flags,ld, Width,Height",
+      "description": "The PropGadget command is used to create a 'proportional gadget'. Proportional gadgets present a program user with a 'slider bar', allowing them to adjust the slider to achieve a desired effect. Proportional gadgets are commonly used for the 'R G B' sliders seen in many paint packages. Proportional gadgets have 2 main qualities - a 'pot' (short for potentiometer) setting, and a'body' setting. The pot setting refers to the current position of the slider bar, and is in the range 0 through 1. For example, a proportional gadget which has been moved to 'half way' would have a pot setting of '.5'. The body setting refers to the size of the units the proportional gadget represents, and is again in the range 0 through 1. Again taking the RGB colour sliders as an example, each slider is intended to show a particular value in the range 0 through 15 - giving a unit size, or body setting, of 1/16 or '.0625'. Put simply, the pot setting describes 'where' the slider bar is, while the body setting describes 'how big' it is. Proportional gadgets may be represented as either horizontal slider bars, vertical slider bars, or a combination of both. See the beginning of the chapter for relevant Flags settings for prop gadgets. X and Y refer to the gadgets position, relative to top left of the window it is opened in. Width and Height refer to the size of the area the slider should be allowed to move in. Id is a unique, non zero nr. which allows to identify when the gadget is manipulated. Proportional gadgets may be altered using the SetVProp and SetHProp commands, and read using the VPropPot, VPropBody, HPropPot and HPropBody functions. ",
+   },
+   "SetHProp": {
+      "prefix": "SetHProp",
+      "body": "SetHProp GadgetList#,ld,Pot,Bod",
+      "description": "SetHProp is used to alter the horizontal slider qualities of a proportional gadget. Both Pot and Body should be in the range 0 through 1. If SetHProp is executed while the specified gadget is already displayed, execution of the ReDraw command will be necessary to display the changes. For a full discussion on proportional gadgets, please refer to the PropGadget command. ",
+   },
+   "SetVProp": {
+      "prefix": "SetVProp",
+      "body": "SetVProp GadgetList#,ld,Pot, Body",
+      "description": "SetVProp is used to alter the vertical slider qualities of a proportional gadget. Both Pot and Body should be in the range 0 through 1. If SetVProp is executed while the specified gadget is already displayed, execution of the ReDraw command will be necessary to display the changes. ",
+   },
+   "HPropPot": {
+      "prefix": "HPropPot",
+      "body": "HPropPot (GadgetList#,ld)",
+      "description": "The HPropPot function allows you to determine the current 'pot' setting of a proportional gadget. HPropPot will return a number from 0 up to, but not including, 1, reflecting the gadgets current horizontal pot setting. ",
+   },
+   "HPropBody": {
+      "prefix": "HPropBody",
+      "body": "HPropBody (GadgetList#,ld)",
+      "description": "The HPropBody function allows you to determine the current 'body' setting of a proportional gadget. HPropBody will return a number from 0 up to, but not including, 1, reflecting the gadgets current horizontal body setting. ",
+   },
+   "VPropPot": {
+      "prefix": "VPropPot",
+      "body": "VPropPot (GadgetList#,ld)",
+      "description": "The VPropPot function allows you to determine the current 'pot' setting of a proportional gadget. VPropPot will return a number from 0 up to, but not including, 1, reflecting the gadgets current vertical pot setting. ",
+   },
+   "VPropBody": {
+      "prefix": "VPropBody",
+      "body": "VPropBody (GadgetList#,ld)",
+      "description": "The VPropBody function allows you to determine the current 'body' setting of a proportional gadget. VPropBody will return a number from 0 up to, but not including, 1, reflecting the gadgets current vertical body setting. ",
+   },
+   "Redraw": {
+      "prefix": "Redraw",
+      "body": "Redraw Window#,id",
+      "description": "ReDraw will redisplay the specified gadget in the specified window. This command is mainly of use when a proportional gadget has been altered using SetHProp or SetVProp and needs to be redrawn, or when a string gadget has been cleared using ClearString, and, likewise, needs to be redrawn. ",
+   },
+   "Borders": {
+      "prefix": "Borders",
+      "body": "Borders [On I Off] I [Width, Height]",
+      "description": "Borders serves 2 purposes. First, Borders may be used to turn on or off the automatic creation of borders around text and string gadgets. Borders are created when either a Textgadget or StringGadget command is executed. If you wish to disable this, Borders Off should be executed before the appropriate TextGadget or StringGadget command. Borders may also be used to specify the spacing between a gadget and it's border, Width referring to the left/right spacing, and Height to the above/below spacing. ",
+   },
+   "BorderPens": {
+      "prefix": "BorderPens",
+      "body": "BorderPens Highlight Colour,Shadow Colour",
+      "description": "BorderPens allows you to control the colours used when gadget borders are created. Gadget borders may be created by the TextGadget, StringGadget and GadgetBorder. HighLight Colour refers to the colour of the top and left edges of the border, while Shadow Colour refers to the right and bottom edges. The default value for HighLight Colour is 1. The default value for Shadow Colour is 2. ",
+   },
+   "Gadget": {
+      "prefix": "Gadget",
+      "body": "Gadget Border X, Y, Width, Height",
+      "description": "The GadgetBorder command may be used to draw a rectangular border into the currently used window. Proportional gadgets and shape gadgets do not have borders automatically created tor them. The GadgetBorder command may be used, once a window is opened, to render borders around these gadgets. X,Y, Width and Height refer to the position of the gadget a border is required around. GadgetBorder will automatically insert sapces between the gadget and the border. The Borders command may be used to alter the amount of spacing. Of course, GadgetBorder may be used to draw a border around any arbitary area, regardless of whether or not that area contains a gadget. ",
+   },
+   "GadgetStatus": {
+      "prefix": "GadgetStatus",
+      "body": "GadgetStatus (GadgetList#,ld)",
+      "description": "GadgetStatus may be used to determine the status of the specified gadget. In the case of toggle' type gadget, GadgetStatus will return true (-1) if the gadget is currently on, or false (0) if the gadget is currently off. In the case of a cycling text gadget, GadgetStatus will return a value of 1 or greater representing the currently displayed text within the gadget. ",
+   },
+   "ButtonId": {
+      "prefix": "ButtonId",
+      "body": "ButtonId (GadgetList#,ButtonGroup)",
+      "description": "ButtonId it´s used to determine which gadget within a group of button type gadgets is currently selected. The value returned will be the GadgetId of the button gadget currently selected. Enable GadgetList#,ld A gadget when disabled is covered by a \"mesh\" and can not be accessed by the user. Commands Enable & Disable allow the programmer to access this feature of Intuition. Disable GadgetList#,ld A gadget when disabled is covered by a \"mesh\" and can not be accessed by the user. Commands Enable & Disable allow the programmer to access this feature of Intuition. ",
+   },
+   "Toggle": {
+      "prefix": "Toggle",
+      "body": "Toggle GadgetList#,ld [,On I Off]",
+      "description": "The Toggle command in the gadget library has been extended so it will actually toggle a gadgets status if the On I Off parameter is missing. ",
+   },
+   "MenuTitle": {
+      "prefix": "MenuTitle",
+      "body": "MenuTitle Menulist#,Menu,Title",
+      "description": "MenuTitle is used to add a menu title to a menulist. Menu titles appear when the right mouse button is held down, and usually have menuitems attached to them. Menu specifies which menu the title should be used for. Higher numbered menus appear further to the right along the menu bar, with 0 being the leftmost menu. Menutitles should be added in left to right order, with menu 0 being the first created, then 1 and so on... Title$ is the actual text you want to appear when the right mouse button is pressed. ",
+   },
+   "Menultem": {
+      "prefix": "Menultem",
+      "body": "Menultem MenuList#, Flags, Menu,ltem,ltemtext$[, Shortcut$]",
+      "description": "Menultem is used to create a text menu item. Menu items appear vertically below menu titles when mouse is moved over a menu title with the right mouse button held down. Flags affects operation of menu item. A value of 0 creates a stand 'select' menu item. A value of 1 creates a 'toggle' menu item. Toggle menu items are used for 'on/off' type options. When a toggle menu item is selected, it will change state between on and off. An 'on' toggle item is identified by a 'tick' or check mark A value of 2 creates a special type of toggle menu item. Any menu items which appear under the same menu with a Flags setting of 2 are said to be mutually exclusive. This means that only 1 of them may begin the 'on' state at one time. If a menu item of this nature is toggled into the 'on' state, any other mutually exclusive menu items which may have previously been 'on' will be automatically turned 'off'. Flags values of 3 and 4 correspond to values 1 and 2, only the item will initially appear in the 'on' state. Menu specifies the menu title under which the menu item should appear. Item specifies the menu item number, this menu item should be referenced as. Higher numbered items appear further down a menu item list, with 0 being topmost item. Menu items should be added in 'top down' order, with item 0 being the first item created. Itemtext$ is the actual text for the menu item. An optional Shortcut$ string allows you to select a one character 'keyboard shortcut' for the menu item. Shapeltem MenuList#, Flags,Menu, Item, Shape# ShapeItem is used to create a graphical menu item. Shape# refers to a previously initialized shape object to be used as the menu item's graphics. All other parameters are identical to those for MenuItem. Subitem MenuList#,Flags,Menu,ltem,Subitem,Subitem text$[,Shortcut$] All menu items may have an optional list of sub menu items attached to them. To attach a sub menu item to a menu item, you use the SubItem command. Item specifies the menu item to attach the sub item to. Subitem refers to the number of the sub menu item to attach. Higher numbered ",
+   },
+   "sub": {
+      "prefix": "sub",
+      "body": "sub items appear further down a sub item list, with 0 being the topmost sub item. ",
+      "description": "Sub items should be added in 'top down' order, with sub item 0 being created first. .  Subitemtext$ specifies the actual text for the sub item. As with menu items, sub items may have an optional keyboard shortcut, specified using Shortcut$ parameter. All other parameters are identical to the MenuItem command. ",
+   },
+   "ShapeSub": {
+      "prefix": "ShapeSub",
+      "body": "ShapeSub MenuList#,Flags,Menu,ltem,Subitem,Shape#",
+      "description": "ShapeSub allows you to create a graphic sub menu item. Shape# specifies a previously created shape object to be used as the sub item's graphics. All other parameters are identical to those in SubItem. ",
+   },
+   "SetMenu": {
+      "prefix": "SetMenu",
+      "body": "SetMenu MenuList#",
+      "description": "SetMenu is used to attach a menulist to the currently used window. Each window may have only one menulist attached to it. MenuGap X Gap, Y Gap Executing MenuGap before creating any menu titles, items or sub items, allows you to control the layout of the menu. X Gap refers to an amount, specified in pixles, to be inserted to the left and right of all menu items and sub menu items. Y Gap refers to an amount, again in pixels, to be inserted above and below all menu items and sub menu items. ",
+   },
+   "SubitemOff": {
+      "prefix": "SubitemOff",
+      "body": "SubitemOff X Offset, Y Offset",
+      "description": "SubItemOff allows you to control the relative position of the top of a list of sub menu items, in relation to their associated menu item. Whenver a menu item is created which is to have sub menu items, it's a good idea to append the name of the menu item with the '>>' character. This may be done using Chr$(187). This gives the user a visual indication that more options are available. To position the sub menu items correctly so that they appear after the '>>' character, SubItemOff should be used. ",
+   },
+   "MenuState": {
+      "prefix": "MenuState",
+      "body": "MenuState MenuList#[ Menu[, Item[, Subitem]]], On l Off",
+      "description": "The MenuState command allows you to turn menus, or sections of menus, on or off. ",
+   },
+   "MenuState": {
+      "prefix": "MenuState",
+      "body": "MenuState with just MenuList# parameter it´s used to turn an entire menu list on or off.",
+      "description": "MenuState with MenuList# and Menu parameters may be used to turn a menu on or off. Similarly, menu items and sub items may be turned on or off by specifying the appropriate parameters. ",
+   },
+   "MenuColour": {
+      "prefix": "MenuColour",
+      "body": "MenuColour Colour",
+      "description": "MenuColour allows to determine what colour any menu item or sub item text is rendered in. MenuColour should be executed before appropriate menu item commands. ",
+   },
+   "MenuChecked": {
+      "prefix": "MenuChecked",
+      "body": "MenuChecked (MenuList#, Menu,ltem[, Subitem]",
+      "description": "The MenuChecked function allows you to tell whether or not a 'toggle' type menu item or menu sub item is currently 'checked' or ton'. If the specified menu item or sub item is in fact checked, MenuChecked will return 'true' (-1). If not, MenuChecked will return 'false' (0). GTButton GTList#, id,x,y, w,h, Text$, flags Same as Blitz's TextGadget but with the added flexibility of placing the label Text$ above, below to the left or right of the button (see flags). GTCheckBox GTList#,id,x,y, w,h, Text$, flags A box with a check mark that toggles on and off, best used for options that are either enabled or disabled GTCycle GTList#,id,x,y, w,h, Text$, flags, Options$ Used for offering the user a range of options, the options string should be a list of options separated by the l character ea. \"HIRES l LORES l SUPER HIRES \" GTlnteger GTList#,id,x,y, w,h, Text$, flags, default ",
+   },
+   "A": {
+      "prefix": "A",
+      "body": "A string gadget that allows only numbers to be entered by the user.See GTSetInteger ",
+      "description": "and GTGetInteger for information about accessing the contents of a GTInteger gadget. GTListView GTList#,id,x,y,w,h, Text$, flags, list0 ListView gadget enables user to scroll through a list of options. These options must be contained in a string field of a Blitz linked list. Currently this string field must be the 2nd field, the first being a word type. See the GTChangeList command for more details. ",
+   },
+   "GTMX": {
+      "prefix": "GTMX",
+      "body": "GTMX GTList#,id,x,y,w,h, Text$, flags, Options$",
+      "description": "GTMX is an exclusive selection gadget, the Options$ is the same as GTCycle in format, GadTools then displays all the options in a vertical list each with a hi-light beside them. GTNumber GTList#,id,x,y,w,h, Text$, flags, value This is a readonly gadget (user cannot interact with it) used to display numbers. See GTSetInteger to update the contents of this read only \"display\" gadget. GTPalette GTList#,id,x,y,w,h, Text$, flags, depth Creates a number of coloured boxes relating to a colour palette, GTScroller GTList#,id,x,y,w,h, Text$, flags, Visible, Total A prop type gadget for the user to control an amount or level, is accompanied by a set of arrow gadgets GTSlider GTList#,id,x,y,w,h, Text$, flags, Min, Max Same as Scroller but for controlling the position of the display inside a larger view. GTString GTList#,id,x,y,w,h, Text$, flags, MaxChars A standard string type gadget. See GTSetString and GTGetString for accessing the contents of a GTString gadget. GTText GTList#,id,x,y,w,h, Text$, flags, Display$ A read only gadget (see GTNumber) for displaying text messages. See GTSetString for updating the contents of this read only \"display\" gadget. GTShape GTList#,id,x,y, flags, Shape#[, Shape#] Similar to the Blitz ShapeGadget allowing IFF graphics that are loaded int Blitz shape objects to be used as gadgets in a window. ",
+   },
+   "AttachGTList": {
+      "prefix": "AttachGTList",
+      "body": "AttachGTList GTList#, Window#",
+      "description": "The AttachGTList command is used to attach a set of GadTools gadgets to a Window after it has been opened. ",
+   },
+   "GTTags": {
+      "prefix": "GTTags",
+      "body": "GTTags Tag, Value 1,Tag, Value...]",
+      "description": "The GTTags command can be used prior to initialization of any of the 12 gadtools gadgets to preset any relevant Tag fields. The following are some useful Tags that can be used with GTTags: #tag=$80080000 #GTCB Checked=#tag+4 ; State of checkbox #GTLV_Top=#tag+5 ; Top visible item in listview #GTLV_ReadOnly=#tag+7 ; Set TRUE if lisiview is ReadOnly #GTMX_Active=#tag+10 ; Active one in mx gadget #GTTX_Text=#tag+11 ; Text to display #GTNM_Number=#tag+ 13 ; Number to display #GTCY_Active=#tag+ 15 ; The active one in the cycle gad #GTPA_Color=#tag+ 17 ; Palette color #GTPA ColorOffset=#tag+18 ; First color to use in palette #GTSC_Top=#tag+21 ; Top visible in scroller #GTSC_Total=#tag+22 ; Total in scroller area #GTSC_Visible=#tag+23 ; Number visible in scroller #GTSL_Level=#tag+40 ; Slider level #GTSL_MaxLevelLen=#tag+41 ; Max length of printed level #GTSL_LevelFormat=#tag+42 ;* Format string for level #GTSL_LevelPlace=#tag+43 ;* Where level should be placed #GTLV_Selected=#tag+54 ; Set ordinal number of selected #GTMX_Spacing=#tag+61 ;* Added to font height All of the above except for those marked * can be set after initialization of the Gadget using the GTSetAttrs command. The following is an example of creating a slider gadget with a numeric display: f$=\"%21d  \"GTTags#GTSLLevelFormat,&f$,#GTSLMaxLevelLen,4GTSlider 2,10,320,120,200,20,\"GTSLIDER\",2,0,10 ",
+   },
+   "GTGadPtr": {
+      "prefix": "GTGadPtr",
+      "body": "GTGadPtr (GTList#,id)",
+      "description": "GTGadPtr returns the actual location of the specified GadTools gadget in memory. ",
+   },
+   "GTBevelBox": {
+      "prefix": "GTBevelBox",
+      "body": "GTBevelBox GTList#,x,y,w,h,flags",
+      "description": "GTBevelBox is the GadTools library equivalent of the Borders command and can be used to render frames and boxes in the currently used Window ",
+   },
+   "GTChangeList": {
+      "prefix": "GTChangeList",
+      "body": "GTChangeList GTList#,id [,List()]",
+      "description": "GTChangeList must be used whenever a List attached to a GTListView needs to be modified. Call GTChangeList without the List() parameter to free the List, modify it then reattach it with another call to GTChangeList this time using the List() parameter. ",
+   },
+   "GTSetAttrs": {
+      "prefix": "GTSetAttrs",
+      "body": "GTSetAttrs GTList#,id [, Tag, Value...]",
+      "description": "GTSetAttrs can be used to modify the status of certain GadTools gadgets with the relevant Tags. See GTTags for more information. GTSetString GTList#,id,string$ Used with both GTString and GTText gadgets, GTSetString will not only update the contents of the gadget but redraw it also. GTSetinteger GTList#,id,value Used with both GTInteger and GTNumber gadgets, GTSetInteger will not only update the contents of the gadget but redraw it also. GTGetString GTList#,id Used to read the contents from a GTString gadget. GTGetinteger GTList#,id Used to read the contents from a GTlnteger gadget. GTGetAttrs (GTList#,id,Tag) A 3.0 specific command. See C= documentation for more information. GTEnable GTList#,ld Allows GTGadgets to be enabled and disabled. GTDisable GTList#,ld Allows GTGadgets to be enabled and disabled. ",
+   },
+   "GTToggle": {
+      "prefix": "GTToggle",
+      "body": "GTToggle GTList#,ld[,On l Off]",
+      "description": "GTToggle allows the programmer to set Boolean gadgets such as GTButton and GTCheckbox to a desired state. ",
+   },
+   "GTStatus": {
+      "prefix": "GTStatus",
+      "body": "GTStatus (GTList#,ld)",
+      "description": "GTStatus returns the status of the gadtools toggle gadgets, a value of 1 means the the gadget is selected, 0 deselected. ASLPathRequest$ (Title$,Pathname$ [,x,y,w,h]) Same as ASLFileRequest$ except will just prompt the user for a path name (directory) rather than an actual file. ASLFontRequest (enable flags) The ASL Font Requester is also pretty useful. The flags parameter enables the user to modify the following options: #pen=1 :#bckgrnd=2:#style=4:#drawmode=8:#fixsize=16 It doesn't seem to handle colour fonts, no keyboard shortcuts so perhaps patching ReqTools is an option for this one. The following code illustrates how a .fontinfo structure is created by a call to ASLFontRequest (just like in high level language man!). ASLScreenRequest (enable flags) Those who are just getting to grips with 2.0 and above will find this command makes your programs look really good, however I haven't got time to explain the difficulties of developing programs that work in all screen resolutions (what are ya?). NEWTYPE .fontinfo name.s ysize.w style.b:flags.b pen1.b:pen2:drawmode:pad End NEWTYPE FindScreen 0 *f.fontinfo=ASLFontRequest(15) If * ",
+   },
+   "NPrint": {
+      "prefix": "NPrint",
+      "body": "NPrint *f\\name",
+      "description": "",
+   },
+   "NPrint": {
+      "prefix": "NPrint",
+      "body": "NPrint *f\\ysize",
+      "description": "",
+   },
+   "NPrint": {
+      "prefix": "NPrint",
+      "body": "NPrint *f\\penl",
+      "description": "",
+   },
+   "NPrint": {
+      "prefix": "NPrint",
+      "body": "NPrint *f\\pen2",
+      "description": "NPrint *f\\drawmode Else NPrint \"cancelled\" Endif MouseWait ",
+   },
+   "CreateMsgPort": {
+      "prefix": "CreateMsgPort",
+      "body": "CreateMsgPort (\"Name\")",
+      "description": "",
+   },
+   "CreateMsgPort": {
+      "prefix": "CreateMsgPort",
+      "body": "CreateMsgPort is a general Function and not specific to ARexx.",
+      "description": "CreateMsgPort opens an intuition PUBLIC message port of the name supplied as the only argument. If all is well the address of the port created will be returned to you as a LONGWORD so the variable that you assign it to should be of type long. If you do not supply a name then a private MsgPort will be opened for you. Port. 1=CreateMsgPort( \" PortName\" ) It is important that you check you actually succeeded in opening a port in your program. The following code or something similar will suffice. Port. 1=CreateMsgPort( \"Name\" ) IF Port=0 THEN Error_Routine{ } The name you give your port will be the name that Arexx looks for as the HOST address,(and is case sensitive) so take this into consideration when you open your port. NOTE IT MUST BE A UNIQUE NAME AND SHOULD NOT INCLUDE SPACES. DeleteMsgPort() is used to remove the port later but this is not entirely necessary as Blitz will clean up for you on exit if need be. ",
+   },
+   "DeleteMsgPort": {
+      "prefix": "DeleteMsgPort",
+      "body": "DeleteMsgPort (Port)",
+      "description": "DeleteMsgPort deletes a MessagePort previously allocated with CreateMsgPort(). The only argument taken by DeleteMsgPort is the address returned by CreateMsgPort(). If the Port was a public port then it will be removed from the public port list. Port. 1=CreateMsgPort( \"Name\") IF Port=0 Then End DeleteMsgPort Port Error checking is not critical as if this fails we have SERIOUS PROBLEMS YOU MUST WAIT FOR ALL MESSAGES FROM AREXX TO BE RECEIVED BEFORE YOU DELETE THE MSGPORT.IF YOU NEGLECT TO DELETE A MSGPORT BLITZ2 WILL DO IT FOR YOU AUTOMATICALLY ON PROGRAM EXIT. ",
+   },
+   "CreateRexxMsg": {
+      "prefix": "CreateRexxMsg",
+      "body": "CreateRexxMsg (ReplyPort,\"exten' \"HOST\")",
+      "description": "CreateRexxMsg() allocates a special Message structure used to communicate with Arexx. If all is successful it returns the LONGWORD address of this rexxmsg structure. The arguments are ReplyPort which is the long address returned by CreateMsgPort(). This is the Port that ARexx will reply to after it has finished with the message. EXTEN which is the exten name used by any ARexx script you are wishing to run. i.e. if you are attempting to run the ARexx script test.rexx you would use an EXTEN of \"rexx\" HOST is the name string of the HOST port. Your program is usually the HOST and so this equates to the name you gave your port in CreateMsgPort(). REMEMBER IT IS CASE SENSITIVE. As we are allocating resources error checking is important and can be achieved with the following code: msg.l=CreateRexxMsg(Port, \"rexx\",\"HostName\" ) IF msg=0 THEN Error_Routine{ } DeleteRexxMag rexxmsg DeleteRexxMsg simply deletes a RexxMsg Structure previously allocated by CreateRexxMsg(). It takes a single argument which is the long address of a RexxMsg structure such as returned by CreateRexxMsg(). msg.l=CreateRexxMsg(Port, \"rexx \",\"HostName\") IF msg=0 THEN Error Routine( } DeleteRexxMsg msg Again if you neglect to delete the RexxMsg structure Blitz will do this for you on exit of the program. ",
+   },
+   "ClearRexxMsg": {
+      "prefix": "ClearRexxMsg",
+      "body": "ClearRexxMsg Arexxmsg",
+      "description": "ClearRexxMsg is used to delete and clear an ArgString from one or more of the Argument slots in a RexxMsg Structure. This is most useful for the more advanced programmer wishing to take advantage of the Arexx #RXFUNC abilities. The arguments are a LONGWORD address of a RexxMsg structure. ClearRexxMsg will always work from slot number 1 forward to 16. ",
+   },
+   "FillRexxMsg": {
+      "prefix": "FillRexxMsg",
+      "body": "FillRexxMsg ( rexxmsg,&FillStruct)",
+      "description": "FillRexxMsg allows you to fill all 16 ARGSlots if necessary with either ArgStrings or numerical values depending on your requirement. FillRexxMsg will only be used by those programmers wishing to do more advanced things with Arexx, including adding libraries to the ARexx library list, adding Hosts,Value Tokens etc. It is also needed to access Arexx using the #RXFUNC flag. The arguments are a LONG Pointer to a rexxmsg. The LONG address of a FillStruct NEWTYPE structure. This structure is defined in the Arexx.res and has the following form. NEWTYPE .FillStruct Flags.w ;Flag block Args0.l ; argument block (ARG0-ARG15) Args1.l ; argument block (ARG0-ARG15) Args2.l ; argument block (ARG0-ARG15) Args3.l ; argument block (ARG0-ARG15) Args4.l ; argument block (ARG0-ARG15) Args5.l ; argument block (ARG0-ARG15) Args6.l , argument block (ARG0-ARG15) Args7.l , argument block (ARG0-ARG15) Args8.l ; argument block (ARG0-ARG15) Args9.l ; argument block (ARG0-ARG15) Args10.l ; argument block (ARG0-ARG15) Args11.l ; argument block (ARG0-ARG15) Args12.l ; argument block (ARG0-ARG15) Args13.l ; argument block (ARG0-ARG15) Args14.l ; argument block (ARG0-ARG15) Args15.l ; argument block (ARG0-ARG15) EndMark.l ; End of the FillStruct End NEWTYPE The Args?.l are the 16 slots that can possibly be filled ready for converting into the RexxMsg structure. The Flags.w is a WORD value representing the type of LONG word you are supplying for each ARGSLOT (Arg?.l). Each bit in the Flags WORD is representative of a single Args?.l, where a set bit represents a numerical value to be passed and a clear bit represents a string argument to be converted into a ArgString before installing in the RexxMsg. The Flags Value is easiest to supply as a binary number to make the bits visible and would look like this. %0000000000000000  ;represents that all Arguments are Strings. %0110000000000000  ;represent second&third as being integers. FillRexxMsg expects to find the address of any strings in the Args?.l slots so it is important to remember when filling a FillStruct that you must pass the string address and not the name of the string. This is accomplished using the '&' address of operand. So to use FillRexxMsg we must do the following things in our program: 1. Allocate a FillStruct 2. Set the flags in the FillStruct\\Flags. 3. Fill the FillStruct with either integer values or the addresses of our string arguments. 4. Call FillRexxMsg with the LONG address of our rexxmsg and the LONG address of our   FillStruct. To accomplish this takes the following code: ;Allocate our FillStruct (called F) DEFTYPE.FillStruct F ;assign some string arguments T$=\"open \" :T1$=\"-0123456789\" ;Fill in our FillStruct with flags and (&) addresses of our strings F\\Flags= %0010000000000000,&T$,&T1$,4 ;Third argument here is an integer (4). Port.l=CreateMsgPort( \"host\") msg.l=CreateRexxMsg(Port,\"vc\",\"host\") FillRexxMsg msg,&F ;<-3 ergs see #RXFUNC SendRexxCommand msg,\"\",#RXFUNCI #RXFF RESULTI 3 ",
+   },
+   "CreateArgString": {
+      "prefix": "CreateArgString",
+      "body": "CreateArgString (\"this is a string\")",
+      "description": "CreateArgString() builds an ARexx compatible ArgString structure around the provided string. All strings sent to, or received from Arexx are in the form of ArgStrings. See the TYPE RexxARG. If all is well the return will be a LONG address of the ArgString structure. The pointer will actually point to the NULL terminated String with the remainder of the structure available at negative offsets. ",
+   },
+   "DeleteArgString": {
+      "prefix": "DeleteArgString",
+      "body": "DeleteArgString ArgString",
+      "description": "DeleteArgString is designed to Delete ArgStrings allocated by either Blitz or ARexx in a system friendly way. It takes only one argument the LONGWORD address of an ArgString as returned by CreateArgString(). ",
+   },
+   "SendRexxCommand": {
+      "prefix": "SendRexxCommand",
+      "body": "SendRexxCommand rexxmsg, \"commands/ring \",#RXCOMMI #RXFF RESULT",
+      "description": "SendRexxCommand is designed to fill and send a RexxMsg structure to ARexx inorder to get ARexx to do something on your behalf. The arguments are as follows; rexxmsg: the LONGWORD address of a RexxMsg structure as returned by CreateRexxMsg(). commands/ring: the command string you wish to send to ARexx. This is a string as in \"this is a string\" and will vary depending on what you wish to do with ARexx. Normally this will be the name of an ARexx script file you wish to execute. ARexx will then look for the script by the name as well as the name with the exten added.(this is the exten you used when you created the RexxMsg structure using CreateRexxMsg()). This could also be a string file. That is a complete ARexx script in a single line. ActionCodes: the flag values you use to tell ARexx what you want it to do with the commandstring you have supplied. ",
+   },
+   "COMMAND": {
+      "prefix": "COMMAND",
+      "body": "COMMAND (ACTION) CODES",
+      "description": "The command codes that are currently implemented in the resident process are described below. Commands are listed by their mnemonic codes,followed by the valid ",
+   },
+}

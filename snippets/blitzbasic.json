@@ -441,5 +441,126 @@
             "CD32_Blue = CD32_Buttons & 64 = 64"
         ],
         "description": "GameB returns the button states of CD32 style game controllers. The values of all buttons pressed are added together to make up the value returned by GameB. To check a certain button is down a logical AND should be performed, buttonvalue AND returnvalue will evaluate to 0 if the button is not held down."
-    }
+    },
+    "OpenFile": {
+        "prefix": "OpenFile",
+        "body": [
+            "if OpenFile(File#,Filename$)",
+            "\t;Do your file handling here.",
+            "\tCloseFile File#",
+            "else",
+            "\t;The file was not successfully opened. Do your error handling here.",
+            "endif"
+        ],
+        "description": "OpenFile attempts to open the file specified by Filename$. If file was successfully opened, OpenFile will return true (-1), otherwise, OpenFile will return false (0). Files opened using OpenFile may be both written to and read from. If the file specified by Filename$ did not already exist before the file was opened, it will be created by OpenFile. Files opened with OpenFile are intended for use by the random access file commands, although it is quite legal to use these files in a sequential manner."
+    },
+    "ReadFile": {
+        "prefix": "ReadFile",
+        "body": [
+            "if ReadFile(File#,Filename$)",
+            "\t;Do your file handling here.",
+            "\tCloseFile File#",
+            "else",
+            "\t;The file was not successfully opened. Do your error handling here.",
+            "endif"
+        ],
+        "description": "ReadFile opens an already existing file specified by Filename$ for sequential reading. If the specified file was successfully opened, ReadFile will return true (-1), otherwise ReadFile will return false (0). Once a file is open using ReadFile, FileInput may be used to read information from it."
+    },
+    "WriteFile": {
+        "prefix": "WriteFile",
+        "body": [
+            "if WriteFile(File#,Filename$)",
+            "\t;Do your file handling here.",
+            "\tCloseFile File#",
+            "else",
+            "\t;The file was not successfully opened. Do your error handling here.",
+            "endif"
+        ],
+        "description": "WriteFile creates a new file, specified by Filename$ for the purpose of sequential file writing. If the file was successfully opened, WriteFile will return true (-1), otherwise WriteFile will return false (0). A file opened using WriteFile may be written to by using the FileOutput command."
+    },
+    "CloseFile": {
+        "prefix": "CloseFile",
+        "body": "CloseFile File#",
+        "description": "CloseFile is used to close a file opened using one of the file open functions (FileOpen, ReadFile, WriteFile). This should be done to all files when they are no longer required."
+    },
+    "Fields": {
+        "prefix": "Fields",
+        "body": "Fields File#, Var[, Var...]",
+        "description": "Fields set up fields of a random access file record. Once Fields is executed, Get and Put are used to read and write information to and from the file. The Var parameters specify a list of variables you wish to be either read from or written to the file. When a Put is executed the values held in these variables will be transferred to the file. When a Get is executed these variables will take on values read from the file. Any string variables in the variable list MUST have been initialized to contain a maximum number of characters. This is done using the MaxLen command. These string variables must NEVER grow to be longer than their defined maximum length."    
+    },      
+    "Put": {
+        "prefix": "Put",
+        "body": "Put File#,Record",
+        "description": "Put is used to transfer the values contained in a Fields variable list to a particular record in a random access file. When using Put to increase size of a random access file, you may only add to the immediate end of file. For example, if you have a random access file with 5 records in it, it is illegal to put record number 7 to the file until record number 6 has been created. "
+     },
+     "Get": {
+        "prefix": "Get",
+        "body": "Get File#,Record",
+        "description": "Get is to transfer information from a particular record of a random access file into a variable list set up by Fields command. Only records which also exist may be'got'. "
+     },            
+     "FileOutput": {
+        "prefix": "FileOutput",
+        "body": "FileOutput File#",
+        "description": "FileOutput causes output of all subsequent Print and NPrint commands to be sent to the specified sequential file. When the file is later closed, Print statements should be returned to an appropriate output channel (eg: DefaultOutput or WindowOutput). Filelnput File# FileInput command causes all subsequent Edit, Edit$ and Inkey$ commands to receive their input from the specified file. When file is later closed, input should be redirected to an appropriate channel (eg: DefaultInput or WindowInput). "
+     },     
+     "FileSeek": {
+        "prefix": "FileSeek",
+        "body": "FileSeek File#,Position",
+        "description": "FileSeek allows you to move to a particular point in the specified file. The first piece of data in a file is at position 0, the second at position 1 and so on. Position must not be set to a value greater than the length of the file. Used in conjunction with OpenFile and Lof, FileSeek may be used to 'append'to a file. "
+     },
+     "Lof": {
+        "prefix": "Lof",
+        "body": "Lof(File#)",
+        "description": "Lof will return the length, in bytes, of the specified file. "
+     },
+     "Eof": {
+        "prefix": "Eof",
+        "body": "Eof (File#)",
+        "description": "Eof function allows you to determine if you are currently positioned at the end of the specified file. If so, Eof will return true (-1), otherwise Eof will return false (0). If you are at the end of a file, any further writing to the file will increase it's length, while any further reading from the file will cause an error. "
+     },   
+     "Loc": {
+        "prefix": "Loc",
+        "body": "Loc (File#)",
+        "description": "Loc may be used to determine your current position in the specified file. When a file is first opened, you will be at position 0 in the file DosBuffLen Bytes All Blitz file handling is done through the use of special buffering routines. This is done to increase the speed of file handling, especially in the case of sequential files. Initially, each file opened is allocated a 2048 byte buffer. However, if memory is tight this buffer size may be lowered using the DosBuffLen command. "
+     },  
+     "KillFile": {
+        "prefix": "KillFile",
+        "body": "KillFile Filename$",
+        "description": "KillFile command will simply attempt to delete the specified file. No error will be returned if the file could not be deleted. CatchDosErrs Whenever you are executing AmigaDos I/O (for example, reading or writing a file), there is always the possibility of something going wrong (for example, disk not inserted... read/write error etc.). Normally, when such problems occur, AmigaDos displays a suitable requester on the WorkBench window. However, by executing CatchDosErrs you can force such requesters to open on a Blitz window. The window you wish dos error requesters to open on should be the currently used window at the time CatchDosErrs is executed. "
+     }, 
+     "ReadMem": {
+        "prefix": "ReadMem",
+        "body": "ReadMem File#,Address,Length",
+        "description": "ReadMem allows to read a number of bytes, determined by Length, into an absoulte memory location, determined by Address, from an open file specified by File#. Be careful using ReadMem, as writing to absolute memory may have serious consequences if you don't known what you're doing! "
+     },
+     "WriteMem": {
+        "prefix": "WriteMem",
+        "body": "WriteMem File#,Address,Length",
+        "description": "WriteMem allows you to write a number of bytes, determined by Length, from an absolute memory location, determined by Address to an open file specified by File#. "
+     },                        
+     "Exists": {
+        "prefix": "Exists",
+        "body": "Exists (FileName$)",
+        "description": "Exists actually returns the length of the file, unlike Lof() Exists() is for files that have not already been opened. If 0 the file either does not exist or is empty or is perhaps not a file at all! Hmmm, anyway the following poke turns off the \"Please Insert Volume Blah:\" requester so you can use Exists to wait for disk changes: Poke.l Peek.l(Peek.l(4)+276)+184,-1 ILBMlnfo Filename$ ILBMInfo examines an ILBM file. Once ILBMInfo has been executed. ILBMWidth, ILBMHeight and ILBMDepth examines properties of the image contained in file "
+     },
+     "ILBMWidth": {
+        "prefix": "ILBMWidth",
+        "body": "ILBMWidth",
+        "description": "ILBMWidth will return the width (pixels) of an ILBM image examined with ILBMInfo. "
+     },
+     "ILBMHeight": {
+        "prefix": "ILBMHeight",
+        "body": "ILBMHeight",
+        "description": "ILBMHeight will return the height (pixels) of an ILBM image examined with ILBMInfo. "
+     },
+     "ILBMDepth": {
+        "prefix": "ILBMDepth",
+        "body": "ILBMDepth",
+        "description": "ILBMDepth will return the depth (bitplanes) of ILBM image examined with ILBMInfo. "
+     },
+     "ILBMViewMode": {
+        "prefix": "ILBMViewMode",
+        "body": "ILBMViewMode",
+        "description": "ILBMViewMode returns the viewmode of the file that was processed by ILBMInfo. This is useful for opening a screen in the right mode before using LoadScreen etc.  Different values of ViewMode are as follows (add/or them for different combinations): Mode Value HiRes 32768 Ham 2048 HalfBrite 128 Interlace 4 LoRes 0 "
+     }   
 }
