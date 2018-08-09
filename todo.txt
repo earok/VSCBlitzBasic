@@ -1,49 +1,4 @@
 
-   "DCB": {
-      "prefix": "DCB",
-      "body": "DCB [.Size] Repeats,Data",
-      "description": "DCB stantd for 'define consistant block' .DCB allows you to insert a repeating series of the satire value into your assembler programs. ",
-   },
-   "EVEN": {
-      "prefix": "EVEN",
-      "body": "EVEN",
-      "description": "EVEN allows to word align Blitz's internal program counter. This may be necessary if a DC, DCB or DS statement has caused the program counter to be left at an odd address. ",
-   },
-   "GetReg": {
-      "prefix": "GetReg",
-      "body": "GetReg 68000 Reg,Expression",
-      "description": "GetReg allows you to tranfer the result of a BASIC expression to a 68000 register. The result of the expression will first be converted into a long value before being moved to the data register. GetReg should only be used to transfer expressions to one of the 8 data registers (d0-d7). GetReg will use the stack to temporarily store any registers used in calculation of theexpression. ",
-   },
-   "PutReg": {
-      "prefix": "PutReg",
-      "body": "PutReg 68000 Reg, Variable",
-      "description": "PutReg may he used to transfer a vlue from any 68000 register (d0-d7/a0-a7) into a BASIC variable. If the specified variable is a string, long, float or quick, then all 4 bytes from the register will be transfered. If the specified variable is a word or a byte, then only the relevant low bytes will be transferred. ",
-   },
-   "SysJsr": {
-      "prefix": "SysJsr",
-      "body": "SysJsr Routine",
-      "description": "SysJsr allows you to call any of Blitz's system routines from your own program. Routine specifies a routine number to call. ",
-   },
-   "TokeJsr": {
-      "prefix": "TokeJsr",
-      "body": "TokeJsr Token[,Form]",
-      "description": "TokeJsr allows to call any of Blitz's library based routines. Token refers to either a token number, or an actual token name. Form refers to a particular form of the token. ",
-   },
-   "ALibJsr": {
-      "prefix": "ALibJsr",
-      "body": "ALibJsr Token[,Form]",
-      "description": "ALibJsr is only used when writing Blitz libraries. ALibJsr allows you to call a routine from another library from within your own library. Please refer to the Library Writing section of the programmers guide for more information on library writing. ",
-   },
-   "BLibJsr": {
-      "prefix": "BLibJsr",
-      "body": "BLibJsr Token[,Form]",
-      "description": "BLibJsr is only used when writing Blitz libraries. BLibJsr allows you to call a routine from another library from within your own library. Please refer to the Library Writing section of the programmers guide for more information on library writing. ",
-   },
-   "AsmExit": {
-      "prefix": "AsmExit",
-      "body": "AsmExit",
-      "description": "AsmExit is used to exit from functions and statements written in assembler.  Registers A4-A6 must be preserved in functions and statements written in assembler. ",
-   },
    "Poke": {
       "prefix": "Poke",
       "body": "Poke [.Type] Address,Data",
