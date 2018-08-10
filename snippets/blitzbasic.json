@@ -1160,6 +1160,11 @@
         "body": "SetBPLCON0 Default",
         "description": "The SetBPLCON0 command has been added for advanced control of Slice display modes. The BPLCON0 hardware register is on page A4-l of the reference manual (appendix 4). The bits of interest are as follows: bit#1 ERSY external sync (for genlock enabling) bit#2 LACE interlace mode bit#3 LPEN light pen enable "
     },
+    "InitCopList": {
+        "prefix": "InitCopList",
+        "body": "InitCopList CopList#,ypos,height, type,sprites,colors,customs",
+        "description": "The ypos is usually set to 44 the standard top of frame for a PAL display. If CopLIst is to be used below another coplist on the same display ypos should be set to 2 scan lines below the last CopLists bottom line. Sprites should always be set to eight, even if they are not all available, colors should be set to the number required. When using more than 32 colours ensure that the #agacolors flag MUST be set. Customs allocate enough room for advanced custom copper lists to be attached to each display."
+    },
     "CreateDisplay": {
         "prefix": "CreateDisplay",
         "body": "CreateDisplay CopList#[,CopList#..]",
@@ -2764,40 +2769,40 @@
         "prefix": "CreateMsgPort",
         "body": "CreateMsgPort (\"Name\")",
         "description": "CreateMsgPort is a general Function and not specific to ARexx. CreateMsgPort opens an intuition PUBLIC message port of the name supplied as the only argument. If all is well the address of the port created will be returned to you as a LONGWORD so the variable that you assign it to should be of type long. If you do not supply a name then a private MsgPort will be opened for you. Port. 1=CreateMsgPort( \" PortName\" ) It is important that you check you actually succeeded in opening a port in your program. The following code or something similar will suffice. Port. 1=CreateMsgPort( \"Name\" ) IF Port=0 THEN Error_Routine{ } The name you give your port will be the name that Arexx looks for as the HOST address,(and is case sensitive) so take this into consideration when you open your port. NOTE IT MUST BE A UNIQUE NAME AND SHOULD NOT INCLUDE SPACES. DeleteMsgPort() is used to remove the port later but this is not entirely necessary as Blitz will clean up for you on exit if need be. "
-     },
-     "DeleteMsgPort": {
+    },
+    "DeleteMsgPort": {
         "prefix": "DeleteMsgPort",
         "body": "DeleteMsgPort (Port)",
         "description": "DeleteMsgPort deletes a MessagePort previously allocated with CreateMsgPort(). The only argument taken by DeleteMsgPort is the address returned by CreateMsgPort(). If the Port was a public port then it will be removed from the public port list. Port. 1=CreateMsgPort( \"Name\") IF Port=0 Then End DeleteMsgPort Port Error checking is not critical as if this fails we have SERIOUS PROBLEMS YOU MUST WAIT FOR ALL MESSAGES FROM AREXX TO BE RECEIVED BEFORE YOU DELETE THE MSGPORT.IF YOU NEGLECT TO DELETE A MSGPORT BLITZ2 WILL DO IT FOR YOU AUTOMATICALLY ON PROGRAM EXIT. "
-     },
-     "CreateRexxMsg": {
+    },
+    "CreateRexxMsg": {
         "prefix": "CreateRexxMsg",
         "body": "CreateRexxMsg (ReplyPort,\"exten' \"HOST\")",
         "description": "CreateRexxMsg() allocates a special Message structure used to communicate with Arexx. If all is successful it returns the LONGWORD address of this rexxmsg structure. The arguments are ReplyPort which is the long address returned by CreateMsgPort(). This is the Port that ARexx will reply to after it has finished with the message. EXTEN which is the exten name used by any ARexx script you are wishing to run. i.e. if you are attempting to run the ARexx script test.rexx you would use an EXTEN of \"rexx\" HOST is the name string of the HOST port. Your program is usually the HOST and so this equates to the name you gave your port in CreateMsgPort(). REMEMBER IT IS CASE SENSITIVE. As we are allocating resources error checking is important and can be achieved with the following code: msg.l=CreateRexxMsg(Port, \"rexx\",\"HostName\" ) IF msg=0 THEN Error_Routine{ } DeleteRexxMag rexxmsg DeleteRexxMsg simply deletes a RexxMsg Structure previously allocated by CreateRexxMsg(). It takes a single argument which is the long address of a RexxMsg structure such as returned by CreateRexxMsg(). msg.l=CreateRexxMsg(Port, \"rexx \",\"HostName\") IF msg=0 THEN Error Routine( } DeleteRexxMsg msg Again if you neglect to delete the RexxMsg structure Blitz will do this for you on exit of the program. "
-     },
-     "ClearRexxMsg": {
+    },
+    "ClearRexxMsg": {
         "prefix": "ClearRexxMsg",
         "body": "ClearRexxMsg Arexxmsg",
         "description": "ClearRexxMsg is used to delete and clear an ArgString from one or more of the Argument slots in a RexxMsg Structure. This is most useful for the more advanced programmer wishing to take advantage of the Arexx #RXFUNC abilities. The arguments are a LONGWORD address of a RexxMsg structure. ClearRexxMsg will always work from slot number 1 forward to 16. "
-     },
-     "FillRexxMsg": {
+    },
+    "FillRexxMsg": {
         "prefix": "FillRexxMsg",
         "body": "FillRexxMsg ( rexxmsg,&FillStruct)",
         "description": "FillRexxMsg allows you to fill all 16 ARGSlots if necessary with either ArgStrings or numerical values depending on your requirement. FillRexxMsg will only be used by those programmers wishing to do more advanced things with Arexx, including adding libraries to the ARexx library list, adding Hosts,Value Tokens etc. It is also needed to access Arexx using the #RXFUNC flag. The arguments are a LONG Pointer to a rexxmsg. The LONG address of a FillStruct NEWTYPE structure. This structure is defined in the Arexx.res and has the following form. NEWTYPE .FillStruct Flags.w ;Flag block Args0.l ; argument block (ARG0-ARG15) Args1.l ; argument block (ARG0-ARG15) Args2.l ; argument block (ARG0-ARG15) Args3.l ; argument block (ARG0-ARG15) Args4.l ; argument block (ARG0-ARG15) Args5.l ; argument block (ARG0-ARG15) Args6.l , argument block (ARG0-ARG15) Args7.l , argument block (ARG0-ARG15) Args8.l ; argument block (ARG0-ARG15) Args9.l ; argument block (ARG0-ARG15) Args10.l ; argument block (ARG0-ARG15) Args11.l ; argument block (ARG0-ARG15) Args12.l ; argument block (ARG0-ARG15) Args13.l ; argument block (ARG0-ARG15) Args14.l ; argument block (ARG0-ARG15) Args15.l ; argument block (ARG0-ARG15) EndMark.l ; End of the FillStruct End NEWTYPE The Args?.l are the 16 slots that can possibly be filled ready for converting into the RexxMsg structure. The Flags.w is a WORD value representing the type of LONG word you are supplying for each ARGSLOT (Arg?.l). Each bit in the Flags WORD is representative of a single Args?.l, where a set bit represents a numerical value to be passed and a clear bit represents a string argument to be converted into a ArgString before installing in the RexxMsg. The Flags Value is easiest to supply as a binary number to make the bits visible and would look like this. %0000000000000000  ;represents that all Arguments are Strings. %0110000000000000  ;represent second&third as being integers. FillRexxMsg expects to find the address of any strings in the Args?.l slots so it is important to remember when filling a FillStruct that you must pass the string address and not the name of the string. This is accomplished using the '&' address of operand. So to use FillRexxMsg we must do the following things in our program: 1. Allocate a FillStruct 2. Set the flags in the FillStruct\\Flags. 3. Fill the FillStruct with either integer values or the addresses of our string arguments. 4. Call FillRexxMsg with the LONG address of our rexxmsg and the LONG address of our   FillStruct. To accomplish this takes the following code: ;Allocate our FillStruct (called F) DEFTYPE.FillStruct F ;assign some string arguments T$=\"open \" :T1$=\"-0123456789\" ;Fill in our FillStruct with flags and (&) addresses of our strings F\\Flags= %0010000000000000,&T$,&T1$,4 ;Third argument here is an integer (4). Port.l=CreateMsgPort( \"host\") msg.l=CreateRexxMsg(Port,\"vc\",\"host\") FillRexxMsg msg,&F ;<-3 ergs see #RXFUNC SendRexxCommand msg,\"\",#RXFUNCI #RXFF RESULTI 3 "
-     },
-     "CreateArgString": {
+    },
+    "CreateArgString": {
         "prefix": "CreateArgString",
         "body": "CreateArgString (\"this is a string\")",
         "description": "CreateArgString() builds an ARexx compatible ArgString structure around the provided string. All strings sent to, or received from Arexx are in the form of ArgStrings. See the TYPE RexxARG. If all is well the return will be a LONG address of the ArgString structure. The pointer will actually point to the NULL terminated String with the remainder of the structure available at negative offsets. "
-     },
-     "DeleteArgString": {
+    },
+    "DeleteArgString": {
         "prefix": "DeleteArgString",
         "body": "DeleteArgString ArgString",
         "description": "DeleteArgString is designed to Delete ArgStrings allocated by either Blitz or ARexx in a system friendly way. It takes only one argument the LONGWORD address of an ArgString as returned by CreateArgString(). "
-     },
-     "SendRexxCommand": {
+    },
+    "SendRexxCommand": {
         "prefix": "SendRexxCommand",
         "body": "SendRexxCommand rexxmsg, \"commands/ring \",#RXCOMMI #RXFF RESULT",
         "description": "SendRexxCommand is designed to fill and send a RexxMsg structure to ARexx inorder to get ARexx to do something on your behalf. The arguments are as follows; rexxmsg: the LONGWORD address of a RexxMsg structure as returned by CreateRexxMsg(). commands/ring: the command string you wish to send to ARexx. This is a string as in \"this is a string\" and will vary depending on what you wish to do with ARexx. Normally this will be the name of an ARexx script file you wish to execute. ARexx will then look for the script by the name as well as the name with the exten added.(this is the exten you used when you created the RexxMsg structure using CreateRexxMsg()). This could also be a string file. That is a complete ARexx script in a single line. ActionCodes: the flag values you use to tell ARexx what you want it to do with the commandstring you have supplied. "
-     }
+    }
 }
