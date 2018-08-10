@@ -2489,5 +2489,315 @@
         "prefix": "LoadFont",
         "body": "LoadFont IntuiFont#,Fontname.font$,YSize[,style]",
         "description": "LoadFont is used to load a font from the fonts: directory. Unlike BlitzFonts any size IntuiFont can be used. The command WindowFont is used to set text output to a certain IntuiFont in a particular Window. The LoadFont command has been extended with an optional style parameter. The following constants may be combined: #underl ined= 1 #bold=2 #italic=4 #extended=8 ;wider than normal #colour=64 ;hmm use colour version I suppose "
-    }
+    },
+    "ButtonGroup": {
+        "prefix": "ButtonGroup",
+        "body": "ButtonGroup Group -",
+        "description": "ButtonGroup allows you to determine which 'group' a number of button type gadgets belong to. Following the execution of ButtonGroup, any button gadgets created will be identified as belonging to the spiecified group. The upshot of all this is that button gadgets are only mutually exclusive to other button gadgets within the same group. 'Group' must be a positive number greater than 0. Any button gadgets created before a'ButtonGroup' command is executed will belong to group 1. "
+    },
+    "SetGadgetStatus": {
+        "prefix": "SetGadgetStatus",
+        "body": "SetGadgetStatus GadgetList#,Id,Value",
+        "description": "SetGadgetStatus is used to set a cycling text gadget to a particular value, once set ReDraw should be used to refresh the gadget to reflect it's new value. "
+    },
+    "GadgetPens": {
+        "prefix": "GadgetPens",
+        "body": "GadgetPens Foreground Colour[,Background Colour]",
+        "description": "GadgetPens determines the text colours used when text gadgets are created using the TextGadget command. The default values used for gadget colours are a foreground colour of 1, and a background colour of 0. "
+    },
+    "GadgetJam": {
+        "prefix": "GadgetJam",
+        "body": "GadgetJam Jammode",
+        "description": "GadgetJam allows you to determine the text rendering method used when gadgets are created using the TextGadget command. Please refer to the WJam command in the windows chapter for a full description of jam modes available. "
+    },
+    "SelectMode": {
+        "prefix": "SelectMode",
+        "body": "SelectMode mode",
+        "description": "SelectMode is used to predefine how gadget rendering will show a gadget selection, modes are 1 for box and 0 for inverse. Use prior to creation of gadgets. "
+    },
+    "ShapeGadget": {
+        "prefix": "ShapeGadget",
+        "body": "ShapeGadget GadgetList#,X,Y,Flags,ld,Shape#[,Shape#",
+        "description": "ShapeGadget command allows to create gadgets with graphic imagery. Shape# refers to a shape object containing the graphics you wish the gadget to contain. ShapeGadget command has been extended to allow an alternative image to be displayed when the gadget is selected. All other parameters are identical to those in TextGadget. "
+    },
+    "StringGadget": {
+        "prefix": "StringGadget",
+        "body": "StringGadget GadgetList#,X, Y,Flags,ld,Maxlen, Width",
+        "description": "StringGadget allows to create an Intuition style 'text entry' gadget. When clicked on, a string gadget brings up a text cursor, and is ready to accept text entry trom keyboard. X and Y specifies the gadgets, position, relative to the top left of the window it is to appear in. See the beginning of the chapter for the relevant Flags tor a string gadget. Id is an identification value to be attached to this gadget. All gadgets in a gadgetlist should have unique Id numbers, allowing you to detect which gadgets has been selected. Id may be any positive, non-zero number. Maxlen refers to the maximum number of characters which may appear in this gadgets. Width refers to how wide, in pixels, the gadget should be. A string gadget may have a width less than the maximum number of characters it may contain, as characters will be scrolled through the gadget when necessary. You may read the current contents of a string gadget using the StringText function. "
+    },
+    "StringText$": {
+        "prefix": "StringText$",
+        "body": "StringText$ (GadgetList#,ld)",
+        "description": "Stringtext$ function allows you to determine the current contents of a string gadget. StringText$ will return a string of characters representing the string gadgets contents. "
+    },
+    "ActivateString": {
+        "prefix": "ActivateString",
+        "body": "ActivateString Window#,ld",
+        "description": "ActivateString may be used to 'automatically' activate a string gadget. This is identical to the program user having clicked in the string gadget themselves, as the string gadget's cursor will appear, and further keystrokes will be sent to the string gadget. It is often nice of a program to activate Important string gadgets, as it saves the user the hassle of having to reach t'or the mouse before the keyboard. "
+    },
+    "ResetString": {
+        "prefix": "ResetString",
+        "body": "ResetString GadgetList#,ld",
+        "description": "ResetString allows you to 'reset' a string gadget. This will cause the string gadget's cursor position to be set to the leftmost position. "
+    },
+    "ClearString": {
+        "prefix": "ClearString",
+        "body": "ClearString GadgetList#,l",
+        "description": "ClearString may be used to clear, or erase, the text in the specified string gadget. The cursor position will also be moved to the leftmost position in the string gadget. If a string gadget is cleared while it is displayed in a window, the text will not be erased from the actual display. To do this, ReDraw must be executed. "
+    },
+    "SetString": {
+        "prefix": "SetString",
+        "body": "SetString GadgetList#, ID, String$",
+        "description": "SetString may be used to initialize the contents of a string gadget created with the StringGadget command. If the string gadget specified by GadgetList# and id is already displayed, you will also need to execute ReDraw to display the change. "
+    },
+    "PropGadget": {
+        "prefix": "PropGadget",
+        "body": "PropGadget GadgetList#,X, Y,Flags,ld, Width,Height",
+        "description": "The PropGadget command is used to create a 'proportional gadget'. Proportional gadgets present a program user with a 'slider bar', allowing them to adjust the slider to achieve a desired effect. Proportional gadgets are commonly used for the 'R G B' sliders seen in many paint packages. Proportional gadgets have 2 main qualities - a 'pot' (short for potentiometer) setting, and a'body' setting. The pot setting refers to the current position of the slider bar, and is in the range 0 through 1. For example, a proportional gadget which has been moved to 'half way' would have a pot setting of '.5'. The body setting refers to the size of the units the proportional gadget represents, and is again in the range 0 through 1. Again taking the RGB colour sliders as an example, each slider is intended to show a particular value in the range 0 through 15 - giving a unit size, or body setting, of 1/16 or '.0625'. Put simply, the pot setting describes 'where' the slider bar is, while the body setting describes 'how big' it is. Proportional gadgets may be represented as either horizontal slider bars, vertical slider bars, or a combination of both. See the beginning of the chapter for relevant Flags settings for prop gadgets. X and Y refer to the gadgets position, relative to top left of the window it is opened in. Width and Height refer to the size of the area the slider should be allowed to move in. Id is a unique, non zero nr. which allows to identify when the gadget is manipulated. Proportional gadgets may be altered using the SetVProp and SetHProp commands, and read using the VPropPot, VPropBody, HPropPot and HPropBody functions. "
+    },
+    "SetHProp": {
+        "prefix": "SetHProp",
+        "body": "SetHProp GadgetList#,ld,Pot,Bod",
+        "description": "SetHProp is used to alter the horizontal slider qualities of a proportional gadget. Both Pot and Body should be in the range 0 through 1. If SetHProp is executed while the specified gadget is already displayed, execution of the ReDraw command will be necessary to display the changes. For a full discussion on proportional gadgets, please refer to the PropGadget command. "
+    },
+    "SetVProp": {
+        "prefix": "SetVProp",
+        "body": "SetVProp GadgetList#,ld,Pot, Body",
+        "description": "SetVProp is used to alter the vertical slider qualities of a proportional gadget. Both Pot and Body should be in the range 0 through 1. If SetVProp is executed while the specified gadget is already displayed, execution of the ReDraw command will be necessary to display the changes. "
+    },
+    "HPropPot": {
+        "prefix": "HPropPot",
+        "body": "HPropPot (GadgetList#,ld)",
+        "description": "The HPropPot function allows you to determine the current 'pot' setting of a proportional gadget. HPropPot will return a number from 0 up to, but not including, 1, reflecting the gadgets current horizontal pot setting. "
+    },
+    "HPropBody": {
+        "prefix": "HPropBody",
+        "body": "HPropBody (GadgetList#,ld)",
+        "description": "The HPropBody function allows you to determine the current 'body' setting of a proportional gadget. HPropBody will return a number from 0 up to, but not including, 1, reflecting the gadgets current horizontal body setting. "
+    },
+    "VPropPot": {
+        "prefix": "VPropPot",
+        "body": "VPropPot (GadgetList#,ld)",
+        "description": "The VPropPot function allows you to determine the current 'pot' setting of a proportional gadget. VPropPot will return a number from 0 up to, but not including, 1, reflecting the gadgets current vertical pot setting. "
+    },
+    "VPropBody": {
+        "prefix": "VPropBody",
+        "body": "VPropBody (GadgetList#,ld)",
+        "description": "The VPropBody function allows you to determine the current 'body' setting of a proportional gadget. VPropBody will return a number from 0 up to, but not including, 1, reflecting the gadgets current vertical body setting. "
+    },
+    "Redraw": {
+        "prefix": "Redraw",
+        "body": "Redraw Window#,id",
+        "description": "ReDraw will redisplay the specified gadget in the specified window. This command is mainly of use when a proportional gadget has been altered using SetHProp or SetVProp and needs to be redrawn, or when a string gadget has been cleared using ClearString, and, likewise, needs to be redrawn. "
+    },
+    "Borders": {
+        "prefix": "Borders",
+        "body": "Borders [On I Off] I [Width, Height]",
+        "description": "Borders serves 2 purposes. First, Borders may be used to turn on or off the automatic creation of borders around text and string gadgets. Borders are created when either a Textgadget or StringGadget command is executed. If you wish to disable this, Borders Off should be executed before the appropriate TextGadget or StringGadget command. Borders may also be used to specify the spacing between a gadget and it's border, Width referring to the left/right spacing, and Height to the above/below spacing. "
+    },
+    "BorderPens": {
+        "prefix": "BorderPens",
+        "body": "BorderPens Highlight Colour,Shadow Colour",
+        "description": "BorderPens allows you to control the colours used when gadget borders are created. Gadget borders may be created by the TextGadget, StringGadget and GadgetBorder. HighLight Colour refers to the colour of the top and left edges of the border, while Shadow Colour refers to the right and bottom edges. The default value for HighLight Colour is 1. The default value for Shadow Colour is 2. "
+    },
+    "Gadget": {
+        "prefix": "Gadget",
+        "body": "Gadget Border X, Y, Width, Height",
+        "description": "The GadgetBorder command may be used to draw a rectangular border into the currently used window. Proportional gadgets and shape gadgets do not have borders automatically created tor them. The GadgetBorder command may be used, once a window is opened, to render borders around these gadgets. X,Y, Width and Height refer to the position of the gadget a border is required around. GadgetBorder will automatically insert sapces between the gadget and the border. The Borders command may be used to alter the amount of spacing. Of course, GadgetBorder may be used to draw a border around any arbitary area, regardless of whether or not that area contains a gadget. "
+    },
+    "GadgetStatus": {
+        "prefix": "GadgetStatus",
+        "body": "GadgetStatus (GadgetList#,ld)",
+        "description": "GadgetStatus may be used to determine the status of the specified gadget. In the case of toggle' type gadget, GadgetStatus will return true (-1) if the gadget is currently on, or false (0) if the gadget is currently off. In the case of a cycling text gadget, GadgetStatus will return a value of 1 or greater representing the currently displayed text within the gadget. "
+    },
+    "ButtonId": {
+        "prefix": "ButtonId",
+        "body": "ButtonId (GadgetList#,ButtonGroup)",
+        "description": "ButtonId it´s used to determine which gadget within a group of button type gadgets is currently selected. The value returned will be the GadgetId of the button gadget currently selected. Enable GadgetList#,ld A gadget when disabled is covered by a \"mesh\" and can not be accessed by the user. Commands Enable & Disable allow the programmer to access this feature of Intuition. Disable GadgetList#,ld A gadget when disabled is covered by a \"mesh\" and can not be accessed by the user. Commands Enable & Disable allow the programmer to access this feature of Intuition. "
+    },
+    "Toggle": {
+        "prefix": "Toggle",
+        "body": "Toggle GadgetList#,ID[,On|Off]",
+        "description": "The Toggle command in the gadget library has been extended so it will actually toggle a gadgets status if the On I Off parameter is missing. "
+    },
+    "MenuTitle": {
+        "prefix": "MenuTitle",
+        "body": "MenuTitle Menulist#,Menu,Title",
+        "description": "MenuTitle is used to add a menu title to a menulist. Menu titles appear when the right mouse button is held down, and usually have menuitems attached to them. Menu specifies which menu the title should be used for. Higher numbered menus appear further to the right along the menu bar, with 0 being the leftmost menu. Menutitles should be added in left to right order, with menu 0 being the first created, then 1 and so on... Title$ is the actual text you want to appear when the right mouse button is pressed. "
+    },
+    "MenuItem": {
+        "prefix": "MenuItem",
+        "body": "MenuItem MenuList#, Flags, Menu,ltem,ltemtext$[, Shortcut$]",
+        "description": "MenuItem is used to create a text menu item. Menu items appear vertically below menu titles when mouse is moved over a menu title with the right mouse button held down. Flags affects operation of menu item. A value of 0 creates a stand 'select' menu item. A value of 1 creates a 'toggle' menu item. Toggle menu items are used for 'on/off' type options. When a toggle menu item is selected, it will change state between on and off. An 'on' toggle item is identified by a 'tick' or check mark A value of 2 creates a special type of toggle menu item. Any menu items which appear under the same menu with a Flags setting of 2 are said to be mutually exclusive. This means that only 1 of them may begin the 'on' state at one time. If a menu item of this nature is toggled into the 'on' state, any other mutually exclusive menu items which may have previously been 'on' will be automatically turned 'off'. Flags values of 3 and 4 correspond to values 1 and 2, only the item will initially appear in the 'on' state. Menu specifies the menu title under which the menu item should appear. Item specifies the menu item number, this menu item should be referenced as. Higher numbered items appear further down a menu item list, with 0 being topmost item. Menu items should be added in 'top down' order, with item 0 being the first item created. Itemtext$ is the actual text for the menu item. An optional Shortcut$ string allows you to select a one character 'keyboard shortcut' for the menu item."
+    },
+    "ShapeItem": {
+        "prefix": "ShapeItem",
+        "body": "ShapeItem MenuList#, Flags,Menu, Item, Shape# ",
+        "description": "ShapeItem is used to create a graphical menu item. Shape# refers to a previously initialized shape object to be used as the menu item's graphics. All other parameters are identical to those for MenuItem."
+    },
+    "SubItem": {
+        "prefix": "SubItem",
+        "body": "SubItem MenuList#,Flags,Menu,ltem,Subitem,Subitem text$[,Shortcut$] ",
+        "description": "All menu items may have an optional list of sub menu items attached to them. To attach a sub menu item to a menu item, you use the SubItem command. Item specifies the menu item to attach the sub item to. Subitem refers to the number of the sub menu item to attach. Higher numbered sub items appear further down a sub item list, with 0 being the topmost sub item. Sub items should be added in 'top down' order, with sub item 0 being created first. .  Subitemtext$ specifies the actual text for the sub item. As with menu items, sub items may have an optional keyboard shortcut, specified using Shortcut$ parameter. All other parameters are identical to the MenuItem command."
+    },
+    "ShapeSub": {
+        "prefix": "ShapeSub",
+        "body": "ShapeSub MenuList#,Flags,Menu,Item,Subitem,Shape#",
+        "description": "ShapeSub allows you to create a graphic sub menu item. Shape# specifies a previously created shape object to be used as the sub item's graphics. All other parameters are identical to those in SubItem. "
+    },
+    "SetMenu": {
+        "prefix": "SetMenu",
+        "body": "SetMenu MenuList#",
+        "description": "SetMenu is used to attach a menulist to the currently used window. Each window may have only one menulist attached to it. MenuGap X Gap, Y Gap Executing MenuGap before creating any menu titles, items or sub items, allows you to control the layout of the menu. X Gap refers to an amount, specified in pixles, to be inserted to the left and right of all menu items and sub menu items. Y Gap refers to an amount, again in pixels, to be inserted above and below all menu items and sub menu items. "
+    },
+    "SubitemOff": {
+        "prefix": "SubitemOff",
+        "body": "SubitemOff X Offset, Y Offset",
+        "description": "SubItemOff allows you to control the relative position of the top of a list of sub menu items, in relation to their associated menu item. Whenver a menu item is created which is to have sub menu items, it's a good idea to append the name of the menu item with the '>>' character. This may be done using Chr$(187). This gives the user a visual indication that more options are available. To position the sub menu items correctly so that they appear after the '>>' character, SubItemOff should be used. "
+    },
+    "MenuState": {
+        "prefix": "MenuState",
+        "body": "MenuState MenuList#[ Menu[, Item[, Subitem]]], On l Off",
+        "description": "The MenuState command allows you to turn menus, or sections of menus, on or off. MenuState with just MenuList# parameter it´s used to turn an entire menu list on or off. MenuState with MenuList# and Menu parameters may be used to turn a menu on or off. Similarly, menu items and sub items may be turned on or off by specifying the appropriate parameters. "
+    },
+    "MenuColour": {
+        "prefix": "MenuColour",
+        "body": "MenuColour Colour",
+        "description": "MenuColour allows to determine what colour any menu item or sub item text is rendered in. MenuColour should be executed before appropriate menu item commands. "
+    },
+    "MenuChecked": {
+        "prefix": "MenuChecked",
+        "body": "MenuChecked (MenuList#, Menu,ltem[, Subitem]",
+        "description": "The MenuChecked function allows you to tell whether or not a 'toggle' type menu item or menu sub item is currently 'checked' or ton'. If the specified menu item or sub item is in fact checked, MenuChecked will return 'true' (-1). If not, MenuChecked will return 'false' (0)."
+    },
+    "GTButton": {
+        "prefix": "GTButton",
+        "body": "GTButton GTList#, id,x,y, w,h, Text$, flags",
+        "description": "Same as Blitz's TextGadget but with the added flexibility of placing the label Text$ above, below to the left or right of the button (see flags)."
+    },
+    "GTCheckBox": {
+        "prefix": "GTCheckBox",
+        "body": "GTCheckBox GTList#,id,x,y, w,h, Text$, flags",
+        "description": "A box with a check mark that toggles on and off, best used for options that are either enabled or disabled"
+    },
+    "GTCycle": {
+        "prefix": "GTCycle",
+        "body": "GTCycle GTList#,id,x,y, w,h, Text$, flags, Options$",
+        "description": "Used for offering the user a range of options, the options string should be a list of options separated by the l character ea. \"HIRES l LORES l SUPER HIRES \""
+    },
+    "GTInteger": {
+        "prefix": "GTInteger",
+        "body": "GTInteger GTList#,id,x,y, w,h, Text$, flags, default",
+        "description": "A string gadget that allows only numbers to be entered by the user.See GTSetInteger and GTGetInteger for information about accessing the contents of a GTInteger gadget."
+    },
+    "GTListView": {
+        "prefix": "GTListView",
+        "body": "GTListView GTList#,id,x,y,w,h, Text$, flags, list0",
+        "description": "ListView gadget enables user to scroll through a list of options. These options must be contained in a string field of a Blitz linked list. Currently this string field must be the 2nd field, the first being a word type. See the GTChangeList command for more details. "
+    },
+    "GTMX": {
+        "prefix": "GTMX",
+        "body": "GTMX GTList#,id,x,y,w,h, Text$, flags, Options$",
+        "description": "GTMX is an exclusive selection gadget, the Options$ is the same as GTCycle in format, GadTools then displays all the options in a vertical list each with a hi-light beside them. GTNumber GTList#,id,x,y,w,h, Text$, flags, value This is a readonly gadget (user cannot interact with it) used to display numbers. See GTSetInteger to update the contents of this read only \"display\" gadget. GTPalette GTList#,id,x,y,w,h, Text$, flags, depth Creates a number of coloured boxes relating to a colour palette, GTScroller GTList#,id,x,y,w,h, Text$, flags, Visible, Total A prop type gadget for the user to control an amount or level, is accompanied by a set of arrow gadgets GTSlider GTList#,id,x,y,w,h, Text$, flags, Min, Max Same as Scroller but for controlling the position of the display inside a larger view. GTString GTList#,id,x,y,w,h, Text$, flags, MaxChars A standard string type gadget. See GTSetString and GTGetString for accessing the contents of a GTString gadget. GTText GTList#,id,x,y,w,h, Text$, flags, Display$ A read only gadget (see GTNumber) for displaying text messages. See GTSetString for updating the contents of this read only \"display\" gadget. GTShape GTList#,id,x,y, flags, Shape#[, Shape#] Similar to the Blitz ShapeGadget allowing IFF graphics that are loaded int Blitz shape objects to be used as gadgets in a window. "
+    },
+    "AttachGTList": {
+        "prefix": "AttachGTList",
+        "body": "AttachGTList GTList#, Window#",
+        "description": "The AttachGTList command is used to attach a set of GadTools gadgets to a Window after it has been opened. "
+    },
+    "GTTags": {
+        "prefix": "GTTags",
+        "body": "GTTags Tag, Value 1,Tag, Value...]",
+        "description": "The GTTags command can be used prior to initialization of any of the 12 gadtools gadgets to preset any relevant Tag fields. The following are some useful Tags that can be used with GTTags: #tag=$80080000 #GTCB Checked=#tag+4 ; State of checkbox #GTLV_Top=#tag+5 ; Top visible item in listview #GTLV_ReadOnly=#tag+7 ; Set TRUE if lisiview is ReadOnly #GTMX_Active=#tag+10 ; Active one in mx gadget #GTTX_Text=#tag+11 ; Text to display #GTNM_Number=#tag+ 13 ; Number to display #GTCY_Active=#tag+ 15 ; The active one in the cycle gad #GTPA_Color=#tag+ 17 ; Palette color #GTPA ColorOffset=#tag+18 ; First color to use in palette #GTSC_Top=#tag+21 ; Top visible in scroller #GTSC_Total=#tag+22 ; Total in scroller area #GTSC_Visible=#tag+23 ; Number visible in scroller #GTSL_Level=#tag+40 ; Slider level #GTSL_MaxLevelLen=#tag+41 ; Max length of printed level #GTSL_LevelFormat=#tag+42 ;* Format string for level #GTSL_LevelPlace=#tag+43 ;* Where level should be placed #GTLV_Selected=#tag+54 ; Set ordinal number of selected #GTMX_Spacing=#tag+61 ;* Added to font height All of the above except for those marked * can be set after initialization of the Gadget using the GTSetAttrs command. The following is an example of creating a slider gadget with a numeric display: f$=\"%21d  \"GTTags#GTSLLevelFormat,&f$,#GTSLMaxLevelLen,4GTSlider 2,10,320,120,200,20,\"GTSLIDER\",2,0,10 "
+    },
+    "GTGadPtr": {
+        "prefix": "GTGadPtr",
+        "body": "GTGadPtr (GTList#,id)",
+        "description": "GTGadPtr returns the actual location of the specified GadTools gadget in memory. "
+    },
+    "GTBevelBox": {
+        "prefix": "GTBevelBox",
+        "body": "GTBevelBox GTList#,x,y,w,h,flags",
+        "description": "GTBevelBox is the GadTools library equivalent of the Borders command and can be used to render frames and boxes in the currently used Window "
+    },
+    "GTChangeList": {
+        "prefix": "GTChangeList",
+        "body": "GTChangeList GTList#,id [,List()]",
+        "description": "GTChangeList must be used whenever a List attached to a GTListView needs to be modified. Call GTChangeList without the List() parameter to free the List, modify it then reattach it with another call to GTChangeList this time using the List() parameter. "
+    },
+    "GTSetAttrs": {
+        "prefix": "GTSetAttrs",
+        "body": "GTSetAttrs GTList#,id [, Tag, Value...]",
+        "description": "GTSetAttrs can be used to modify the status of certain GadTools gadgets with the relevant Tags. See GTTags for more information. GTSetString GTList#,id,string$ Used with both GTString and GTText gadgets, GTSetString will not only update the contents of the gadget but redraw it also. GTSetinteger GTList#,id,value Used with both GTInteger and GTNumber gadgets, GTSetInteger will not only update the contents of the gadget but redraw it also. GTGetString GTList#,id Used to read the contents from a GTString gadget. GTGetinteger GTList#,id Used to read the contents from a GTlnteger gadget. GTGetAttrs (GTList#,id,Tag) A 3.0 specific command. See C= documentation for more information. GTEnable GTList#,ld Allows GTGadgets to be enabled and disabled. GTDisable GTList#,ld Allows GTGadgets to be enabled and disabled. "
+    },
+    "GTToggle": {
+        "prefix": "GTToggle",
+        "body": "GTToggle GTList#,ld[,On l Off]",
+        "description": "GTToggle allows the programmer to set Boolean gadgets such as GTButton and GTCheckbox to a desired state. "
+    },
+    "GTStatus": {
+        "prefix": "GTStatus",
+        "body": "GTStatus (GTList#,ld)",
+        "description": "GTStatus returns the status of the gadtools toggle gadgets, a value of 1 means the the gadget is selected, 0 deselected."
+    },
+    "ASLFileRequest$": {
+        "prefix": "ASLFileRequest$",
+        "body": "ASLFileRequest$ (Title$,Pathname$,Filename$ tPattern$] [,x,y, w,h] )",
+        "description": "The ASL File Requester is nice. Except for the highlight bar being invisible on directories you get to use keyboard for everything, stick in a pattern$ to hide certain files and of course you get what ever size you want. 1 made it call the Blitz file requester if the program is running under 1.3 (isn't that nice!). There is a fix that patches the ReqTools file requester but that doesn't have the date field."
+    },
+    "ASLPathRequest$": {
+        "prefix": "ASLPathRequest$",
+        "body": "ASLPathRequest$(Title$,Pathname$ [,x,y,w,h])",
+        "description": "Same as ASLFileRequest$ except will just prompt the user for a path name (directory) rather than an actual file."
+    },
+    "ASLFontRequest": {
+        "prefix": "ASLFontRequest",
+        "body": "ASLFontRequest (enable flags) ",
+        "description": "The ASL Font Requester is also pretty useful. The flags parameter enables the user to modify the following options: #pen=1 :#bckgrnd=2:#style=4:#drawmode=8:#fixsize=16 It doesn't seem to handle colour fonts, no keyboard shortcuts so perhaps patching ReqTools is an option for this one. The following code illustrates how a .fontinfo structure is created by a call to ASLFontRequest (just like in high level language man!)."
+    },
+    "ASLScreenRequest": {
+        "prefix": "ASLScreenRequest",
+        "body": "ASLScreenRequest (enable flags) ",
+        "description": "Those who are just getting to grips with 2.0 and above will find this command makes your programs look really good, however I haven't got time to explain the difficulties of developing programs that work in all screen resolutions (what are ya?). "
+    },
+    "CreateMsgPort": {
+        "prefix": "CreateMsgPort",
+        "body": "CreateMsgPort (\"Name\")",
+        "description": "CreateMsgPort is a general Function and not specific to ARexx. CreateMsgPort opens an intuition PUBLIC message port of the name supplied as the only argument. If all is well the address of the port created will be returned to you as a LONGWORD so the variable that you assign it to should be of type long. If you do not supply a name then a private MsgPort will be opened for you. Port. 1=CreateMsgPort( \" PortName\" ) It is important that you check you actually succeeded in opening a port in your program. The following code or something similar will suffice. Port. 1=CreateMsgPort( \"Name\" ) IF Port=0 THEN Error_Routine{ } The name you give your port will be the name that Arexx looks for as the HOST address,(and is case sensitive) so take this into consideration when you open your port. NOTE IT MUST BE A UNIQUE NAME AND SHOULD NOT INCLUDE SPACES. DeleteMsgPort() is used to remove the port later but this is not entirely necessary as Blitz will clean up for you on exit if need be. "
+     },
+     "DeleteMsgPort": {
+        "prefix": "DeleteMsgPort",
+        "body": "DeleteMsgPort (Port)",
+        "description": "DeleteMsgPort deletes a MessagePort previously allocated with CreateMsgPort(). The only argument taken by DeleteMsgPort is the address returned by CreateMsgPort(). If the Port was a public port then it will be removed from the public port list. Port. 1=CreateMsgPort( \"Name\") IF Port=0 Then End DeleteMsgPort Port Error checking is not critical as if this fails we have SERIOUS PROBLEMS YOU MUST WAIT FOR ALL MESSAGES FROM AREXX TO BE RECEIVED BEFORE YOU DELETE THE MSGPORT.IF YOU NEGLECT TO DELETE A MSGPORT BLITZ2 WILL DO IT FOR YOU AUTOMATICALLY ON PROGRAM EXIT. "
+     },
+     "CreateRexxMsg": {
+        "prefix": "CreateRexxMsg",
+        "body": "CreateRexxMsg (ReplyPort,\"exten' \"HOST\")",
+        "description": "CreateRexxMsg() allocates a special Message structure used to communicate with Arexx. If all is successful it returns the LONGWORD address of this rexxmsg structure. The arguments are ReplyPort which is the long address returned by CreateMsgPort(). This is the Port that ARexx will reply to after it has finished with the message. EXTEN which is the exten name used by any ARexx script you are wishing to run. i.e. if you are attempting to run the ARexx script test.rexx you would use an EXTEN of \"rexx\" HOST is the name string of the HOST port. Your program is usually the HOST and so this equates to the name you gave your port in CreateMsgPort(). REMEMBER IT IS CASE SENSITIVE. As we are allocating resources error checking is important and can be achieved with the following code: msg.l=CreateRexxMsg(Port, \"rexx\",\"HostName\" ) IF msg=0 THEN Error_Routine{ } DeleteRexxMag rexxmsg DeleteRexxMsg simply deletes a RexxMsg Structure previously allocated by CreateRexxMsg(). It takes a single argument which is the long address of a RexxMsg structure such as returned by CreateRexxMsg(). msg.l=CreateRexxMsg(Port, \"rexx \",\"HostName\") IF msg=0 THEN Error Routine( } DeleteRexxMsg msg Again if you neglect to delete the RexxMsg structure Blitz will do this for you on exit of the program. "
+     },
+     "ClearRexxMsg": {
+        "prefix": "ClearRexxMsg",
+        "body": "ClearRexxMsg Arexxmsg",
+        "description": "ClearRexxMsg is used to delete and clear an ArgString from one or more of the Argument slots in a RexxMsg Structure. This is most useful for the more advanced programmer wishing to take advantage of the Arexx #RXFUNC abilities. The arguments are a LONGWORD address of a RexxMsg structure. ClearRexxMsg will always work from slot number 1 forward to 16. "
+     },
+     "FillRexxMsg": {
+        "prefix": "FillRexxMsg",
+        "body": "FillRexxMsg ( rexxmsg,&FillStruct)",
+        "description": "FillRexxMsg allows you to fill all 16 ARGSlots if necessary with either ArgStrings or numerical values depending on your requirement. FillRexxMsg will only be used by those programmers wishing to do more advanced things with Arexx, including adding libraries to the ARexx library list, adding Hosts,Value Tokens etc. It is also needed to access Arexx using the #RXFUNC flag. The arguments are a LONG Pointer to a rexxmsg. The LONG address of a FillStruct NEWTYPE structure. This structure is defined in the Arexx.res and has the following form. NEWTYPE .FillStruct Flags.w ;Flag block Args0.l ; argument block (ARG0-ARG15) Args1.l ; argument block (ARG0-ARG15) Args2.l ; argument block (ARG0-ARG15) Args3.l ; argument block (ARG0-ARG15) Args4.l ; argument block (ARG0-ARG15) Args5.l ; argument block (ARG0-ARG15) Args6.l , argument block (ARG0-ARG15) Args7.l , argument block (ARG0-ARG15) Args8.l ; argument block (ARG0-ARG15) Args9.l ; argument block (ARG0-ARG15) Args10.l ; argument block (ARG0-ARG15) Args11.l ; argument block (ARG0-ARG15) Args12.l ; argument block (ARG0-ARG15) Args13.l ; argument block (ARG0-ARG15) Args14.l ; argument block (ARG0-ARG15) Args15.l ; argument block (ARG0-ARG15) EndMark.l ; End of the FillStruct End NEWTYPE The Args?.l are the 16 slots that can possibly be filled ready for converting into the RexxMsg structure. The Flags.w is a WORD value representing the type of LONG word you are supplying for each ARGSLOT (Arg?.l). Each bit in the Flags WORD is representative of a single Args?.l, where a set bit represents a numerical value to be passed and a clear bit represents a string argument to be converted into a ArgString before installing in the RexxMsg. The Flags Value is easiest to supply as a binary number to make the bits visible and would look like this. %0000000000000000  ;represents that all Arguments are Strings. %0110000000000000  ;represent second&third as being integers. FillRexxMsg expects to find the address of any strings in the Args?.l slots so it is important to remember when filling a FillStruct that you must pass the string address and not the name of the string. This is accomplished using the '&' address of operand. So to use FillRexxMsg we must do the following things in our program: 1. Allocate a FillStruct 2. Set the flags in the FillStruct\\Flags. 3. Fill the FillStruct with either integer values or the addresses of our string arguments. 4. Call FillRexxMsg with the LONG address of our rexxmsg and the LONG address of our   FillStruct. To accomplish this takes the following code: ;Allocate our FillStruct (called F) DEFTYPE.FillStruct F ;assign some string arguments T$=\"open \" :T1$=\"-0123456789\" ;Fill in our FillStruct with flags and (&) addresses of our strings F\\Flags= %0010000000000000,&T$,&T1$,4 ;Third argument here is an integer (4). Port.l=CreateMsgPort( \"host\") msg.l=CreateRexxMsg(Port,\"vc\",\"host\") FillRexxMsg msg,&F ;<-3 ergs see #RXFUNC SendRexxCommand msg,\"\",#RXFUNCI #RXFF RESULTI 3 "
+     },
+     "CreateArgString": {
+        "prefix": "CreateArgString",
+        "body": "CreateArgString (\"this is a string\")",
+        "description": "CreateArgString() builds an ARexx compatible ArgString structure around the provided string. All strings sent to, or received from Arexx are in the form of ArgStrings. See the TYPE RexxARG. If all is well the return will be a LONG address of the ArgString structure. The pointer will actually point to the NULL terminated String with the remainder of the structure available at negative offsets. "
+     },
+     "DeleteArgString": {
+        "prefix": "DeleteArgString",
+        "body": "DeleteArgString ArgString",
+        "description": "DeleteArgString is designed to Delete ArgStrings allocated by either Blitz or ARexx in a system friendly way. It takes only one argument the LONGWORD address of an ArgString as returned by CreateArgString(). "
+     },
+     "SendRexxCommand": {
+        "prefix": "SendRexxCommand",
+        "body": "SendRexxCommand rexxmsg, \"commands/ring \",#RXCOMMI #RXFF RESULT",
+        "description": "SendRexxCommand is designed to fill and send a RexxMsg structure to ARexx inorder to get ARexx to do something on your behalf. The arguments are as follows; rexxmsg: the LONGWORD address of a RexxMsg structure as returned by CreateRexxMsg(). commands/ring: the command string you wish to send to ARexx. This is a string as in \"this is a string\" and will vary depending on what you wish to do with ARexx. Normally this will be the name of an ARexx script file you wish to execute. ARexx will then look for the script by the name as well as the name with the exten added.(this is the exten you used when you created the RexxMsg structure using CreateRexxMsg()). This could also be a string file. That is a complete ARexx script in a single line. ActionCodes: the flag values you use to tell ARexx what you want it to do with the commandstring you have supplied. "
+     }
 }
